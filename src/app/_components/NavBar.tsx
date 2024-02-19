@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { EMapHrefToTitle, Page } from "../_utilities";
-import { pageNames } from "../_utilities/data";
+import { pageNames } from "../_utilities";
 
 export function NavBar() {
   const [isScrolledToTop, setIsScrolledToTop] = useState(true);
