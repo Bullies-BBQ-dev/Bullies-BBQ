@@ -1,3 +1,3 @@
-export function Catering() {
-  return <div>Catering</div>;
+export default function Catering() {
+  return <div>Catering Page</div>;
 }
