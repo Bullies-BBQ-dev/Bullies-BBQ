@@ -21,12 +21,19 @@ export type Category =
   | "Beer"
   | null;
 
+  export type CateringCategory =
+  | "ALA Carte & by the Pound"
+  | "Family Dinners to Go"
+  | "Sauces & Rub"
+  | null;
+
 export interface IMenuItem {
   name: string;
   price: number;
   description: string;
-  category: Category;
+  category: Category | CateringCategory;
   img: string;
+  url? : string;
 }
 
 export enum EMapHrefToTitle {
