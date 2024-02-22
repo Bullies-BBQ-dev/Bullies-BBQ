@@ -4,19 +4,35 @@ import { useState } from "react";
 import { cateringMenuList, cateringCategories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
+import { useSelectedItemsContext } from "./context";
 export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] =
     useState<CateringCategory>(null);
+  const { selectedItems, setSelectedItems } = useSelectedItemsContext();
 
   const mapMenu = (menuItem: IMenuItem, index: number) => {
-    function handleClick(url: string) {
-      window.open(url, "_blank");
+    function handleClick(menuItem: IMenuItem) {
+      const existingItemIndex = selectedItems.findIndex(
+        (item) => item.name === menuItem.name
+      );
+      if (existingItemIndex !== -1) {
+        const updatedItems = [...selectedItems];
+        updatedItems[existingItemIndex].quantity =
+          (updatedItems[existingItemIndex].quantity || 0) + 1;
+        setSelectedItems(updatedItems);
+      } else {
+        const newSelectedItems = [
+          ...selectedItems,
+          { ...menuItem, quantity: 1 },
+        ];
+        setSelectedItems(newSelectedItems);
+      }
     }
     return (
       <div
-        className="flex flex-col rounded-lg group hover:shadow-amber-900 hover:scale-[1.02] outline outline-red-800/0 hover:outline-red-800/20 shadow-xl min-w-72 duration-500"
+        className="flex flex-col rounded-lg group hover:shadow-amber-900 hover:scale-[1.02] outline outline-red-800/0 hover:outline-red-800/20 shadow-xl min-w-72 duration-500 cursor-pointer"
         key={index}
-        onClick={() => handleClick(`${menuItem.url}`)}
+        onClick={() => handleClick(menuItem)}
       >
         <div className="max-w-[35%]">
           <Image
