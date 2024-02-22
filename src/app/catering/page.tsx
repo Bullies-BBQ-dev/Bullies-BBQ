@@ -26,7 +26,16 @@ export default function Catering() {
             </p>
 
             <p className={`text-red-800 text-3xl ${redRoseFont.className}`}>
-              Place order online or call{" "}
+              Place{" "}
+              <a
+                href="https://order.toasttab.com/online/bullies-bbq"
+                className="underline underline-offset-[0.4rem] hover:text-blue-600 "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                order online
+              </a>{" "}
+              or call{" "}
               <a
                 href="tel:(843) 686-7427"
                 className="underline underline-offset-[0.4rem] hover:text-blue-600 "
@@ -35,7 +44,9 @@ export default function Catering() {
               </a>
             </p>
             <p className="font-extrabold py-4">
-              *if serving parties larger than 10 please fill out form below
+              *if serving parties larger than 10 please fill out form below{" "}
+              <br />
+              *1 pound serves about 3-5 people
             </p>
           </div>
           <div className="md:w-1/4 flex justify-center items-center">
@@ -45,6 +56,10 @@ export default function Catering() {
         <div>
           <CateringMenuItems redRoseFont={redRoseFont} />
         </div>
+        <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
+          {" "}
+          Interest Form
+        </h3>
         <CateringForm />
       </div>
     </SelectedItemsProvider>

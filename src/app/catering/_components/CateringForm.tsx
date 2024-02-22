@@ -9,6 +9,7 @@ export function CateringForm() {
   const maxTime = "19:30";
   const [selectedTime, setSelectedTime] = useState("");
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
+  const [showAllItems, setShowAllItems] = useState(false);
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const time = event.target.value;
@@ -21,7 +22,25 @@ export function CateringForm() {
     }
   };
 
-  function sendEmail() {}
+  function sendEmail(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formElements = form.current?.elements;
+    if (formElements) {
+      console.log("Form Inputs:");
+      for (let i = 0; i < formElements.length; i++) {
+        const element = formElements[i] as HTMLInputElement;
+        if (element.name && element.value) {
+          console.log(element.name, element.value);
+        }
+      }
+    }
+
+    // Log selected items and quantities
+    console.log("Selected Items:");
+    selectedItems.forEach((item) => {
+      console.log(item.quantity, item.name);
+    });
+  }
 
   function updateQuantity(index: number, quantity: number) {
     const updatedItems = [...selectedItems];
@@ -59,8 +78,12 @@ export function CateringForm() {
   }
 
   const minDate = nextAvailableDate.toISOString().split("T")[0];
+
+  const itemsToShow = showAllItems
+    ? selectedItems.length
+    : Math.min(selectedItems.length, 4);
   return (
-    <div className="flex w-full justify-center text-black">
+    <div className="flex w-full justify-center">
       <div className="w-full lg:w-3/4 lg:px-0 px-4">
         <form
           ref={form}
@@ -135,6 +158,7 @@ export function CateringForm() {
                 type="number"
                 name="people"
                 required
+                min={11}
                 className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
               />
             </div>
@@ -142,13 +166,13 @@ export function CateringForm() {
 
           <div className={`flex `}>
             <div className="w-1/2 pl-2">
-              <label htmlFor="items">Items</label>
-              {selectedItems.map((item, index) => (
-                <div key={index} className="flex mb-4">
+              <label htmlFor="items">Items:</label>
+              {selectedItems.slice(0, itemsToShow).map((item, index) => (
+                <div key={index} className="flex">
                   <div className="w-1/2">
                     <label htmlFor={`quantity-${index}`}>{item.name}</label>
                   </div>
-                  <div className="w-1/2">
+                  <div className="w-1/2 mr-2">
                     <input
                       id={`quantity-${index}`}
                       type="number"
@@ -162,15 +186,22 @@ export function CateringForm() {
                   </div>
                 </div>
               ))}
+              {selectedItems.length > 4 && (
+                <button
+                  onClick={() => setShowAllItems(!showAllItems)}
+                  className="text-red-500 hover:underline ease-in-out delay-75"
+                >
+                  {showAllItems ? "Show Less" : "Show More"}
+                </button>
+              )}
             </div>
-            <div className="w-1/2 pl-2">
+            <div className="w-full pl-2">
               <label htmlFor="message" className={``}>
-                Message
+                Requests/Description (optional)
               </label>
               <textarea
                 name="message"
                 rows={4}
-                required
                 className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
               />
             </div>
@@ -180,8 +211,8 @@ export function CateringForm() {
             <button
               type="submit"
               value="Send"
-              className={`border px-4 py-1 w-full lg:w-1/4  font-medium bg-[#1F2937] border-none hover:text-[#FB904D] transition ease-in-out hover:outline hover:outline-[#FB904D] hover:outline-1
-                
+              className={` px-4 py-1 w-full lg:w-1/4 text-white font-medium bg-red-800  transition ease-in-out
+              rounded border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
                 `}
             >
               Send!

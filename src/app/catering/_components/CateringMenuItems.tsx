@@ -30,17 +30,17 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     }
     return (
       <div
-        className="flex flex-col rounded-lg group hover:shadow-amber-900 hover:scale-[1.02] outline outline-red-800/0 hover:outline-red-800/20 shadow-xl min-w-72 duration-500 cursor-pointer"
+        className="flex flex-col rounded-lg group hover:shadow-gray-400 hover:scale-[1.02] shadow-xl min-w-72 duration-500 cursor-pointer"
         key={index}
         onClick={() => handleClick(menuItem)}
       >
-        <div className="max-w-[35%]">
+        <div className="flex justify-center">
           <Image
             src={menuItem.img}
             alt={menuItem.name}
-            className="rounded-t-lg"
-            width={350}
-            height={350}
+            className="object-fit rounded-t-lg h-48 w-48"
+            width={300}
+            height={300}
           />
         </div>
 
@@ -79,7 +79,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   };
 
   return (
-    <section className="mx-5 min-h-screen">
+    <section className="mx-5 min-h-full">
       <div className="grid grid-cols-6 gap-4 px-4 py-4">
         {cateringCategories.map(mapCategories)}
       </div>
