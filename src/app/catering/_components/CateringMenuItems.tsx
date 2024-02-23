@@ -63,7 +63,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     return (
       <button
         key={index}
-        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800 ${
+        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800  ${
           category === currentCategory
             ? "bg-white text-red-800"
             : "bg-red-800 text-white"
@@ -79,8 +79,8 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   };
 
   return (
-    <section className="mx-5 min-h-full">
-      <div className="grid grid-cols-6 gap-4 px-4 py-4">
+    <section className="mx-5 min-h-full w-full">
+      <div className="grid  grid-cols-3 lg:grid-cols-6 gap-4 px-4 py-4">
         {cateringCategories.map(mapCategories)}
       </div>
       <div

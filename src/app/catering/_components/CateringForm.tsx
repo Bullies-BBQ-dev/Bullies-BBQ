@@ -90,8 +90,8 @@ export function CateringForm() {
           onSubmit={sendEmail}
           className="flex flex-col w-full mb-16 lg:mb-30 "
         >
-          <div className="flex">
-            <div className="w-1/3 pr-2">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/3 lg:pr-2">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
@@ -100,7 +100,7 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
               />
             </div>
-            <div className={`w-1/3 pl-2 `}>
+            <div className={`w-full lg:w-1/3 lg:pl-2 `}>
               <label htmlFor="date">Date</label>
               <input
                 type="date"
@@ -118,7 +118,7 @@ export function CateringForm() {
                 }}
               />
             </div>
-            <div className={`w-1/3 pl-2 `}>
+            <div className={`lg:w-1/3 w-full lg:pl-2 `}>
               <label htmlFor="time">Time</label>
               <input
                 type="time"
@@ -133,8 +133,8 @@ export function CateringForm() {
             </div>
           </div>
 
-          <div className={`flex `}>
-            <div className="w-1/3 pr-2">
+          <div className={`flex flex-col lg:flex-row`}>
+            <div className="w-full lg:w-1/3 lg:pr-2">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -143,7 +143,7 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
               />
             </div>
-            <div className="w-1/3 pl-2">
+            <div className="w-full lg:w-1/3 lg:pl-2">
               <label htmlFor="phone">Phone Number</label>
               <input
                 type="phone"
@@ -152,7 +152,7 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
               />
             </div>
-            <div className="w-1/3 pl-2">
+            <div className="w-full lg:w-1/3 lg:pl-2">
               <label htmlFor="people">Number of People</label>
               <input
                 type="number"
@@ -164,15 +164,17 @@ export function CateringForm() {
             </div>
           </div>
 
-          <div className={`flex `}>
-            <div className="w-1/2 pl-2">
+          <div className={`flex flex-col lg:flex-row`}>
+            <div className="lg:w-1/2 w-full lg:pl-2">
               <label htmlFor="items">Items:</label>
               {selectedItems.slice(0, itemsToShow).map((item, index) => (
                 <div key={index} className="flex">
-                  <div className="w-1/2">
-                    <label htmlFor={`quantity-${index}`}>{item.name}</label>
+                  <div className="lg:w-1/2 w-full">
+                    <label
+                      htmlFor={`quantity-${index}`}
+                    >{`- ${item.name}`}</label>
                   </div>
-                  <div className="w-1/2 mr-2">
+                  <div className="lg:w-1/2  w-full lg:mr-2 flex justify-end">
                     <input
                       id={`quantity-${index}`}
                       type="number"
@@ -181,7 +183,7 @@ export function CateringForm() {
                       onChange={(e) =>
                         updateQuantity(index, parseInt(e.target.value))
                       }
-                      className="mb-4 p-2 w-full focus:outline-[#FB904D] border"
+                      className="mb-4 p-2 w-1/4 focus:outline-[#FB904D] border"
                     />
                   </div>
                 </div>
@@ -195,7 +197,7 @@ export function CateringForm() {
                 </button>
               )}
             </div>
-            <div className="w-full pl-2">
+            <div className="w-full lg:pl-2">
               <label htmlFor="message" className={``}>
                 Requests/Description (optional)
               </label>

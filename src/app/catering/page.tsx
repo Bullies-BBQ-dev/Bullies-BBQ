@@ -19,11 +19,14 @@ export default function Catering() {
             <h3 className={`text-red-800 text-4xl ${redRoseFont.className}`}>
               Having a party ?
             </h3>
-            <p className="text-xl py-4 w-3/4">
-              Keep Bullies in mind for party sized platters of BBQ and
-              fixin&apos;s. Bullies BBQ is good all year round. Winter Holidays,
-              Summer Picnics, Super Bowl Sunday, Graduation Parties and more!
-            </p>
+            <div className="">
+              <p className="text-xl py-4 w-full lg:w-3/4 ">
+                Keep Bullies in mind for party sized platters of BBQ and
+                fixin&apos;s. Bullies BBQ is good all year round. Winter
+                Holidays, Summer Picnics, Super Bowl Sunday, Graduation Parties
+                and more!
+              </p>
+            </div>
 
             <p className={`text-red-800 text-3xl ${redRoseFont.className}`}>
               Place{" "}
@@ -49,7 +52,7 @@ export default function Catering() {
               *1 pound serves about 3-5 people
             </p>
           </div>
-          <div className="md:w-1/4 flex justify-center items-center">
+          <div className="md:w-1/4 lg:flex justify-center items-center hidden">
             <Image src="/Bullies-logo.png" width={200} height={200} alt="" />
           </div>
         </div>
