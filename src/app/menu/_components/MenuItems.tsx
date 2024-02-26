@@ -50,7 +50,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
 
   return (
     <section className="mx-5 min-h-screen">
-      <div className="grid grid-cols-6 gap-4 px-16 py-4">
+      <div className="grid grid-cols-6 gap-4 px-16 py-4 sticky top-20 z-10 bg-white">
         {categories.map(mapCategories)}
       </div>
       <div
