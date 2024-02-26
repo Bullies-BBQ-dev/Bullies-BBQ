@@ -1,7 +1,7 @@
 "use client";
-
-import { useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useSelectedItemsContext } from "./context";
+import emailjs from "@emailjs/browser";
 
 export function CateringForm() {
   const form = useRef<HTMLFormElement | null>(null);
@@ -13,7 +13,6 @@ export function CateringForm() {
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const time = event.target.value;
-    // Check if the selected time is within the min-max range
     if (time >= minTime && time <= maxTime) {
       setSelectedTime(time);
     } else {
@@ -22,25 +21,25 @@ export function CateringForm() {
     }
   };
 
-  function sendEmail(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const formElements = form.current?.elements;
-    if (formElements) {
-      console.log("Form Inputs:");
-      for (let i = 0; i < formElements.length; i++) {
-        const element = formElements[i] as HTMLInputElement;
-        if (element.name && element.value) {
-          console.log(element.name, element.value);
-        }
-      }
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (form.current) {
+      emailjs
+        .sendForm("service_l66sb72", "template_4vlk3li", form.current, {
+          publicKey: "69VTj3m726TFXQowL",
+        })
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            form.current?.reset();
+            setSelectedItems([]);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
     }
-
-    // Log selected items and quantities
-    console.log("Selected Items:");
-    selectedItems.forEach((item) => {
-      console.log(item.quantity, item.name);
-    });
-  }
+  };
 
   function updateQuantity(index: number, quantity: number) {
     const updatedItems = [...selectedItems];
@@ -53,35 +52,28 @@ export function CateringForm() {
   }
 
   const today = new Date();
-  //   const minDate = today.toISOString().split("T")[0]; // Today's date as minDate
   const maxDate = new Date(
     today.getFullYear(),
     today.getMonth(),
     today.getDate() + 20
   )
     .toISOString()
-    .split("T")[0]; // 3 weeks into the future as maxDate
-  const disableSundays = (date: Date) => {
-    return date.getDay() === 6; // 6 is Sunday
-  };
+    .split("T")[0];
+  const disableSundays = (date: Date) => date.getDay() === 6;
 
   let nextAvailableDate = new Date();
-
-  // If today is Sunday, find the next Monday
   if (nextAvailableDate.getDay() === 6) {
-    nextAvailableDate.setDate(nextAvailableDate.getDate() + 1); // Move to Monday
+    nextAvailableDate.setDate(nextAvailableDate.getDate() + 1);
   }
-
-  // Find the next available date that is not a Sunday
   while (disableSundays(nextAvailableDate)) {
     nextAvailableDate.setDate(nextAvailableDate.getDate() + 1);
   }
-
   const minDate = nextAvailableDate.toISOString().split("T")[0];
 
   const itemsToShow = showAllItems
     ? selectedItems.length
     : Math.min(selectedItems.length, 4);
+
   return (
     <div className="flex w-full justify-center">
       <div className="w-full lg:w-3/4 lg:px-0 px-4">
@@ -97,7 +89,7 @@ export function CateringForm() {
                 type="text"
                 name="name"
                 required
-                className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
             <div className={`w-full lg:w-1/3 lg:pl-2 `}>
@@ -106,7 +98,7 @@ export function CateringForm() {
                 type="date"
                 name="date"
                 required
-                className="mb-4 p-2 w-full focus:outline-[#FB904D] border"
+                className="mb-4 p-2 w-full focus:outline-red-800 border"
                 min={minDate}
                 max={maxDate}
                 onChange={(e) => {
@@ -124,7 +116,7 @@ export function CateringForm() {
                 type="time"
                 name="time"
                 required
-                className="mb-4 p-2 w-full focus:outline-[#FB904D] border"
+                className="mb-4 p-2 w-full focus:outline-red-800 border"
                 value={selectedTime}
                 onChange={handleTimeChange}
                 min={minTime}
@@ -140,7 +132,7 @@ export function CateringForm() {
                 type="email"
                 name="email"
                 required
-                className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
             <div className="w-full lg:w-1/3 lg:pl-2">
@@ -149,7 +141,7 @@ export function CateringForm() {
                 type="phone"
                 name="phone"
                 required
-                className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
             <div className="w-full lg:w-1/3 lg:pl-2">
@@ -159,39 +151,57 @@ export function CateringForm() {
                 name="people"
                 required
                 min={11}
-                className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
           </div>
 
           <div className={`flex flex-col lg:flex-row`}>
-            <div className="lg:w-1/2 w-full lg:pl-2">
+            <div className="lg:w-1/2 w-full lg:pl-2 pl-0">
               <label htmlFor="items">Items:</label>
               {selectedItems.slice(0, itemsToShow).map((item, index) => (
                 <div key={index} className="flex">
-                  <div className="lg:w-1/2 w-full">
-                    <label
-                      htmlFor={`quantity-${index}`}
-                    >{`- ${item.name}`}</label>
+                  <div className=" w-full">
+                    <input
+                      type="text"
+                      name="items"
+                      value={item.name}
+                      readOnly
+                      className="py-2 w-full border-none bg-inherit select-none focus:outline-none"
+                    />
                   </div>
-                  <div className="lg:w-1/2  w-full lg:mr-2 flex justify-end">
+                  <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end">
                     <input
                       id={`quantity-${index}`}
                       type="number"
+                      name="quantity"
                       min="0"
-                      value={item.quantity}
+                      value={`${item.quantity}`}
                       onChange={(e) =>
                         updateQuantity(index, parseInt(e.target.value))
                       }
-                      className="mb-4 p-2 w-1/4 focus:outline-[#FB904D] border"
+                      className="mb-4 p-2 w-1/2 focus:outline-red-800 border"
+                    />
+                  </div>
+                  <div className="hidden">
+                    <input
+                      id={`quantity-${index}`}
+                      type="text"
+                      name="selectedItems"
+                      readOnly
+                      value={`${item.quantity} ${item.name}`}
+                      onChange={(e) =>
+                        updateQuantity(index, parseInt(e.target.value))
+                      }
                     />
                   </div>
                 </div>
               ))}
+
               {selectedItems.length > 4 && (
                 <button
                   onClick={() => setShowAllItems(!showAllItems)}
-                  className="text-red-500 hover:underline ease-in-out delay-75"
+                  className="text-red-500 hover:underline ease-in-out delay-75 py-4"
                 >
                   {showAllItems ? "Show Less" : "Show More"}
                 </button>
@@ -199,12 +209,12 @@ export function CateringForm() {
             </div>
             <div className="w-full lg:pl-2">
               <label htmlFor="message" className={``}>
-                Requests/Description (optional)
+                Requests/Description (optional):
               </label>
               <textarea
                 name="message"
                 rows={4}
-                className={`mb-4 p-2 w-full focus:outline-[#FB904D] border`}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
               />
             </div>
           </div>

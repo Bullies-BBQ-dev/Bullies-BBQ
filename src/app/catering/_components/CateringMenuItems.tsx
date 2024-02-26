@@ -5,10 +5,13 @@ import { cateringMenuList, cateringCategories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 import { useSelectedItemsContext } from "./context";
+import { Popup } from "./Popup";
+
 export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] =
     useState<CateringCategory>(null);
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
+  const [showAllItems, setShowAllItems] = useState(false);
 
   const mapMenu = (menuItem: IMenuItem, index: number) => {
     function handleClick(menuItem: IMenuItem) {
@@ -63,9 +66,9 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     return (
       <button
         key={index}
-        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800  ${
+        className={`py-1 rounded border-4 hover:bg-red-800/[0.85] hover:scale-[1.02] duration-300 bg-red-800  ${
           category === currentCategory
-            ? "bg-white text-red-800"
+            ? "bg-red-800 text-white border-yellow-500"
             : "bg-red-800 text-white"
         }`}
         onClick={() => {
@@ -77,9 +80,14 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
       </button>
     );
   };
+  const itemsToShow = currentCategory
+    ? showAllItems
+      ? cateringMenuList.length
+      : 9
+    : cateringMenuList.length;
 
   return (
-    <section className="mx-5 min-h-full w-full">
+    <section className="mx-5 min-h-full">
       <div className="grid  grid-cols-3 lg:grid-cols-6 gap-4 px-4 py-4">
         {cateringCategories.map(mapCategories)}
       </div>
@@ -91,9 +99,24 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         {currentCategory
           ? cateringMenuList
               .filter((menuIem) => menuIem.category === currentCategory)
+              .slice(0, itemsToShow)
               .map(mapMenu)
-          : cateringMenuList.map(mapMenu)}
+          : cateringMenuList.slice(0, itemsToShow).map(mapMenu)}
       </div>
+      {currentCategory &&
+      cateringMenuList.filter(
+        (menuItem) => menuItem.category === currentCategory
+      ).length > 9 ? (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setShowAllItems(!showAllItems)}
+            className="text-black hover:underline ease-in-out delay-75"
+          >
+            {showAllItems ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      ) : null}
+      <Popup />
     </section>
   );
 }
