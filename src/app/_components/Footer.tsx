@@ -65,11 +65,26 @@ export function Footer() {
               <p>Closed</p>
             </div>
             <div className="flex flex-col col-span-1 w-24">
-              <p>About Us</p>
+              <Link
+                href={"/about"}
+                className="hover:underline hover:underline-offset-4 decoration-2"
+              >
+                <p>About Us</p>
+              </Link>
               <br />
-              <p>Order Now</p>
+              <Link
+                href={"https://order.toasttab.com/online/bullies-bbq"}
+                className="hover:underline hover:underline-offset-4 decoration-2"
+              >
+                <p>Order Now</p>
+              </Link>
               <br />
-              <p>Catering</p>
+              <Link
+                href={"/catering"}
+                className="hover:underline hover:underline-offset-4 decoration-2"
+              >
+                <p>Catering</p>
+              </Link>
             </div>
           </div>
           <div className="col-span-3 md:col-span-1 w-44 pt-8 md:pt-0">
