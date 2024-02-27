@@ -51,12 +51,12 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   };
 
   return (
-    <section className="mx-5 min-h-screen">
-      <div className="grid grid-cols-6 gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-20 z-10 bg-white shadow-md duration-200">
+    <section className="mx-2 sm:mx-5 min-h-screen">
+      <div className="grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-20 z-10 bg-white shadow-md duration-200">
         {categories.map(mapCategories)}
       </div>
       <div
-        className="relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10"
+        className="relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2"
         style={{ gridColumnGap: "4%" }}
         key={currentCategory}
       >

@@ -83,7 +83,7 @@ export function NavBar() {
   return (
     <header className="w-full fixed z-20 ">
       <nav
-        className={`hidden sm:flex justify-center items-center ease-in duration-100 text-lg ${
+        className={`flex justify-center items-center ease-in duration-100 text-lg ${
           isScrolledToTop
             ? "text-white ease-out duration-300"
             : " bg-white text-black hover:duration-100 shadow-md"
@@ -92,18 +92,42 @@ export function NavBar() {
         <Link
           href={"/"}
           className={`hidden absolute h-20 lg:left-1 xl:left-4 2xl:left-12 hover:scale-110 animate-fade-in duration-200 ${
-            isScrolledToTop && pathName === "/" ? "hidden" : "lg:flex "
+            isScrolledToTop
+              ? pathName === "/"
+                ? "hidden"
+                : "lg:flex scale-125"
+              : "lg:flex "
           }`}
         >
           <img src="/Bullies-BBQ-Name.png" alt="Bullies-BBQ" />
         </Link>
-        <div className="grid grid-cols-5 place-items-center xl:w-full xl:max-w-screen-lg  gap-0 md:gap-5 lg:gap-10 xl:gap-15 duration-300">
+        <div className="hidden sm:grid grid-cols-5 place-items-center xl:w-full xl:max-w-screen-lg  gap-0 md:gap-5 lg:gap-10 xl:gap-15 duration-300">
           {pageNames.map(mapNavLinks)}
         </div>
-      </nav>
-      <nav className="sm:hidden flex flex-row-reverse">
         <GrMenu
-          className={`${
+          className={`sm:hidden flex ${
+            isScrolledToTop ? "border-2 border-white" : "bg-red-800"
+          } shadow-xl rounded text-white m-4`}
+          size={45}
+          onClick={() => setIsModalOpen(true)}
+        ></GrMenu>
+        {isModalOpen && (
+          <div className="fixed z-20 w-screen h-screen bg-black/90 animate-fade-in top-0">
+            <div className=" flex flex-col justify-center items-center gap-y-4 text-white p-20">
+              <div className="w-full flex flex-row-reverse">
+                <GrClose
+                  onClick={() => setIsModalOpen(false)}
+                  size={40}
+                ></GrClose>
+              </div>
+              {pageNames.map(mapModalLinks)}
+            </div>
+          </div>
+        )}
+      </nav>
+      {/* <nav className="sm:hidden flex flex-row-reverse">
+        <GrMenu
+          className={`sm:hidden flex ${
             isScrolledToTop ? "border-2 border-white" : "bg-red-800"
           } shadow-xl rounded text-white m-4`}
           size={45}
@@ -122,7 +146,7 @@ export function NavBar() {
             </div>
           </div>
         )}
-      </nav>
+      </nav> */}
     </header>
   );
 }
