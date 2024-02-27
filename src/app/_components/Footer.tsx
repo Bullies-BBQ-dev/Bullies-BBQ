@@ -72,7 +72,7 @@ export function Footer() {
               <p>Catering</p>
             </div>
           </div>
-          <div className="col-span-1 w-44 pt-8 md:pt-0">
+          <div className="col-span-3 md:col-span-1 w-44 pt-8 md:pt-0">
             <Image
               src="/Bullies-logo.png"
               alt="BulliesBBQ logo"
@@ -81,6 +81,11 @@ export function Footer() {
               loading="lazy"
             />
           </div>
+        </div>
+        <div>
+          <p className="text-white text-xxs pt-8 w-46">
+            © 2008 -2017 Bullies BBQ, Inc. All Rights Reserved
+          </p>
         </div>
       </footer>
     </>
