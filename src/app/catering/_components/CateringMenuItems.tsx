@@ -47,7 +47,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
           />
         </div>
 
-        <div className="flex flex-col justify-end h-full ">
+        <div className="flex flex-col h-full ">
           <div className="flex justify-between p-3 group-hover:text-red-800 duration-500">
             <span className={`${redRoseFont.className} text-3xl`}>
               {menuItem.name}

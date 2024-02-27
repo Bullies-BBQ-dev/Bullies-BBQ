@@ -209,11 +209,12 @@ export function CateringForm() {
             </div>
             <div className="w-full lg:pl-2">
               <label htmlFor="message" className={``}>
-                Requests/Description (optional):
+                Requests/Description
               </label>
               <textarea
                 name="message"
                 rows={4}
+                required
                 className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
               />
             </div>

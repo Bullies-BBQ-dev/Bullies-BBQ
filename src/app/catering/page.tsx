@@ -60,7 +60,7 @@ export default function Catering() {
 
         <CateringMenuItems redRoseFont={redRoseFont} />
         <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
-          Interest Form
+          Catering Inquiry
         </h3>
         <CateringForm />
       </div>
