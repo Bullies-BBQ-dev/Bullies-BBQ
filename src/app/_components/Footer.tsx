@@ -1,16 +1,29 @@
 import Image from "next/image";
 import { BsYelp } from "react-icons/bs";
+import { LuFacebook } from "react-icons/lu";
+import { FaInstagram } from "react-icons/fa";
+import Link from "next/link";
+
 
 export function Footer() {
   return (
     <footer className="bg-red-900 pb-24 flex flex-col items-center px-2">
       <div className="bg-red-600 flex justify-center w-full">
-        <div>icon</div>
-        <span className=" text">
-          <BsYelp size={40} />
+      <Link href="https://www.facebook.com/pages/Bullies-BBQ-Burgers-and-Wings/190373154321712" target="_blank"  className="p-2">
+        <span className="text-amber-400 drop-shadow-md">
+          <LuFacebook size={40}/>
         </span>
-
-        <div>icon</div>
+      </Link>
+      <Link href="https://www.yelp.com/biz/bullies-bbq-hilton-head-island" target="_blank" className="p-2">
+        <span className="text-amber-400 drop-shadow-md">
+          <BsYelp size={38} />
+        </span>
+      </Link>
+      <Link href="https://www.instagram.com/explore/locations/472508119426826/bullies-bbq-hilton-head-island/" target="_blank"  className="p-2">
+        <span className="text-amber-400 drop-shadow-md">
+          <FaInstagram size={40}/>
+        </span>
+      </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-6 gap-8 text-white pt-16 place-items-center max-w-screen-xl">
         <div className="col-span-2">
