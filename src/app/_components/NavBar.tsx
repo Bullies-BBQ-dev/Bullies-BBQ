@@ -110,7 +110,7 @@ export function NavBar() {
           onClick={() => setIsModalOpen(true)}
         ></GrMenu>
         {isModalOpen && (
-          <div className="fixed z-20 w-screen h-screen bg-black/80 animate-fade-in">
+          <div className="fixed z-20 w-screen h-screen bg-black/90 animate-fade-in">
             <div className=" flex flex-col justify-center items-center gap-y-4 text-white p-20">
               <div className="w-full flex flex-row-reverse">
                 <GrClose

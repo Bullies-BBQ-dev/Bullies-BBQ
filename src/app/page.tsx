@@ -11,9 +11,9 @@ export default function Home() {
           "https://destination-bbq.com/wp-content/uploads/2015/04/Bullies-Interior-1024x576.jpg.webp"
         }
       >
-        <div className="grid grid-cols-2 place-content-center gap-24">
+        <div className="grid md:grid-cols-2 place-content-center gap-1 sm:gay-4 md:gap-16 lg:gap-24">
           <img className="" src="/Bullies-BBQ-Name.png" alt="" />
-          <div className="flex flex-col justify-evenly">
+          <div className="flex flex-col justify-center items-center md:justify-evenly md:items-start">
             <span className={redRoseFont.className + " text-white text-5xl"}>
               Barbecue in <br /> Hilton Head
             </span>

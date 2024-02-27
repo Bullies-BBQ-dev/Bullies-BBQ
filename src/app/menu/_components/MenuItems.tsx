@@ -4,6 +4,7 @@ import { Category, IMenuItem } from "@/app/_utilities";
 import { useState } from "react";
 import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
+import { CategoryIcons } from ".";
 
 export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] = useState<Category>(null);
@@ -33,7 +34,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     return (
       <button
         key={index}
-        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800 ${
+        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800 grid place-items-center ${
           category === currentCategory
             ? "bg-white text-red-800"
             : "bg-red-800 text-white"
@@ -43,14 +44,15 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
           else setCurrentCategory(category);
         }}
       >
-        {category}
+        <span className="hidden sm:grid">{category}</span>
+        <CategoryIcons category={category}></CategoryIcons>
       </button>
     );
   };
 
   return (
     <section className="mx-5 min-h-screen">
-      <div className="grid grid-cols-6 gap-4 px-16 py-4 sticky top-20 z-10 bg-white shadow-md">
+      <div className="grid grid-cols-6 gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-20 z-10 bg-white shadow-md duration-200">
         {categories.map(mapCategories)}
       </div>
       <div
