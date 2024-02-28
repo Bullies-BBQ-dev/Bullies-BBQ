@@ -104,49 +104,31 @@ export function NavBar() {
         <div className="hidden sm:grid grid-cols-5 place-items-center xl:w-full xl:max-w-screen-lg  gap-0 md:gap-5 lg:gap-10 xl:gap-15 duration-300">
           {pageNames.map(mapNavLinks)}
         </div>
-        <GrMenu
-          className={`sm:hidden flex ${
-            isScrolledToTop ? "border-2 border-white" : "bg-red-800"
-          } shadow-xl rounded text-white m-4`}
-          size={45}
-          onClick={() => setIsModalOpen(true)}
-        ></GrMenu>
+        <div className="sm:hidden flex justify-between items-center w-full">
+          <img
+            src="/Bullies-BBQ-Name.png"
+            alt="Bullies-BBQ"
+            className="h-16 ms-2"
+          />
+          <GrMenu
+            className={`${
+              isScrolledToTop ? "border-2 border-white" : ""
+            } rounded m-4`}
+            size={45}
+            onClick={() => setIsModalOpen(true)}
+          />
+        </div>
         {isModalOpen && (
           <div className="fixed z-20 w-screen h-screen bg-black/90 animate-fade-in top-0">
             <div className=" flex flex-col justify-center items-center gap-y-4 text-white p-20">
               <div className="w-full flex flex-row-reverse">
-                <GrClose
-                  onClick={() => setIsModalOpen(false)}
-                  size={40}
-                ></GrClose>
+                <GrClose onClick={() => setIsModalOpen(false)} size={40} />
               </div>
               {pageNames.map(mapModalLinks)}
             </div>
           </div>
         )}
       </nav>
-      {/* <nav className="sm:hidden flex flex-row-reverse">
-        <GrMenu
-          className={`sm:hidden flex ${
-            isScrolledToTop ? "border-2 border-white" : "bg-red-800"
-          } shadow-xl rounded text-white m-4`}
-          size={45}
-          onClick={() => setIsModalOpen(true)}
-        ></GrMenu>
-        {isModalOpen && (
-          <div className="fixed z-20 w-screen h-screen bg-black/90 animate-fade-in">
-            <div className=" flex flex-col justify-center items-center gap-y-4 text-white p-20">
-              <div className="w-full flex flex-row-reverse">
-                <GrClose
-                  onClick={() => setIsModalOpen(false)}
-                  size={40}
-                ></GrClose>
-              </div>
-              {pageNames.map(mapModalLinks)}
-            </div>
-          </div>
-        )}
-      </nav> */}
     </header>
   );
 }
