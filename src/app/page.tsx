@@ -8,20 +8,16 @@ export default function Home() {
 
       <Banner
         backgroundURL={
-          "https://destination-bbq.com/wp-content/uploads/2015/04/Full-Slab-Dinner-Patty-Ricalton-1024x768.jpg.webp"
+          "https://destination-bbq.com/wp-content/uploads/2015/04/Bullies-Interior-1024x576.jpg.webp"
         }
       >
-        <div className="grid grid-cols-2 place-content-center">
-          <img className=" place-self-end" src="/Bullies-BBQ-Name.png" alt="" />
-          <div className="flex flex-col justify-end">
-            <span
-              className={
-                redRoseFont.className + " text-white text-center text-7xl max-w"
-              }
-            >
-              Barbecue in Hilton Head
+        <div className="grid md:grid-cols-2 place-content-center gap-1 sm:gay-4 md:gap-16 lg:gap-24">
+          <img className="" src="/Bullies-BBQ-Name.png" alt="" />
+          <div className="flex flex-col justify-center items-center md:justify-evenly md:items-start">
+            <span className={redRoseFont.className + " text-white text-5xl"}>
+              Barbecue in <br /> Hilton Head
             </span>
-            <button className="py-10 px-16 max-w-fit bg-red-800 border-8 border-red-800 text-white text-6xl rounded-full hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300">
+            <button className="py-4 px-16 max-w-fit bg-red-800 border-8 border-red-800 text-white text-4xl rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300">
               Order Now!
             </button>
           </div>
