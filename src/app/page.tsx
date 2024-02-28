@@ -8,44 +8,53 @@ export default function Home() {
 
       <Banner
         backgroundURL={
-          "https://destination-bbq.com/wp-content/uploads/2015/04/Full-Slab-Dinner-Patty-Ricalton-1024x768.jpg.webp"
+          "https://destination-bbq.com/wp-content/uploads/2015/04/Bullies-Interior-1024x576.jpg.webp"
         }
       >
-        <div className="grid grid-cols-2 place-content-center">
-          <img className=" place-self-end" src="/Bullies-BBQ-Name.png" alt="" />
-          <div className="flex flex-col justify-end">
+        <div className="grid md:grid-cols-2 place-content-center gap-1 sm:gay-4 md:gap-16 lg:gap-24">
+          <img className="" src="/Bullies-BBQ-Name.png" alt="" />
+          <div className="flex flex-col justify-center items-center md:items-start">
             <span
               className={
-                redRoseFont.className + " text-white text-center text-7xl max-w"
+                redRoseFont.className +
+                " text-white text-3xl py-2 tracking-wide"
               }
             >
-              Barbecue in Hilton Head
+              Barbecue in <br /> Hilton Head
             </span>
-            <button className="py-10 px-16 max-w-fit bg-red-800 border-8 border-red-800 text-white text-6xl rounded-full hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300">
-              Order Now!
+            <button
+              className={
+                redRoseFont.className +
+                " py-3 px-16 max-w-fit bg-red-800 border-4 border-red-800 text-white text-2xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
+              }
+            >
+              Order Now
             </button>
           </div>
         </div>
       </Banner>
 
       <div className="w-full py-10 flex flex-col items-center gap-16 bg-white">
-        <img
-          className="aspect-square duration-300 h-28"
-          src="/Bullies-logo.png"
-          alt=""
-        />
-        <span className="text-7xl text-center">Some Nice Words Here!</span>
-        <p className="md:w-3/4 text-center">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint
-          necessitatibus ipsam culpa iste facere, voluptatibus dolores nostrum
-          aspernatur et, repudiandae voluptate dolor natus mollitia ipsa sed ad
-          enim id repellendus!
+        <div className="">
+          <img
+            className="aspect-square duration-300 object-contain h-60"
+            src="/bullie-full-body.png"
+            alt=""
+          />
+        </div>
+
+        <span className={redRoseFont.className + " text-4xl text-center"}>
+          Bullies BBQ
+        </span>
+        <p className="md:w-3/4 text-center text-xl">
+          Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and Mesquite
+          woods. Bullies Ribs smoke for up to 6 hours and pork butt and briskets
+          up to 14 hours in our large capacity smoker.
         </p>
-        <p className="md:w-3/4 text-center">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint
-          necessitatibus ipsam culpa iste facere, voluptatibus dolores nostrum
-          aspernatur et, repudiandae voluptate dolor natus mollitia ipsa sed ad
-          enim id repellendus!
+        <p className="md:w-3/4 text-center text-xl">
+          Chef Bob Sutton is famous for his South Carolina Pulled Pork. Served
+          up dinner style or on a sandwich. Don't forget to add a couple of
+          "bones" of pure Memphis heaven.
         </p>
         <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2">
           CHECK OUT OUR MENU
@@ -55,7 +64,9 @@ export default function Home() {
       <HomePageMenuItems />
 
       <div className="aspect-video w-full md:w-3/4 flex flex-col justify-evenly">
-        <span className="text-center text-6xl">Visit Us!</span>
+        <span className={redRoseFont.className + " text-center text-4xl"}>
+          Visit Us
+        </span>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.547583284142!2d-80.73426!3d32.173583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc7992c7d5ff67%3A0x2872397f8de93b33!2sBullies%20BBQ!5e0!3m2!1sen!2sus!4v1707822595985!5m2!1sen!2sus"
           width={"100%"}

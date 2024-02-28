@@ -1,13 +1,30 @@
 "use client";
 
 import { Category, IMenuItem } from "@/app/_utilities";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
+import { CategoryIcons } from ".";
 
 export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] = useState<Category>(null);
-  const mapMenu = (menuItem: IMenuItem, index: number) => {
+  const menuRef = useRef<HTMLElement | null>(null);
+
+  const mapMenu = (category: Category) => {
+    return (
+      <>
+        <span
+          className={`${redRoseFont.className} col-span-3 text-5xl text-center underline`}
+        >
+          {category}
+        </span>
+        {menuList
+          .filter((menuIem) => menuIem.category === category)
+          .map(mapMenuItems)}
+      </>
+    );
+  };
+  const mapMenuItems = (menuItem: IMenuItem, index: number) => {
     return (
       <div
         className="flex flex-col rounded-lg group hover:shadow-amber-900 hover:scale-[1.02] outline outline-red-800/0 hover:outline-red-800/20 shadow-xl min-w-72 duration-500"
@@ -29,11 +46,11 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     );
   };
 
-  const mapCategories = (category: Category, index: number) => {
+  const mapCategoryButtons = (category: Category, index: number) => {
     return (
       <button
         key={index}
-        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800 ${
+        className={`py-1 rounded border-4 border-red-800 duration-300 hover:bg-white hover:text-red-800 grid place-items-center ${
           category === currentCategory
             ? "bg-white text-red-800"
             : "bg-red-800 text-white"
@@ -41,28 +58,31 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         onClick={() => {
           if (category === currentCategory) setCurrentCategory(null);
           else setCurrentCategory(category);
+          // menuRef.current?.scrollTo(0, 0);
+          menuRef.current?.scrollIntoView();
         }}
       >
-        {category}
+        <span className="hidden sm:grid">{category}</span>
+        <CategoryIcons category={category}></CategoryIcons>
       </button>
     );
   };
 
   return (
-    <section className="mx-5 min-h-screen">
-      <div className="grid grid-cols-6 gap-4 px-16 py-4 sticky top-20 z-10 bg-white">
-        {categories.map(mapCategories)}
+    <section ref={menuRef} className="mx-2 sm:mx-5 min-h-screen">
+      <div className="grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-[72px] sm:top-20 z-10 bg-white shadow-md duration-200 mb-12">
+        {categories.map(mapCategoryButtons)}
       </div>
       <div
-        className="relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10"
+        className="relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2"
         style={{ gridColumnGap: "4%" }}
         key={currentCategory}
       >
         {currentCategory
-          ? menuList
-              .filter((menuIem) => menuIem.category === currentCategory)
+          ? categories
+              .filter((category) => category === currentCategory)
               .map(mapMenu)
-          : menuList.map(mapMenu)}
+          : categories.map(mapMenu)}
       </div>
     </section>
   );

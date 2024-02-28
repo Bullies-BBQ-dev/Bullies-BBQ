@@ -16,15 +16,15 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
         height: "750px",
       }}
     >
-      <div className="bg-black/60 w-full h-full grid place-content-center select-none">
+      <div className="bg-black/70 w-full h-full grid place-content-center select-none">
         {title ? (
           <span
-            className={`${sancreek.className} text-white text-9xl animate-fade-in`}
+            className={`${sancreek.className} text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl animate-fade-in`}
           >
             {title}
           </span>
         ) : (
-          <>{children}</>
+          <div className="animate-fade-in">{children}</div>
         )}
       </div>
     </div>

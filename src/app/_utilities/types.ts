@@ -21,7 +21,7 @@ export type Category =
   | "Beer"
   | null;
 
-  export type CateringCategory =
+export type CateringCategory =
   | "ALA Carte & by the Pound"
   | "Family Dinners to Go"
   | "Sauces & Rub"
@@ -33,8 +33,8 @@ export interface IMenuItem {
   description: string;
   category: Category | CateringCategory;
   img: string;
-  url? : string;
-  quantity?: number
+  url?: string;
+  quantity?: number;
 }
 
 export enum EMapHrefToTitle {
@@ -44,13 +44,7 @@ export enum EMapHrefToTitle {
   "About" = "/about",
   "Contact" = "/contact",
   "Shop" = "/shop",
+  "Home" = "/",
 }
 
-export type Page =
-  | "Order Now"
-  | "Menu"
-  | "Catering"
-  | "Home"
-  | "About"
-  | "Contact"
-  | "Shop";
+export type Page = "Order Now" | "Menu" | "Catering" | "Home" | "About";
