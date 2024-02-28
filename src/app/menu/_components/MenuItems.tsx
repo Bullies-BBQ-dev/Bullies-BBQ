@@ -10,18 +10,20 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] = useState<Category>(null);
   const menuRef = useRef<HTMLElement | null>(null);
 
-  const mapMenu = (category: Category) => {
+  const mapMenu = (category: Category, index: number) => {
     return (
-      <>
+      <div key={index} className="flex flex-col">
         <span
-          className={`${redRoseFont.className} col-span-3 text-5xl text-center underline`}
+          className={`${redRoseFont.className} text-5xl text-center underline`}
         >
           {category}
         </span>
-        {menuList
-          .filter((menuIem) => menuIem.category === category)
-          .map(mapMenuItems)}
-      </>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
+          {menuList
+            .filter((menuIem) => menuIem.category === category)
+            .map(mapMenuItems)}
+        </div>
+      </div>
     );
   };
   const mapMenuItems = (menuItem: IMenuItem, index: number) => {
@@ -74,7 +76,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         {categories.map(mapCategoryButtons)}
       </div>
       <div
-        className="relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2"
+        className="relative animate-fade-left-right "
         style={{ gridColumnGap: "4%" }}
         key={currentCategory}
       >
