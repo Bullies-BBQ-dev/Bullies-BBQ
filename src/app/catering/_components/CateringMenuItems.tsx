@@ -36,7 +36,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     }
     return (
       <div
-        className="flex flex-col rounded-lg group hover:shadow-gray-400 hover:scale-[1.02] shadow-xl min-w-72 duration-500 cursor-pointer"
+        className="flex flex-col rounded-lg group hover:shadow-gray-400 hover:scale-[1.02] shadow-xl max-w-72 duration-500 cursor-pointer"
         key={index}
         onClick={() => handleClick(menuItem)}
       >

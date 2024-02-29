@@ -64,15 +64,19 @@ export default function Catering() {
             <CateringMenuItems redRoseFont={redRoseFont} />
           </div>
 
-          <div className="flex flex-col items-center pb-10 w-1/3 relative top-0">
-            <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
-              Catering Inquiry
-            </h3>
-            <p className=" text-lg">
-              * Contact us for catering information we will get back to you
-              soon, order not confirmed until you receive confirmation email *
-            </p>
-            <CateringForm />
+          <div className="lg:flex flex-col items-center pb-10 w-1/3 hidden">
+            <div className="sticky top-14">
+              <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
+                Catering Inquiry
+              </h3>
+              <p className="text-lg">
+                * Contact us for catering information we will get back to you
+                soon, order not confirmed until you receive confirmation email *
+              </p>
+              <div className="sticky top-0">
+                <CateringForm />
+              </div>
+            </div>
           </div>
         </div>
 
