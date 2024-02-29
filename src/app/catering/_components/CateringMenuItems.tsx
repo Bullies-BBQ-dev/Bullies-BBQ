@@ -1,11 +1,14 @@
 "use client";
-import { CateringCategory, IMenuItem } from "@/app/_utilities";
+import {
+  CateringCategory,
+  IMenuItem,
+  cateringMenuList,
+  cateringCategories,
+} from "@/app/_utilities";
 import { useState } from "react";
-import { cateringMenuList, cateringCategories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
-import { useSelectedItemsContext } from "./context";
-import { Popup } from "./Popup";
+import { useSelectedItemsContext, Popup } from "./index";
 
 export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] =
@@ -63,32 +66,34 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   };
 
   const mapCategories = (category: CateringCategory, index: number) => {
+    const isActive = category === currentCategory;
+    const categoryClasses = `py-1 rounded border-4 hover:bg-red-800/[0.85] hover:scale-[1.02] duration-300 bg-red-800 text-white ${
+      isActive ? "border-yellow-500" : ""
+    }`;
+
     return (
       <button
         key={index}
-        className={`py-1 rounded border-4 hover:bg-red-800/[0.85] hover:scale-[1.02] duration-300 bg-red-800  ${
-          category === currentCategory
-            ? "bg-red-800 text-white border-yellow-500"
-            : "bg-red-800 text-white"
-        }`}
-        onClick={() => {
-          if (category === currentCategory) setCurrentCategory(null);
-          else setCurrentCategory(category);
-        }}
+        className={categoryClasses}
+        onClick={() => setCurrentCategory(isActive ? null : category)}
       >
         {category}
       </button>
     );
   };
-  const itemsToShow = currentCategory
-    ? showAllItems
-      ? cateringMenuList.length
-      : 9
-    : cateringMenuList.length;
+
+  const filteredMenuItems = currentCategory
+    ? cateringMenuList.filter(
+        (menuItem) => menuItem.category === currentCategory
+      )
+    : cateringMenuList;
+
+  const itemsToShow =
+    currentCategory && !showAllItems ? 9 : filteredMenuItems.length;
 
   return (
     <section className="mx-5 min-h-full">
-      <div className="grid  grid-cols-3 lg:grid-cols-6 gap-4 px-4 py-4">
+      <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 px-4 py-4">
         {cateringCategories.map(mapCategories)}
       </div>
       <div
@@ -96,17 +101,9 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         style={{ gridColumnGap: "4%" }}
         key={currentCategory}
       >
-        {currentCategory
-          ? cateringMenuList
-              .filter((menuIem) => menuIem.category === currentCategory)
-              .slice(0, itemsToShow)
-              .map(mapMenu)
-          : cateringMenuList.slice(0, itemsToShow).map(mapMenu)}
+        {filteredMenuItems.slice(0, itemsToShow).map(mapMenu)}
       </div>
-      {currentCategory &&
-      cateringMenuList.filter(
-        (menuItem) => menuItem.category === currentCategory
-      ).length > 9 ? (
+      {currentCategory && filteredMenuItems.length > 9 && (
         <div className="flex justify-center">
           <button
             onClick={() => setShowAllItems(!showAllItems)}
@@ -115,8 +112,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
             {showAllItems ? "Show Less" : "Show More"}
           </button>
         </div>
-      ) : null}
-      <Popup />
+      )}
     </section>
   );
 }

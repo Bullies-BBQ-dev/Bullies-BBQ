@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { Banner } from "../_components";
 import { redRoseFont } from "../layout";
-import { CateringMenuItems } from "./_components/CateringMenuItems";
-import { CateringForm } from "./_components/CateringForm";
-import { SelectedItemsProvider } from "./_components/context";
+import {
+  CateringMenuItems,
+  CateringForm,
+  SelectedItemsProvider,
+} from "./_components";
 
 export default function Catering() {
   return (
@@ -31,7 +33,7 @@ export default function Catering() {
             <div
               className={`text-red-800 text-2xl lg:text-4xl ${redRoseFont.className}`}
             >
-              For orders of 10 people or less please place{" "}
+              Please place {""}
               <a
                 href="https://order.toasttab.com/online/bullies-bbq"
                 className="underline underline-offset-[0.4rem] hover:text-blue-700 "
@@ -57,12 +59,34 @@ export default function Catering() {
             <Image src="/Bullies-logo.png" width={200} height={200} alt="" />
           </div>
         </div>
+        <div className="flex w-full">
+          <div className="w-2/3">
+            <CateringMenuItems redRoseFont={redRoseFont} />
+          </div>
 
-        <CateringMenuItems redRoseFont={redRoseFont} />
-        <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
-          Catering Inquiry
-        </h3>
-        <CateringForm />
+          <div className="flex flex-col items-center pb-10 w-1/3 relative top-0">
+            <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
+              Catering Inquiry
+            </h3>
+            <p className=" text-lg">
+              * Contact us for catering information we will get back to you
+              soon, order not confirmed until you receive confirmation email *
+            </p>
+            <CateringForm />
+          </div>
+        </div>
+
+        {/* <div className="flex flex-col justify-center items-center pb-10">
+          <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
+            Catering Inquiry
+          </h3>
+          <p className=" text-lg">
+            * Contact us for catering information we will get back to you soon,
+            order not confirmed until you receive confirmation email *
+          </p>
+        </div>
+
+        <CateringForm /> */}
       </div>
     </SelectedItemsProvider>
   );

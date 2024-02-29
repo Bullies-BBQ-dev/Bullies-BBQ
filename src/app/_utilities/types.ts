@@ -54,3 +54,8 @@ export type Page =
   | "About"
   | "Contact"
   | "Shop";
+
+  export type PopupProps = {
+    isOpen: boolean;
+    onClose: ()=> void;
+  }

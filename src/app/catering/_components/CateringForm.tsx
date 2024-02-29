@@ -1,15 +1,16 @@
 "use client";
 import { FormEvent, useRef, useState } from "react";
-import { useSelectedItemsContext } from "./context";
+import { useSelectedItemsContext, Popup } from "./index";
 import emailjs from "@emailjs/browser";
 
 export function CateringForm() {
+  const [selectedTime, setSelectedTime] = useState("");
+  const [showAllItems, setShowAllItems] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { selectedItems, setSelectedItems } = useSelectedItemsContext();
   const form = useRef<HTMLFormElement | null>(null);
   const minTime = "11:30";
   const maxTime = "19:30";
-  const [selectedTime, setSelectedTime] = useState("");
-  const { selectedItems, setSelectedItems } = useSelectedItemsContext();
-  const [showAllItems, setShowAllItems] = useState(false);
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const time = event.target.value;
@@ -33,6 +34,7 @@ export function CateringForm() {
             console.log("SUCCESS!");
             form.current?.reset();
             setSelectedItems([]);
+            setIsOpen(true);
           },
           (error) => {
             console.log("FAILED...", error.text);
@@ -40,6 +42,10 @@ export function CateringForm() {
         );
     }
   };
+
+  function onClose() {
+    setIsOpen(false);
+  }
 
   function updateQuantity(index: number, quantity: number) {
     const updatedItems = [...selectedItems];
@@ -52,11 +58,7 @@ export function CateringForm() {
   }
 
   const today = new Date();
-  const maxDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() + 20
-  )
+  const maxDate = new Date(today.setDate(today.getDate() + 30))
     .toISOString()
     .split("T")[0];
   const disableSundays = (date: Date) => date.getDay() === 6;
@@ -70,9 +72,7 @@ export function CateringForm() {
   }
   const minDate = nextAvailableDate.toISOString().split("T")[0];
 
-  const itemsToShow = showAllItems
-    ? selectedItems.length
-    : Math.min(selectedItems.length, 4);
+  const itemsToShow = showAllItems ? selectedItems.length : 4;
 
   return (
     <div className="flex w-full justify-center">
@@ -105,7 +105,7 @@ export function CateringForm() {
                   const selectedDate = new Date(e.target.value);
                   if (disableSundays(selectedDate)) {
                     e.target.value = "";
-                    alert("Please select a date other than Sunday.");
+                    alert("Please select a date other than Sunday!!!!!!!!.");
                   }
                 }}
               />
@@ -233,6 +233,7 @@ export function CateringForm() {
           </div>
         </form>
       </div>
+      <Popup isOpen={isOpen} onClose={onClose} />
     </div>
   );
 }
