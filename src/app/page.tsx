@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </Banner>
 
-      <div className="flex min-w-60 mx-5 flex-col">
+      <section className="flex min-w-60 mx-5 flex-col">
         <div className="w-full py-10 sm:py-20 flex flex-col items-center gap-5 sm:gap-8 bg-white">
           <div className="">
             <img
@@ -92,7 +92,7 @@ export default function Home() {
             // referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
