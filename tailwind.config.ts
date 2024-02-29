@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'xxs': '.6rem',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -21,7 +24,7 @@ const config: Config = {
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },
-          "50%": { opacity: "0.35" },
+          // "50%": { opacity: "0.35" },
           "100%": { opacity: "1" },
         },
         leftToRight: {
