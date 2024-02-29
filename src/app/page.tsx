@@ -35,7 +35,7 @@ export default function Home() {
       </Banner>
 
       <div className="flex min-w-60 mx-5 flex-col">
-        <div className="w-full py-20 flex flex-col items-center gap-16 bg-white">
+        <div className="w-full py-10 sm:py-20 flex flex-col items-center gap-16 bg-white">
           <div className="">
             <img
               className="aspect-square duration-300 object-contain h-60"
@@ -44,7 +44,11 @@ export default function Home() {
             />
           </div>
 
-          <h1 className={redRoseFont.className + " text-6xl text-center"}>
+          <h1
+            className={
+              redRoseFont.className + " text-5xl sm:text-6xl text-center"
+            }
+          >
             Bullies BBQ
           </h1>
           <div className="md:w-3/4 text-center text-base">
@@ -69,7 +73,8 @@ export default function Home() {
 
         <h2
           className={
-            redRoseFont.className + " text-5xl pb-2.5 sm:pb-5 text-center"
+            redRoseFont.className +
+            " text-4xl sm:text-5xl pb-2.5 sm:pb-5 text-center"
           }
         >
           Visit Us
