@@ -11,7 +11,7 @@ export default function Home() {
           "https://destination-bbq.com/wp-content/uploads/2015/04/Bullies-Interior-1024x576.jpg.webp"
         }
       >
-        <div className="grid md:grid-cols-2 place-content-center gap-1 sm:gay-4 md:gap-16 lg:gap-24">
+        <div className="grid md:grid-cols-2 place-content-center gap-1 sm:gap-4 md:gap-16 lg:gap-24">
           <img className="" src="/Bullies-BBQ-Name.png" alt="" />
           <div className="flex flex-col justify-center items-center md:items-start">
             <span
@@ -35,7 +35,7 @@ export default function Home() {
       </Banner>
 
       <div className="flex min-w-60 mx-5 flex-col">
-        <div className="w-full py-10 sm:py-20 flex flex-col items-center gap-16 bg-white">
+        <div className="w-full py-10 sm:py-20 flex flex-col items-center gap-5 sm:gap-8 bg-white">
           <div className="">
             <img
               className="aspect-square duration-300 object-contain h-60"
@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </div>
 
-          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2">
+          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2 mt-4">
             VIEW OUR MENU
           </button>
         </div>
