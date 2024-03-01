@@ -1,12 +1,12 @@
 "use client";
 import { FormEvent, useRef, useState } from "react";
-import { useSelectedItemsContext, Popup } from "./index";
+import { useSelectedItemsContext } from "./index";
 import emailjs from "@emailjs/browser";
 
 export function CateringForm() {
   const [selectedTime, setSelectedTime] = useState("");
   const [showAllItems, setShowAllItems] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
   const form = useRef<HTMLFormElement | null>(null);
   const minTime = "11:30";
@@ -22,7 +22,7 @@ export function CateringForm() {
     }
   };
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.current) {
       emailjs
@@ -34,7 +34,10 @@ export function CateringForm() {
             console.log("SUCCESS!");
             form.current?.reset();
             setSelectedItems([]);
-            setIsOpen(true);
+            setIsSubmitted(true);
+            setTimeout(() => {
+              setIsSubmitted(false);
+            }, 6000); //
           },
           (error) => {
             console.log("FAILED...", error.text);
@@ -42,10 +45,6 @@ export function CateringForm() {
         );
     }
   };
-
-  function onClose() {
-    setIsOpen(false);
-  }
 
   function updateQuantity(index: number, quantity: number) {
     const updatedItems = [...selectedItems];
@@ -76,14 +75,14 @@ export function CateringForm() {
 
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full lg:w-3/4 lg:px-0 px-4">
+      <div className="w-full px-4">
         <form
           ref={form}
-          onSubmit={sendEmail}
+          onSubmit={handleSubmit}
           className="flex flex-col w-full mb-16 lg:mb-30 "
         >
           <div className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/3 lg:pr-2">
+            <div className="w-full lg:w-1/2 lg:pr-2">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
@@ -92,7 +91,53 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
-            <div className={`w-full lg:w-1/3 lg:pl-2 `}>
+            <div className="w-full lg:w-1/2 lg:pl-2">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+              />
+            </div>
+
+            {/* <div className={`lg:w-1/3 w-full lg:pl-2 `}>
+              <label htmlFor="time">Time</label>
+              <input
+                type="time"
+                name="time"
+                required
+                className="mb-4 p-2 w-full focus:outline-red-800 border"
+                value={selectedTime}
+                onChange={handleTimeChange}
+                min={minTime}
+                max={maxTime}
+              />
+            </div> */}
+          </div>
+          <div className={`flex flex-col lg:flex-row`}>
+            <div className="w-full lg:w-1/2 lg:pr-2">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="phone"
+                name="phone"
+                required
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+              />
+            </div>
+            <div className="w-full lg:w-1/2 lg:pl-2">
+              <label htmlFor="people">Number of People</label>
+              <input
+                type="number"
+                name="people"
+                required
+                min={11}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+              />
+            </div>
+          </div>
+          <div className={`flex flex-col lg:flex-row`}>
+            <div className={`w-full lg:w-1/2 lg:pr-2 `}>
               <label htmlFor="date">Date</label>
               <input
                 type="date"
@@ -110,7 +155,7 @@ export function CateringForm() {
                 }}
               />
             </div>
-            <div className={`lg:w-1/3 w-full lg:pl-2 `}>
+            <div className={`lg:w-1/2 w-full lg:pl-2 `}>
               <label htmlFor="time">Time</label>
               <input
                 type="time"
@@ -123,19 +168,8 @@ export function CateringForm() {
                 max={maxTime}
               />
             </div>
-          </div>
 
-          <div className={`flex flex-col lg:flex-row`}>
-            <div className="w-full lg:w-1/3 lg:pr-2">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                required
-                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
-              />
-            </div>
-            <div className="w-full lg:w-1/3 lg:pl-2">
+            {/* <div className="w-full lg:w-1/3 lg:pl-2">
               <label htmlFor="phone">Phone Number</label>
               <input
                 type="phone"
@@ -143,8 +177,8 @@ export function CateringForm() {
                 required
                 className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
-            </div>
-            <div className="w-full lg:w-1/3 lg:pl-2">
+            </div> */}
+            {/* <div className="w-full lg:w-1/3 lg:pl-2">
               <label htmlFor="people">Number of People</label>
               <input
                 type="number"
@@ -153,12 +187,25 @@ export function CateringForm() {
                 min={11}
                 className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
+            </div> */}
+          </div>
+          <div className={`flex flex-col lg:flex-row`}>
+            {" "}
+            <div className="w-full ">
+              <label htmlFor="message" className={``}>
+                Requests/Description
+              </label>
+              <textarea
+                name="message"
+                rows={4}
+                required
+                className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
+              />
             </div>
           </div>
-
           <div className={`flex flex-col lg:flex-row`}>
-            <div className="lg:w-1/2 w-full lg:pl-2 pl-0">
-              <label htmlFor="items">Items:</label>
+            <div className=" w-full lg:pl-2 pl-0 pb-4">
+              <label htmlFor="items">Items</label>
               {selectedItems.slice(0, itemsToShow).map((item, index) => (
                 <div key={index} className="flex">
                   <div className=" w-full">
@@ -207,7 +254,7 @@ export function CateringForm() {
                 </button>
               )}
             </div>
-            <div className="w-full lg:pl-2">
+            {/* <div className="w-full lg:pl-2">
               <label htmlFor="message" className={``}>
                 Requests/Description
               </label>
@@ -217,23 +264,24 @@ export function CateringForm() {
                 required
                 className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
               />
-            </div>
+            </div> */}
           </div>
-
           <div className="w-full flex justify-end">
             <button
               type="submit"
               value="Send"
-              className={` px-4 py-1 w-full lg:w-1/4 text-white font-medium bg-red-800  transition ease-in-out
+              className={` px-4 py-1 w-full text-white font-medium bg-red-800  transition ease-in-out
               rounded border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
                 `}
             >
-              Send!
+              {isSubmitted ? "Sent!" : "Submit"}
             </button>
+          </div>{" "}
+          <div className="flex justify-center font-bold">
+            {isSubmitted ? "Your Order Has Been Sent!" : ""}
           </div>
         </form>
       </div>
-      <Popup isOpen={isOpen} onClose={onClose} />
     </div>
   );
 }

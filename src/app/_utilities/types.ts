@@ -48,6 +48,7 @@ export enum EMapHrefToTitle {
 }
 
 export type Page = "Order Now" | "Menu" | "Catering" | "Home" | "About";
+
 export type PopupProps = {
   isOpen: boolean;
   onClose: () => void;

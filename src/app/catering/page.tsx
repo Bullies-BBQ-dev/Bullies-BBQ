@@ -5,6 +5,7 @@ import {
   CateringMenuItems,
   CateringForm,
   SelectedItemsProvider,
+  MobileForm,
 } from "./_components";
 
 export default function Catering() {
@@ -15,7 +16,7 @@ export default function Catering() {
           backgroundURL="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022184_1683832838.jpg?size=medium"
           title="Catering"
         />
-        <div className="flex flex-col md:flex-row p-2 lg:p-4 lg:mx-5">
+        <div className="flex flex-col md:flex-row  mx-2 sm:mx-5">
           <div className="p-4 ">
             <h3
               className={`text-red-800 text-3xl lg:text-4xl ${redRoseFont.className}`}
@@ -52,31 +53,36 @@ export default function Catering() {
               !
             </div>
             <p className="font-extrabold py-4 text-lg text-yellow-600">
-              *1 pound serves about 3-5 people
+              *1 pound serves about 3-5 people <br /> *Click to add item to form
             </p>
           </div>
           <div className="md:w-1/4 lg:flex justify-center items-center hidden">
             <Image src="/Bullies-logo.png" width={200} height={200} alt="" />
           </div>
         </div>
+
         <div className="flex w-full">
-          <div className="w-2/3">
+          <div className="w-full lg:w-[70%] ">
             <CateringMenuItems redRoseFont={redRoseFont} />
           </div>
-
-          <div className="lg:flex flex-col items-center pb-10 w-1/3 hidden">
+          <div className="lg:flex md:flex flex-col items-center pb-10 w-1/3  hidden sticky top-14 right-0 h-screen overflow-y-scroll">
             <div className="sticky top-14">
               <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                 Catering Inquiry
               </h3>
-              <p className="text-lg">
-                * Contact us for catering information we will get back to you
-                soon, order not confirmed until you receive confirmation email *
+              <p className="text-md text-center pb-10">
+                *Contact us for catering information we will get back to you
+                soon, order not confirmed until you receive confirmation email*
               </p>
               <div className="sticky top-0">
                 <CateringForm />
               </div>
             </div>
+          </div>
+        </div>
+        <div>
+          <div className="flex lg:hidden xl:hidden ">
+            <MobileForm />
           </div>
         </div>
 
