@@ -26,6 +26,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         updatedItems[existingItemIndex].quantity =
           (updatedItems[existingItemIndex].quantity || 0) + 1;
         setSelectedItems(updatedItems);
+        console.log(selectedItems);
       } else {
         const newSelectedItems = [
           ...selectedItems,
@@ -35,10 +36,9 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
       }
     }
     return (
-      <div className="w-full flex justify-center">
+      <div key={index} className="w-full flex justify-center">
         <div
-          className="flex flex-col items-center rounded-lg group hover:shadow-gray-400 hover:scale-[1.02]  shadow-xl w-[85%] md:w-[90%] lg:w-[90%] xl:w-full  duration-500 cursor-pointer m-0 p-0"
-          key={index}
+          className=" flex flex-col items-center rounded-lg group hover:shadow-gray-400 hover:scale-[1.02]  shadow-xl w-[85%] md:w-[90%] lg:w-[90%] xl:w-full  duration-500 cursor-pointer m-0 p-0"
           onClick={() => handleItemClick(menuItem)}
         >
           <div className="flex flex-col">
@@ -47,15 +47,8 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
               <img
                 src={menuItem.img}
                 alt={menuItem.name}
-                className="object-fit rounded-t-2xl max-h-content  aspect-square"
+                className="object-fit rounded-t-lg max-h-content  aspect-square"
               />
-              {/* <Image
-            src={menuItem.img}
-            alt={menuItem.name}
-            className="object-fit rounded-t-lg h-content w-content aspect-square"
-            width={300}
-            height={300}
-          /> */}
             </div>
             <div className="flex flex-col justify-between h-full">
               <div className="flex justify-between p-3 group-hover:text-red-800 duration-500">

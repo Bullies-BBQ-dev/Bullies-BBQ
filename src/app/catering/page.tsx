@@ -65,7 +65,7 @@ export default function Catering() {
           <div className="w-full lg:w-[70%] ">
             <CateringMenuItems redRoseFont={redRoseFont} />
           </div>
-          <div className="lg:flex md:flex flex-col items-center pb-10 w-1/3  hidden sticky top-14 right-0 h-screen overflow-y-scroll">
+          <div className="lg:flex md:hidden sm:hidden flex-col items-center pb-10 w-1/3 hidden sticky top-14 right-0 h-screen overflow-y-scroll shadow-2xl ">
             <div className="sticky top-14">
               <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                 Catering Inquiry
@@ -74,29 +74,15 @@ export default function Catering() {
                 *Contact us for catering information we will get back to you
                 soon, order not confirmed until you receive confirmation email*
               </p>
-              <div className="sticky top-0">
+              <div className="sticky top-0  ">
                 <CateringForm />
               </div>
             </div>
           </div>
         </div>
         <div>
-          <div className="flex lg:hidden xl:hidden ">
-            <MobileForm />
-          </div>
+          <MobileForm />
         </div>
-
-        {/* <div className="flex flex-col justify-center items-center pb-10">
-          <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
-            Catering Inquiry
-          </h3>
-          <p className=" text-lg">
-            * Contact us for catering information we will get back to you soon,
-            order not confirmed until you receive confirmation email *
-          </p>
-        </div>
-
-        <CateringForm /> */}
       </div>
     </SelectedItemsProvider>
   );

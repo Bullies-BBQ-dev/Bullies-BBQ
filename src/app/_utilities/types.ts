@@ -34,7 +34,10 @@ export interface IMenuItem {
   category: Category | CateringCategory;
   img: string;
   url?: string;
-  quantity?: number;
+}
+
+export interface CateringItems extends IMenuItem {
+  quantity: number;
 }
 
 export enum EMapHrefToTitle {

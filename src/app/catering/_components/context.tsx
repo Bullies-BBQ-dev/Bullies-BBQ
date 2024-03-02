@@ -1,10 +1,10 @@
 "use client";
-import { IMenuItem } from "@/app/_utilities";
+import { CateringItems, IMenuItem } from "@/app/_utilities";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface SelectedItemsContextType {
-  selectedItems: IMenuItem[];
-  setSelectedItems: (items: IMenuItem[]) => void;
+  selectedItems: CateringItems[];
+  setSelectedItems: (items: CateringItems[]) => void;
 }
 
 const SelectedItemsContext = createContext<
@@ -28,7 +28,7 @@ interface SelectedItemsProviderProps {
 export const SelectedItemsProvider: React.FC<SelectedItemsProviderProps> = ({
   children,
 }) => {
-  const [selectedItems, setSelectedItems] = useState<IMenuItem[]>([]);
+  const [selectedItems, setSelectedItems] = useState<CateringItems[]>([]);
 
   return (
     <SelectedItemsContext.Provider value={{ selectedItems, setSelectedItems }}>

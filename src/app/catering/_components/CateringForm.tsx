@@ -2,6 +2,7 @@
 import { FormEvent, useRef, useState } from "react";
 import { useSelectedItemsContext } from "./index";
 import emailjs from "@emailjs/browser";
+import { CiCircleCheck } from "react-icons/ci";
 
 export function CateringForm() {
   const [selectedTime, setSelectedTime] = useState("");
@@ -100,20 +101,6 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
-
-            {/* <div className={`lg:w-1/3 w-full lg:pl-2 `}>
-              <label htmlFor="time">Time</label>
-              <input
-                type="time"
-                name="time"
-                required
-                className="mb-4 p-2 w-full focus:outline-red-800 border"
-                value={selectedTime}
-                onChange={handleTimeChange}
-                min={minTime}
-                max={maxTime}
-              />
-            </div> */}
           </div>
           <div className={`flex flex-col lg:flex-row`}>
             <div className="w-full lg:w-1/2 lg:pr-2">
@@ -168,26 +155,6 @@ export function CateringForm() {
                 max={maxTime}
               />
             </div>
-
-            {/* <div className="w-full lg:w-1/3 lg:pl-2">
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="phone"
-                name="phone"
-                required
-                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
-              />
-            </div> */}
-            {/* <div className="w-full lg:w-1/3 lg:pl-2">
-              <label htmlFor="people">Number of People</label>
-              <input
-                type="number"
-                name="people"
-                required
-                min={11}
-                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
-              />
-            </div> */}
           </div>
           <div className={`flex flex-col lg:flex-row`}>
             {" "}
@@ -254,32 +221,27 @@ export function CateringForm() {
                 </button>
               )}
             </div>
-            {/* <div className="w-full lg:pl-2">
-              <label htmlFor="message" className={``}>
-                Requests/Description
-              </label>
-              <textarea
-                name="message"
-                rows={4}
-                required
-                className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
-              />
-            </div> */}
           </div>
           <div className="w-full flex justify-end">
             <button
               type="submit"
               value="Send"
+              disabled={isSubmitted || selectedItems.length === 0}
               className={` px-4 py-1 w-full text-white font-medium bg-red-800  transition ease-in-out
-              rounded border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
+              rounded border-red-800 border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
                 `}
             >
-              {isSubmitted ? "Sent!" : "Submit"}
+              {isSubmitted ? "Sent!" : "Send Inquiry"}
             </button>
           </div>{" "}
-          <div className="flex justify-center font-bold">
-            {isSubmitted ? "Your Order Has Been Sent!" : ""}
-          </div>
+          {isSubmitted && (
+            <div className="flex items-center flex-col w-full justify-center font-bold absolute bottom-[-20px] animate-success opacity-0 left-0 ">
+              <div className="flex w-3/4 items-center bg-[#4CAE00] text-white rounded-lg p-2">
+                <CiCircleCheck size="30" className=" text-[#ffff]" />
+                Your Inquiry Has Been Sent!
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </div>

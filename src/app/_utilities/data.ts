@@ -1,4 +1,4 @@
-import { Category, CateringCategory, IMenuItem, Page } from ".";
+import { Category, CateringCategory, CateringItems, IMenuItem, Page } from ".";
 
 export const pageNames: Page[] = [
   "Menu",
