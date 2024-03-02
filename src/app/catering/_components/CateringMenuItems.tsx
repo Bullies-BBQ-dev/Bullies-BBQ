@@ -1,20 +1,23 @@
 "use client";
-import { CateringCategory, IMenuItem } from "@/app/_utilities";
-import { useState } from "react";
-import { cateringMenuList, cateringCategories } from "@/app/_utilities";
+import {
+  CateringCategory,
+  IMenuItem,
+  cateringMenuList,
+  cateringCategories,
+} from "@/app/_utilities";
+import { useRef, useState } from "react";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
-import { useSelectedItemsContext } from "./context";
-import { Popup } from "./Popup";
+import { useSelectedItemsContext } from "./index";
 
 export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] =
     useState<CateringCategory>(null);
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
-  const [showAllItems, setShowAllItems] = useState(false);
+  const menuRef = useRef<HTMLElement | null>(null);
 
   const mapMenu = (menuItem: IMenuItem, index: number) => {
-    function handleClick(menuItem: IMenuItem) {
+    function handleItemClick(menuItem: IMenuItem) {
       const existingItemIndex = selectedItems.findIndex(
         (item) => item.name === menuItem.name
       );
@@ -23,6 +26,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         updatedItems[existingItemIndex].quantity =
           (updatedItems[existingItemIndex].quantity || 0) + 1;
         setSelectedItems(updatedItems);
+        console.log(selectedItems);
       } else {
         const newSelectedItems = [
           ...selectedItems,
@@ -32,91 +36,78 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
       }
     }
     return (
-      <div
-        className="flex flex-col rounded-lg group hover:shadow-gray-400 hover:scale-[1.02] shadow-xl min-w-72 duration-500 cursor-pointer"
-        key={index}
-        onClick={() => handleClick(menuItem)}
-      >
-        <div className="flex justify-center">
-          <Image
-            src={menuItem.img}
-            alt={menuItem.name}
-            className="object-fit rounded-t-lg h-48 w-48"
-            width={300}
-            height={300}
-          />
-        </div>
-
-        <div className="flex flex-col justify-end h-full ">
-          <div className="flex justify-between p-3 group-hover:text-red-800 duration-500">
-            <span className={`${redRoseFont.className} text-3xl`}>
-              {menuItem.name}
-            </span>
-            <span className={`${redRoseFont.className} text-3xl`}>
-              ${menuItem.price}
-            </span>
+      <div key={index} className="w-full flex justify-center">
+        <div
+          className=" flex flex-col items-center rounded-lg group hover:shadow-gray-400 hover:scale-[1.02]  shadow-xl w-[85%] md:w-[90%] lg:w-[90%] xl:w-full  duration-500 cursor-pointer m-0 p-0"
+          onClick={() => handleItemClick(menuItem)}
+        >
+          <div className="flex flex-col">
+            {" "}
+            <div className="flex justify-center w-full">
+              <img
+                src={menuItem.img}
+                alt={menuItem.name}
+                className="object-fit rounded-t-lg max-h-content  aspect-square"
+              />
+            </div>
+            <div className="flex flex-col justify-between h-full">
+              <div className="flex justify-between p-3 group-hover:text-red-800 duration-500">
+                <span className={`${redRoseFont.className} text-xl`}>
+                  {menuItem.name}
+                </span>
+                <span className={`${redRoseFont.className} text-xl`}>
+                  ${menuItem.price}
+                </span>
+              </div>
+              <p className="p-3">{menuItem.description}</p>
+            </div>
           </div>
-          <p className="p-3">{menuItem.description}</p>
         </div>
       </div>
     );
   };
 
   const mapCategories = (category: CateringCategory, index: number) => {
+    const isActive = category === currentCategory;
+    const categoryClasses = `py-1 rounded hover:bg-red-800/[0.85] duration-200 bg-red-800 text-white  ${
+      isActive ? " outline-4 outline outline-yellow-500" : ""
+    }`;
+
     return (
       <button
         key={index}
-        className={`py-1 rounded border-4 hover:bg-red-800/[0.85] hover:scale-[1.02] duration-300 bg-red-800  ${
-          category === currentCategory
-            ? "bg-red-800 text-white border-yellow-500"
-            : "bg-red-800 text-white"
-        }`}
+        className={categoryClasses}
         onClick={() => {
-          if (category === currentCategory) setCurrentCategory(null);
-          else setCurrentCategory(category);
+          setCurrentCategory(isActive ? null : category);
+          menuRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }}
       >
         {category}
       </button>
     );
   };
-  const itemsToShow = currentCategory
-    ? showAllItems
-      ? cateringMenuList.length
-      : 9
-    : cateringMenuList.length;
+
+  const filteredMenuItems = currentCategory
+    ? cateringMenuList.filter(
+        (menuItem) => menuItem.category === currentCategory
+      )
+    : cateringMenuList;
 
   return (
-    <section className="mx-5 min-h-full">
-      <div className="grid  grid-cols-3 lg:grid-cols-6 gap-4 px-4 py-4">
+    <section ref={menuRef} className="min-h-screen mx-2 sm:mx-5">
+      <div className="grid sm:grid-cols-2 md:grid-cols-2 grid-cols-2 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10">
         {cateringCategories.map(mapCategories)}
       </div>
       <div
-        className="relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-9 xl:mx-9 max-w-screen-full py-10"
-        style={{ gridColumnGap: "4%" }}
+        className="justify relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-9 py-10"
+        style={{ gridColumnGap: "2%" }}
         key={currentCategory}
       >
-        {currentCategory
-          ? cateringMenuList
-              .filter((menuIem) => menuIem.category === currentCategory)
-              .slice(0, itemsToShow)
-              .map(mapMenu)
-          : cateringMenuList.slice(0, itemsToShow).map(mapMenu)}
+        {filteredMenuItems.map(mapMenu)}
       </div>
-      {currentCategory &&
-      cateringMenuList.filter(
-        (menuItem) => menuItem.category === currentCategory
-      ).length > 9 ? (
-        <div className="flex justify-center">
-          <button
-            onClick={() => setShowAllItems(!showAllItems)}
-            className="text-black hover:underline ease-in-out delay-75"
-          >
-            {showAllItems ? "Show Less" : "Show More"}
-          </button>
-        </div>
-      ) : null}
-      <Popup />
     </section>
   );
 }

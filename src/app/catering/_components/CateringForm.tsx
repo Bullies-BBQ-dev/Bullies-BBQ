@@ -1,15 +1,17 @@
 "use client";
 import { FormEvent, useRef, useState } from "react";
-import { useSelectedItemsContext } from "./context";
+import { useSelectedItemsContext } from "./index";
 import emailjs from "@emailjs/browser";
+import { CiCircleCheck } from "react-icons/ci";
 
 export function CateringForm() {
+  const [selectedTime, setSelectedTime] = useState("");
+  const [showAllItems, setShowAllItems] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { selectedItems, setSelectedItems } = useSelectedItemsContext();
   const form = useRef<HTMLFormElement | null>(null);
   const minTime = "11:30";
   const maxTime = "19:30";
-  const [selectedTime, setSelectedTime] = useState("");
-  const { selectedItems, setSelectedItems } = useSelectedItemsContext();
-  const [showAllItems, setShowAllItems] = useState(false);
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const time = event.target.value;
@@ -21,7 +23,7 @@ export function CateringForm() {
     }
   };
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.current) {
       emailjs
@@ -33,6 +35,10 @@ export function CateringForm() {
             console.log("SUCCESS!");
             form.current?.reset();
             setSelectedItems([]);
+            setIsSubmitted(true);
+            setTimeout(() => {
+              setIsSubmitted(false);
+            }, 6000); //
           },
           (error) => {
             console.log("FAILED...", error.text);
@@ -52,11 +58,7 @@ export function CateringForm() {
   }
 
   const today = new Date();
-  const maxDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() + 20
-  )
+  const maxDate = new Date(today.setDate(today.getDate() + 30))
     .toISOString()
     .split("T")[0];
   const disableSundays = (date: Date) => date.getDay() === 6;
@@ -70,20 +72,18 @@ export function CateringForm() {
   }
   const minDate = nextAvailableDate.toISOString().split("T")[0];
 
-  const itemsToShow = showAllItems
-    ? selectedItems.length
-    : Math.min(selectedItems.length, 4);
+  const itemsToShow = showAllItems ? selectedItems.length : 4;
 
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full lg:w-3/4 lg:px-0 px-4">
+      <div className="w-full px-4">
         <form
           ref={form}
-          onSubmit={sendEmail}
+          onSubmit={handleSubmit}
           className="flex flex-col w-full mb-16 lg:mb-30 "
         >
           <div className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/3 lg:pr-2">
+            <div className="w-full lg:w-1/2 lg:pr-2">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
@@ -92,7 +92,39 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
-            <div className={`w-full lg:w-1/3 lg:pl-2 `}>
+            <div className="w-full lg:w-1/2 lg:pl-2">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+              />
+            </div>
+          </div>
+          <div className={`flex flex-col lg:flex-row`}>
+            <div className="w-full lg:w-1/2 lg:pr-2">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="phone"
+                name="phone"
+                required
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+              />
+            </div>
+            <div className="w-full lg:w-1/2 lg:pl-2">
+              <label htmlFor="people">Number of People</label>
+              <input
+                type="number"
+                name="people"
+                required
+                min={11}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+              />
+            </div>
+          </div>
+          <div className={`flex flex-col lg:flex-row`}>
+            <div className={`w-full lg:w-1/2 lg:pr-2 `}>
               <label htmlFor="date">Date</label>
               <input
                 type="date"
@@ -105,12 +137,12 @@ export function CateringForm() {
                   const selectedDate = new Date(e.target.value);
                   if (disableSundays(selectedDate)) {
                     e.target.value = "";
-                    alert("Please select a date other than Sunday.");
+                    alert("Please select a date other than Sunday!!!!!!!!.");
                   }
                 }}
               />
             </div>
-            <div className={`lg:w-1/3 w-full lg:pl-2 `}>
+            <div className={`lg:w-1/2 w-full lg:pl-2 `}>
               <label htmlFor="time">Time</label>
               <input
                 type="time"
@@ -124,41 +156,23 @@ export function CateringForm() {
               />
             </div>
           </div>
-
           <div className={`flex flex-col lg:flex-row`}>
-            <div className="w-full lg:w-1/3 lg:pr-2">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
+            {" "}
+            <div className="w-full ">
+              <label htmlFor="message" className={``}>
+                Requests/Description
+              </label>
+              <textarea
+                name="message"
+                rows={4}
                 required
-                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
-              />
-            </div>
-            <div className="w-full lg:w-1/3 lg:pl-2">
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="phone"
-                name="phone"
-                required
-                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
-              />
-            </div>
-            <div className="w-full lg:w-1/3 lg:pl-2">
-              <label htmlFor="people">Number of People</label>
-              <input
-                type="number"
-                name="people"
-                required
-                min={11}
-                className={`mb-4 p-2 w-full focus:outline-red-800 border`}
+                className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
               />
             </div>
           </div>
-
           <div className={`flex flex-col lg:flex-row`}>
-            <div className="lg:w-1/2 w-full lg:pl-2 pl-0">
-              <label htmlFor="items">Items:</label>
+            <div className=" w-full lg:pl-2 pl-0 pb-4">
+              <label htmlFor="items">Items</label>
               {selectedItems.slice(0, itemsToShow).map((item, index) => (
                 <div key={index} className="flex">
                   <div className=" w-full">
@@ -207,29 +221,27 @@ export function CateringForm() {
                 </button>
               )}
             </div>
-            <div className="w-full lg:pl-2">
-              <label htmlFor="message" className={``}>
-                Requests/Description (optional):
-              </label>
-              <textarea
-                name="message"
-                rows={4}
-                className={`mb-4 p-2 w-full focus:outline-red-800 border resize-none `}
-              />
-            </div>
           </div>
-
           <div className="w-full flex justify-end">
             <button
               type="submit"
               value="Send"
-              className={` px-4 py-1 w-full lg:w-1/4 text-white font-medium bg-red-800  transition ease-in-out
-              rounded border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
+              disabled={isSubmitted || selectedItems.length === 0}
+              className={` px-4 py-1 w-full text-white font-medium bg-red-800  transition ease-in-out
+              rounded border-red-800 border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
                 `}
             >
-              Send!
+              {isSubmitted ? "Sent!" : "Send Inquiry"}
             </button>
-          </div>
+          </div>{" "}
+          {isSubmitted && (
+            <div className="flex items-center flex-col w-full justify-center font-bold absolute bottom-[-20px] animate-success opacity-0 left-0 ">
+              <div className="flex w-3/4 items-center bg-[#4CAE00] text-white rounded-lg p-2">
+                <CiCircleCheck size="30" className=" text-[#ffff]" />
+                Your Inquiry Has Been Sent!
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </div>

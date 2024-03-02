@@ -34,7 +34,10 @@ export interface IMenuItem {
   category: Category | CateringCategory;
   img: string;
   url?: string;
-  quantity?: number;
+}
+
+export interface CateringItems extends IMenuItem {
+  quantity: number;
 }
 
 export enum EMapHrefToTitle {
@@ -48,3 +51,8 @@ export enum EMapHrefToTitle {
 }
 
 export type Page = "Order Now" | "Menu" | "Catering" | "Home" | "About";
+
+export type PopupProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};

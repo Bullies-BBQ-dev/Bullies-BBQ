@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        'xxs': '.6rem',
+        xxs: ".6rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -20,8 +20,17 @@ const config: Config = {
         "fade-in": "fadeIn 0.45s ease-out",
         "left-right": "leftToRight 0.4s ease-out",
         "fade-left-right": "leftToRight 0.2s",
+        success: "success 4s",
       },
       keyframes: {
+        success: {
+          "0%": { opacity: "0" },
+          "5%": { opacity: "0.5" },
+          "10%": { opacity: "1" },
+          "70%": { opacity: "1", transform: "translateX(0%)" },
+          "80%": { opacity: "1", transform: "translateX(100%)" },
+          "100%": { opacity: "0", transform: "translateX(100%)" },
+        },
         fadeIn: {
           "0%": { opacity: "0" },
           // "50%": { opacity: "0.35" },
