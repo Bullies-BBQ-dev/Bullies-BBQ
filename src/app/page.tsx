@@ -35,8 +35,8 @@ export default function Home() {
       </Banner>
 
       <section className="flex min-w-60 mx-5 flex-col">
-        <div className="grid mx-auto w-full sm:mx-5 pt-10 sm:pt-20 grid-cols-1 md:grid-cols-3 place-items-center max-w-screen-lg">
-          <div className="col-span-2 flex sm:px-10 pb-5 md:pb-0 gap-4 flex-col">
+        <div className="flex mx-auto flex-col lg:flex-row py-10 sm:py-20 max-w-screen-xl">
+          <div className="flex w-full lg:w-1/2 sm:px-10 pb-10 lg:py-10 flex-col gap-6">
             <h1
               className={
                 redRoseFont.className + " text-5xl sm:text-6xl text-center"
@@ -51,29 +51,29 @@ export default function Home() {
             >
               It's not just food its a way of life!
             </p>
-            <div className="text-center text-base min-w-[260px] max-w-[490px] sm:w-[490px]">
+            <div className="grid text-center text-base gap-4">
               <p>
                 Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and
                 Mesquite woods. Bullies Ribs smoke for up to 6 hours and pork
                 butt and briskets up to 14 hours in our large capacity smoker.
-                <br />
-                <br />
+              </p>
+              <p>
                 Chef Bob Sutton is famous for his South Carolina Pulled Pork.
                 Served up dinner style or on a sandwich. Don't forget to add a
                 couple of "bones" of pure Memphis heaven.
               </p>
             </div>
           </div>{" "}
-          <div className="col-span-1 pl-0 lg:pl-5 ">
+          <div className="flex justify-center w-full lg:w-1/2">
             <img
-              className="object-fill h-[380px] w-[375px]"
+              className="object-fill"
               src="/outside-view.png"
               alt="outside view bullies bbq restuarant"
             />
           </div>
         </div>
 
-        <div className="flex justify-center py-10 sm:pb-20">
+        <div className="flex justify-center pb-10 sm:pb-20">
           <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2">
             VIEW OUR MENU
           </button>
