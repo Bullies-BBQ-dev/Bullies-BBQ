@@ -35,36 +35,46 @@ export default function Home() {
       </Banner>
 
       <section className="flex min-w-60 mx-5 flex-col">
-        <div className="w-full py-10 sm:py-20 flex flex-col items-center gap-5 sm:gap-8 bg-white">
-          <div className="">
+        <div className="grid mx-auto w-full sm:mx-5 pt-10 sm:pt-20 grid-cols-1 md:grid-cols-3 place-items-center max-w-screen-lg">
+          <div className="col-span-2 flex sm:px-10 pb-5 md:pb-0 gap-4 flex-col">
+            <h1
+              className={
+                redRoseFont.className + " text-5xl sm:text-6xl text-center"
+              }
+            >
+              Bullies BBQ
+            </h1>
+            <p
+              className={
+                redRoseFont.className + " text-xl sm:text-2xl text-center"
+              }
+            >
+              It's not just food its a way of life!
+            </p>
+            <div className="text-center text-base min-w-[260px] max-w-[490px] sm:w-[490px]">
+              <p>
+                Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and
+                Mesquite woods. Bullies Ribs smoke for up to 6 hours and pork
+                butt and briskets up to 14 hours in our large capacity smoker.
+                <br />
+                <br />
+                Chef Bob Sutton is famous for his South Carolina Pulled Pork.
+                Served up dinner style or on a sandwich. Don't forget to add a
+                couple of "bones" of pure Memphis heaven.
+              </p>
+            </div>
+          </div>{" "}
+          <div className="col-span-1 pl-0 lg:pl-5 ">
             <img
-              className="aspect-square duration-300 object-contain h-60"
-              src="/bullie-full-body.png"
-              alt=""
+              className="object-fill h-[380px] w-[375px]"
+              src="/outside-view.png"
+              alt="outside view bullies bbq restuarant"
             />
           </div>
+        </div>
 
-          <h1
-            className={
-              redRoseFont.className + " text-5xl sm:text-6xl text-center"
-            }
-          >
-            Bullies BBQ
-          </h1>
-          <div className="md:w-3/4 text-center text-base">
-            <p>
-              Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and
-              Mesquite woods. Bullies Ribs smoke for up to 6 hours and pork butt
-              and briskets up to 14 hours in our large capacity smoker.
-              <br />
-              <br />
-              Chef Bob Sutton is famous for his South Carolina Pulled Pork.
-              Served up dinner style or on a sandwich. Don't forget to add a
-              couple of "bones" of pure Memphis heaven.
-            </p>
-          </div>
-
-          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2 mt-4">
+        <div className="flex justify-center py-10 sm:pb-20">
+          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2">
             VIEW OUR MENU
           </button>
         </div>
