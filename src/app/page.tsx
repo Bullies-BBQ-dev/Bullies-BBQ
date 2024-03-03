@@ -35,8 +35,8 @@ export default function Home() {
       </Banner>
 
       <section className="flex min-w-60 mx-5 flex-col">
-        <div className="flex mx-auto flex-col lg:flex-row py-10 sm:py-20 max-w-screen-xl">
-          <div className="flex w-full lg:w-1/2 sm:px-10 pb-10 lg:py-10 flex-col gap-6">
+        <div className="flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:max-w-[1800px]">
+          <div className="flex w-5/6 sm:w-full lg:w-1/2 xl:w-4/5 lg:max-w-[650px] lg:px-10 xl:px-20 pb-10 lg:py-10 flex-col gap-6">
             <h1
               className={
                 redRoseFont.className + " text-5xl sm:text-6xl text-center"
@@ -46,7 +46,7 @@ export default function Home() {
             </h1>
             <p
               className={
-                redRoseFont.className + " text-xl sm:text-2xl text-center"
+                redRoseFont.className + " text-2xl sm:text-3xl text-center"
               }
             >
               It's not just food its a way of life!
@@ -64,7 +64,7 @@ export default function Home() {
               </p>
             </div>
           </div>{" "}
-          <div className="flex justify-center w-full lg:w-1/2">
+          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[600px]">
             <img
               className="object-fill"
               src="/outside-view.png"
