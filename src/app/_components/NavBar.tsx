@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { EMapHrefToTitle, Page } from "../_utilities";
 import { pageNames } from "../_utilities";
 import { GrMenu, GrClose } from "react-icons/gr";
+import { PromoBanner } from "./PromoBanner";
 
 export function NavBar() {
   const [isScrolledToTop, setIsScrolledToTop] = useState(true);
@@ -53,7 +54,7 @@ export function NavBar() {
             key={index}
             className={`aspect-square duration-200 ${
               isScrolledToTop
-                ? " h-32"
+                ? " pt-1 h-28"
                 : " h-20 hover:scale-125 hover:translate-y-3"
             }`}
             src="/Bullies-logo.png"
@@ -82,6 +83,7 @@ export function NavBar() {
 
   return (
     <header className="w-full fixed z-20 ">
+      <PromoBanner />
       <nav
         className={`flex justify-center items-center ease-in duration-100 text-lg ${
           isScrolledToTop

@@ -21,8 +21,13 @@ const config: Config = {
         "left-right": "leftToRight 0.4s ease-out",
         "fade-left-right": "leftToRight 0.2s",
         success: "success 4s",
+        slide: "slide 20s linear infinite",
       },
       keyframes: {
+        slide: {
+          "0%": { transform: "translateX(-300px)" },
+          "100%": { transform: "translateX(100%)" },
+        },
         success: {
           "0%": { opacity: "0" },
           "5%": { opacity: "0.5" },
