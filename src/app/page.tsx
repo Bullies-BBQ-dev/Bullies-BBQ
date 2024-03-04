@@ -35,11 +35,12 @@ export default function Home() {
       </Banner>
 
       <section className="flex min-w-60 mx-5 flex-col">
-        <div className="flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:max-w-[1800px]">
-          <div className="flex w-5/6 sm:w-full lg:w-1/2 xl:w-4/5 lg:max-w-[650px] lg:px-10 xl:px-20 pb-10 lg:py-10 flex-col gap-6">
+        <div className="flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
+          <div className="flex w-5/6 sm:w-[560px] lg:w-[417px] xl:min-w-[655px] lg:pr-10 xl:pr-20 pb-10 lg:py-10 flex-col gap-6">
             <h1
               className={
-                redRoseFont.className + " text-5xl sm:text-6xl text-center"
+                redRoseFont.className +
+                " text-5xl sm:text-6xl text-center text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600"
               }
             >
               Bullies BBQ
@@ -64,7 +65,7 @@ export default function Home() {
               </p>
             </div>
           </div>{" "}
-          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[600px]">
+          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px]">
             <img
               className="object-fill"
               src="/outside-view.png"
@@ -83,29 +84,25 @@ export default function Home() {
 
         <h2
           className={
-            redRoseFont.className +
-            " text-4xl sm:text-5xl text-center text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600"
+            redRoseFont.className + " text-4xl sm:text-5xl text-center"
           }
         >
           Visit Us
         </h2>
 
-        <div className="flex flex-col justify-evenly mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
-          <div className="flex w-1/3 justify-center flex-col pb-10 px-5 w-[310px]">
-            <div className="pb-10">
-              <h3
-                className={
-                  redRoseFont.className + " text-3xl py-2.5 text-red-800"
-                }
-              >
-                Location
-              </h3>
-              <p className={redRoseFont.className + " text-base py-2.5"}>
+        <div className="flex flex-col-reverse justify-evenly mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
+          <div className="flex w-1/3 justify-center flex-col pt-10 px-5 w-[310px]">
+            <div
+              className={`${redRoseFont.className} flex flex-col gap-5 sm:gap-6 text-base pb-10`}
+            >
+              <h3 className=" text-3xl text-red-800">Location</h3>
+              <p>
                 3 Regency Pkwy
                 <br />
                 Hilton Head Island, SC 29928
               </p>
-              <p className={redRoseFont.className + " text-base py-2.5"}>
+
+              <p>
                 Located 6/10's of a mile WEST of the Palmetto Dunes Entrance on
                 Hwy 278, Turn at the Red Roof Inn.
               </p>
@@ -120,20 +117,16 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div>
-              <h3
-                className={
-                  redRoseFont.className + " text-3xl py-2.5 text-red-800"
-                }
-              >
-                Hours
-              </h3>
-              <p className={redRoseFont.className + " text-base py-2.5"}>
+            <div
+              className={`${redRoseFont.className} flex flex-col gap-4 text-base`}
+            >
+              <h3 className="text-3xl text-red-800">Hours</h3>
+              <p>
                 Monday - Saturday:
                 <br />
                 11am - 8pm
-                <br />
-                <br />
+              </p>
+              <p>
                 Sunday:
                 <br />
                 Closed
