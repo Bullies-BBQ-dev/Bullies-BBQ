@@ -39,8 +39,7 @@ export default function Home() {
           <div className="flex w-5/6 sm:w-[560px] lg:w-[417px] xl:min-w-[655px] lg:pr-10 xl:pr-20 pb-10 lg:py-10 flex-col gap-6">
             <h1
               className={
-                redRoseFont.className +
-                " text-5xl sm:text-6xl text-center text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600"
+                redRoseFont.className + " text-5xl sm:text-6xl text-center"
               }
             >
               Bullies BBQ
