@@ -84,14 +84,14 @@ export default function Home() {
         <h2
           className={
             redRoseFont.className +
-            " text-4xl sm:text-5xl pb-2.5 sm:pb-5 text-center text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600"
+            " text-4xl sm:text-5xl text-center text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600"
           }
         >
           Visit Us
         </h2>
 
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex w-1/3 justify-center flex-col py-5">
+        <div className="flex flex-col justify-evenly mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
+          <div className="flex w-1/3 justify-center flex-col pb-10 px-5 w-[310px]">
             <div className="pb-10">
               <h3
                 className={
@@ -105,7 +105,7 @@ export default function Home() {
                 <br />
                 Hilton Head Island, SC 29928
               </p>
-              <p className={redRoseFont.className + " text-base py-2.5 w-80"}>
+              <p className={redRoseFont.className + " text-base py-2.5"}>
                 Located 6/10's of a mile WEST of the Palmetto Dunes Entrance on
                 Hwy 278, Turn at the Red Roof Inn.
               </p>
@@ -113,7 +113,7 @@ export default function Home() {
                 <button
                   className={
                     redRoseFont.className +
-                    " py-2 px-10 max-w-fit bg-red-800 border-black border-2 hover:border-red-800 text-white text-1xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
+                    " py-2 px-10 w-56 bg-red-800 border-black border-2 hover:border-red-800 text-white text-1xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
                   }
                 >
                   Get Directions
@@ -141,12 +141,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex w-2/3 py-5">
+          <div className="flex w-full lg:mx-w-[650px] xl:max-w-[1140px] lg:w-2/3 lg:pr-5">
             <iframe
-              className="aspect-video h-full min-h-[545px] max-h-[800px] pb-10 sm:pb-28 md:px-20 sm:px-10"
+              className="aspect-video h-full min-h-[545px] lg:min-h-[650px] max-h-[800px]"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.547583284142!2d-80.73426!3d32.173583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc7992c7d5ff67%3A0x2872397f8de93b33!2sBullies%20BBQ!5e0!3m2!1sen!2sus!4v1707822595985!5m2!1sen!2sus"
               width={"100%"}
-              height={"75%"}
+              height={"100%"}
               style={{ border: "0" }}
               // allowfullscreen={false}
               loading="lazy"
