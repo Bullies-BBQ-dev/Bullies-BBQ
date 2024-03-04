@@ -34,37 +34,47 @@ export default function Home() {
         </div>
       </Banner>
 
-      <div className="flex min-w-60 mx-5 flex-col">
-        <div className="w-full py-10 sm:py-20 flex flex-col items-center gap-5 sm:gap-8 bg-white">
-          <div className="">
+      <section className="flex min-w-60 mx-5 flex-col">
+        <div className="flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
+          <div className="flex w-5/6 sm:w-[560px] lg:w-[417px] xl:min-w-[655px] lg:pr-10 xl:pr-20 pb-10 lg:py-10 flex-col gap-6">
+            <h1
+              className={
+                redRoseFont.className + " text-5xl sm:text-6xl text-center"
+              }
+            >
+              Bullies BBQ
+            </h1>
+            <p
+              className={
+                redRoseFont.className + " text-2xl sm:text-3xl text-center"
+              }
+            >
+              It's not just food its a way of life!
+            </p>
+            <div className="grid text-center text-base gap-4">
+              <p>
+                Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and
+                Mesquite woods. Bullies Ribs smoke for up to 6 hours and pork
+                butt and briskets up to 14 hours in our large capacity smoker.
+              </p>
+              <p>
+                Chef Bob Sutton is famous for his South Carolina Pulled Pork.
+                Served up dinner style or on a sandwich. Don't forget to add a
+                couple of "bones" of pure Memphis heaven.
+              </p>
+            </div>
+          </div>{" "}
+          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px]">
             <img
-              className="aspect-square duration-300 object-contain h-60"
-              src="/bullie-full-body.png"
-              alt=""
+              className="object-fill"
+              src="/outside-view.png"
+              alt="outside view bullies bbq restuarant"
             />
           </div>
+        </div>
 
-          <h1
-            className={
-              redRoseFont.className + " text-5xl sm:text-6xl text-center"
-            }
-          >
-            Bullies BBQ
-          </h1>
-          <div className="md:w-3/4 text-center text-base">
-            <p>
-              Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and
-              Mesquite woods. Bullies Ribs smoke for up to 6 hours and pork butt
-              and briskets up to 14 hours in our large capacity smoker.
-              <br />
-              <br />
-              Chef Bob Sutton is famous for his South Carolina Pulled Pork.
-              Served up dinner style or on a sandwich. Don't forget to add a
-              couple of "bones" of pure Memphis heaven.
-            </p>
-          </div>
-
-          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2 mt-4">
+        <div className="flex justify-center pb-10 sm:pb-20">
+          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2">
             VIEW OUR MENU
           </button>
         </div>
@@ -73,26 +83,70 @@ export default function Home() {
 
         <h2
           className={
-            redRoseFont.className +
-            " text-4xl sm:text-5xl pb-2.5 sm:pb-5 text-center"
+            redRoseFont.className + " text-4xl sm:text-5xl text-center"
           }
         >
           Visit Us
         </h2>
 
-        <div className="xl:mx-54 lg:mx-20">
-          <iframe
-            className="aspect-video w-full h-full min-h-[545px] max-h-[800px] pb-10 sm:pb-28 md:px-20 sm:px-10"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.547583284142!2d-80.73426!3d32.173583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc7992c7d5ff67%3A0x2872397f8de93b33!2sBullies%20BBQ!5e0!3m2!1sen!2sus!4v1707822595985!5m2!1sen!2sus"
-            width={"100%"}
-            height={"75%"}
-            style={{ border: "0" }}
-            // allowfullscreen={false}
-            loading="lazy"
-            // referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div className="flex flex-col-reverse justify-evenly mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
+          <div className="flex w-1/3 justify-center flex-col pt-10 px-5 w-[310px]">
+            <div
+              className={`${redRoseFont.className} flex flex-col gap-5 sm:gap-6 text-base pb-10`}
+            >
+              <h3 className=" text-3xl text-red-800">Location</h3>
+              <p>
+                3 Regency Pkwy
+                <br />
+                Hilton Head Island, SC 29928
+              </p>
+
+              <p>
+                Located 6/10's of a mile WEST of the Palmetto Dunes Entrance on
+                Hwy 278, Turn at the Red Roof Inn.
+              </p>
+              <div className="py-2.5">
+                <button
+                  className={
+                    redRoseFont.className +
+                    " py-2 px-10 w-56 bg-red-800 border-black border-2 hover:border-red-800 text-white text-1xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
+                  }
+                >
+                  Get Directions
+                </button>
+              </div>
+            </div>
+            <div
+              className={`${redRoseFont.className} flex flex-col gap-4 text-base`}
+            >
+              <h3 className="text-3xl text-red-800">Hours</h3>
+              <p>
+                Monday - Saturday:
+                <br />
+                11am - 8pm
+              </p>
+              <p>
+                Sunday:
+                <br />
+                Closed
+              </p>
+            </div>
+          </div>
+
+          <div className="flex w-full lg:mx-w-[650px] xl:max-w-[1140px] lg:w-2/3 lg:pr-5">
+            <iframe
+              className="aspect-video h-full min-h-[545px] lg:min-h-[650px] max-h-[800px]"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.547583284142!2d-80.73426!3d32.173583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc7992c7d5ff67%3A0x2872397f8de93b33!2sBullies%20BBQ!5e0!3m2!1sen!2sus!4v1707822595985!5m2!1sen!2sus"
+              width={"100%"}
+              height={"100%"}
+              style={{ border: "0" }}
+              // allowfullscreen={false}
+              loading="lazy"
+              // referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

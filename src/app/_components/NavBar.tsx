@@ -8,6 +8,7 @@ import { pageNames } from "../_utilities";
 import { GrMenu, GrClose } from "react-icons/gr";
 import { Red_Rose } from "next/font/google";
 import { NextFont } from "next/dist/compiled/@next/font";
+import { PromoBanner } from "./PromoBanner";
 
 interface NavBarProps {
   redRoseFont: NextFont;
@@ -59,7 +60,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             key={index}
             className={`aspect-square duration-200 ${
               isScrolledToTop
-                ? " h-32"
+                ? " pt-1 h-28"
                 : " h-20 hover:scale-125 hover:translate-y-3"
             }`}
             src="/Bullies-logo.png"
@@ -88,6 +89,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
 
   return (
     <header className="w-full fixed z-20 ">
+      <PromoBanner />
       <nav
         className={`flex justify-center items-center ease-in duration-100 text-lg px-6 ${
           isScrolledToTop
