@@ -18,7 +18,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         >
           {category}
         </span>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
           {menuList
             .filter((menuIem) => menuIem.category === category)
             .map(mapMenuItems)}
@@ -29,7 +29,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const mapMenuItems = (menuItem: IMenuItem, index: number) => {
     return (
       <div
-        className="flex flex-col rounded-lg group hover:shadow-amber-900 hover:scale-[1.02] outline outline-red-800/0 hover:outline-red-800/20 shadow-xl min-w-72 duration-500"
+        className="flex flex-col rounded-lg group hover:shadow-amber-900 hover:scale-[1.02]  shadow-lg min-w-72 duration-500"
         key={index}
       >
         <img src={menuItem.img} alt={menuItem.name} className="rounded-t-lg" />
