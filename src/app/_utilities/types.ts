@@ -13,12 +13,12 @@ export interface BannerWithChildrenProps {
 export type BannerProps = BannerWithTitleProps | BannerWithChildrenProps;
 
 export type Category =
-  | "Sandwiches"
-  | "Dinners"
-  | "Sides"
-  | "Desserts"
-  | "Sauces"
-  | "Beer"
+  | "sandwiches"
+  | "dinners"
+  | "sides"
+  | "desserts"
+  | "sauces"
+  | "beer"
   | null;
 
 export type CateringCategory =

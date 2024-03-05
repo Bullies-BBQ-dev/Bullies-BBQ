@@ -1,19 +1,23 @@
 "use client";
 
 import { Category, IMenuItem } from "@/app/_utilities";
-import { useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRef } from "react";
 import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { CategoryIcons } from ".";
 import Link from "next/link";
 import { MenuItemDetails } from "./MenuItemDetails";
-import { useSearchParams } from "next/navigation";
 import { GrClose } from "react-icons/gr";
 
 export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
-  const [currentCategory, setCurrentCategory] = useState<Category>(null);
+  const currCategory = useSearchParams().get("category") as Category;
   const menuRef = useRef<HTMLElement | null>(null);
   const show = useSearchParams().get("show");
+
+  const upperCaseFirst = (category: Category) => {
+    if (category) return category.charAt(0).toUpperCase() + category.slice(1);
+  };
 
   const mapMenu = (category: Category, index: number) => {
     return (
@@ -21,7 +25,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         <span
           className={`${redRoseFont.className} text-5xl text-center underline`}
         >
-          {category}
+          {upperCaseFirst(category)}
         </span>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
           {menuList
@@ -34,7 +38,9 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const mapMenuItems = (menuItem: IMenuItem, index: number) => {
     return (
       <Link
-        href={`/menu?show=${menuItem.prodId}`}
+        href={`/menu?${
+          currCategory ? "category=" + currCategory + "&" : ""
+        }show=${menuItem.prodId}`}
         className="flex flex-col rounded-lg group hover:scale-[1.02] shadow-xl hover:shadow-gray-400 hover:shadow-2xl min-w-72 duration-500"
         key={index}
         scroll={false}
@@ -61,29 +67,37 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
 
   const mapCategoryButtons = (category: Category, index: number) => {
     return (
-      <button
-        key={index}
-        className={`py-1 rounded border-4 border-red-800 relative duration-300 hover:bg-white hover:text-red-800 grid place-items-center ${
-          category === currentCategory
-            ? "bg-white text-red-800"
-            : "bg-red-800 text-white"
+      <Link
+        href={`/menu${
+          category === currCategory ? "" : "?category=" + category
         }`}
-        onClick={() => {
-          if (category === currentCategory) setCurrentCategory(null);
-          else setCurrentCategory(category);
-          // menuRef.current?.scrollTo(0, 0);
-          menuRef.current?.scrollIntoView({ behavior: "smooth" });
-        }}
+        key={index}
+        className=""
+        scroll={false}
       >
-        <span className="hidden sm:flex items-center">
-          {category}
-          {category === currentCategory && (
-            <GrClose className="absolute right-0 mr-2" />
-          )}
-        </span>
+        <button
+          className={`w-full py-1 rounded border-4 border-red-800 relative duration-300 hover:bg-white hover:text-red-800 grid place-items-center ${
+            category === currCategory
+              ? "bg-white text-red-800"
+              : "bg-red-800 text-white"
+          }`}
+          onClick={() => {
+            // if (category === currCategory) setcurrCategory(null);
+            // else setcurrCategory(category);
+            // menuRef.current?.scrollTo(0, 0);
+            menuRef.current?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <span className="hidden sm:flex items-center">
+            {upperCaseFirst(category)}
+            {category === currCategory && (
+              <GrClose className="absolute right-0 mr-2" />
+            )}
+          </span>
 
-        <CategoryIcons category={category}></CategoryIcons>
-      </button>
+          <CategoryIcons category={category}></CategoryIcons>
+        </button>
+      </Link>
     );
   };
 
@@ -95,15 +109,15 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
       <div
         className="relative animate-fade-left-right "
         style={{ gridColumnGap: "4%" }}
-        key={currentCategory}
+        key={currCategory}
       >
-        {currentCategory
+        {currCategory
           ? categories
-              .filter((category) => category === currentCategory)
+              .filter((category) => category === currCategory)
               .map(mapMenu)
           : categories.map(mapMenu)}
       </div>
-      {currentCategory === "Sauces" && (
+      {currCategory === "sauces" && (
         <div
           className={`${redRoseFont.className} grid md:grid-cols-2 place-items-baseline max-w-screen-lg gap-20 text-3xl text-center`}
         >
@@ -143,7 +157,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         <MenuItemDetails
           redRoseFont={redRoseFont}
           id={Number(show)}
-          category={currentCategory}
+          category={currCategory}
         />
       )}
     </section>

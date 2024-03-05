@@ -17,14 +17,22 @@ export function MenuItemDetails({
   id,
   category,
 }: MenuItemDetailsProps) {
+  const currItem = menuList.find(
+    (menuItem: IMenuItem) => menuItem.prodId === id
+  ) as IMenuItem;
   const router = useRouter();
   const index = id - 1;
-  const currList = category ? menuList.filter((menuItem) => menuItem.category === category) : menuList;
-  const nextOrPrevIndex = (next: boolean, currIndex: number) => {
+  const currList = category
+    ? menuList.filter((menuItem) => menuItem.category === category)
+    : menuList;
+  const nextOrPrevIndex = (next: boolean, id: number) => {
+    let index = currList.findIndex(
+      (menuItem) => menuItem.prodId === currItem.prodId
+    );
     let nextOrPrevIndex: number = next
-      ? (currIndex + 1) % menuList.length
-      : (currIndex - 1 + menuList.length) % menuList.length;
-    return nextOrPrevIndex + 1;
+      ? (index + 1) % currList.length
+      : (index - 1 + currList.length) % currList.length;
+    return currList[nextOrPrevIndex].prodId;
   };
   return (
     <section
@@ -36,18 +44,26 @@ export function MenuItemDetails({
           e.target instanceof HTMLElement &&
           e.target.id === "menu-item-details"
         )
-          router.push("/menu", { scroll: false });
+          router.push(`/menu${category ? "?category=" + category : ""}`, {
+            scroll: false,
+          });
       }}
     >
       <div className="m-auto max-h-screen max-w-screen-xl bg-white rounded-md grid place-items-center overflow-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 animate-fade-in-200 text-center place-items-center">
           <div className="col-span-full w-full flex justify-between">
-            <Link href={"/menu"} scroll={false}>
+            <Link
+              href={`/menu${category ? "?category=" + category : ""}`}
+              scroll={false}
+            >
               <button className="bg-orange-950 m-2 text-white p-2">
                 Back to Menu
               </button>
             </Link>
-            <Link href={"/menu"} scroll={false}>
+            <Link
+              href={`/menu${category ? "?category=" + category : ""}`}
+              scroll={false}
+            >
               <button className="p-2">
                 <GrClose
                   // onClick={() => setModalItem(null)}
@@ -59,7 +75,7 @@ export function MenuItemDetails({
 
           <div className="p-1 sm:p-10">
             <img
-              src={menuList[index].img}
+              src={currItem.img}
               alt=""
               className="rounded-md shadow-md animate-fade-in aspect-[4/3] h-72 sm:h-[425px] object-cover"
             />
@@ -71,26 +87,26 @@ export function MenuItemDetails({
                 className={`${
                   redRoseFont.className
                 } text-4xl sm:text-5xl pb-2 ${
-                  menuList[index].name === "Bull Dog\n(2 Meat Combo)"
+                  currItem.name === "Bull Dog\n(2 Meat Combo)"
                     ? "whitespace-pre"
                     : "sm:whitespace-pre"
                 }`}
               >
-                {menuList[index].name}
+                {currItem.name}
               </span>
 
-              {menuList[index].category === "Sandwiches" ? (
+              {currItem.category === "sandwiches" ? (
                 <div
                   className={`${redRoseFont.className} flex flex-wrap justify-around sm:flex-col py-2 sm:gap-y-4 text-2xl sm:text-3xl sm:w-full`}
                 >
                   <div>
                     <div className="flex flex-col sm:flex-row justify-between sm:pb-1 sm:px-24">
                       Regular
-                      <span>${menuList[index].price}</span>
+                      <span>${currItem.price}</span>
                     </div>
                     <div className="flex flex-col sm:flex-row justify-between sm:px-24">
                       Jumbo
-                      <span>${menuList[index].price + 2}</span>
+                      <span>${currItem.price + 2}</span>
                     </div>
                   </div>
                   <div className="flex justify-between items-center w-full px-2 text-xl sm:text-2xl sm:px-6">
@@ -105,10 +121,10 @@ export function MenuItemDetails({
                 <div
                   className={`${redRoseFont.className} text-3xl grow grid place-items-center`}
                 >
-                  ${menuList[index].price}
+                  ${currItem.price}
                 </div>
               )}
-              {menuList[index].category === "Dinners" && (
+              {currItem.category === "dinners" && (
                 <span
                   className={`${redRoseFont.className} text-xl sm:text-2xl`}
                 >
@@ -117,7 +133,7 @@ export function MenuItemDetails({
               )}
             </div>
             <div className="w-full h-full flex flex-col justify-between">
-              <p>{menuList[index].description}</p>
+              <p>{currItem.description}</p>
               <Link
                 href={"https://order.toasttab.com/online/bullies-bbq"}
                 target="_blank"
@@ -142,21 +158,25 @@ export function MenuItemDetails({
           >
             <Link
               className="bg-gray-100 sm:place-self-end w-full h-20 sm:w-60 flex items-center"
-              href={`/menu?show=${nextOrPrevIndex(false, index)}`}
+              href={`/menu?${
+                category ? "category=" + category + "&" : ""
+              }show=${nextOrPrevIndex(false, id)}`}
               scroll={false}
             >
               <HiMiniChevronLeft size={25} />
               <button className={`${redRoseFont.className} w-full h-full py-4`}>
-                {menuList[nextOrPrevIndex(false, index) - 1].name}{" "}
+                {menuList[nextOrPrevIndex(false, id) - 1].name}{" "}
               </button>
             </Link>
             <Link
               className="bg-gray-100 sm:place-self-start w-full h-20 sm:w-60 flex items-center"
-              href={`/menu?show=${nextOrPrevIndex(true, index)}`}
+              href={`/menu?${
+                category ? "category=" + category + "&" : ""
+              }show=${nextOrPrevIndex(true, id)}`}
               scroll={false}
             >
               <button className={`${redRoseFont.className} w-full h-full py-4`}>
-                {menuList[nextOrPrevIndex(true, index) - 1].name}{" "}
+                {menuList[nextOrPrevIndex(true, id) - 1].name}{" "}
               </button>
               <HiMiniChevronRight size={25} />
             </Link>

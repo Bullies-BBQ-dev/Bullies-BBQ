@@ -16,12 +16,12 @@ export const pageNames: Page[] = [
 ];
 
 export const categories: Category[] = [
-  "Sandwiches",
-  "Dinners",
-  "Sides",
-  "Desserts",
-  "Sauces",
-  "Beer",
+  "sandwiches",
+  "dinners",
+  "sides",
+  "desserts",
+  "sauces",
+  "beer",
 ];
 
 export const sauces: ISauce[] = [
@@ -324,7 +324,7 @@ export const menuList: IMenuItem[] = [
     price: 12.0,
     description:
       "Dive into a brisket sandwich: tender, slow-smoked brisket hugged by a toasted bun. It's a meaty masterpiece, pure and simple.",
-    category: "Sandwiches",
+    category: "sandwiches",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001534292476_1683832386.jpg?size=medium",
   },
   {
@@ -333,7 +333,7 @@ export const menuList: IMenuItem[] = [
     price: 10.0,
     description:
       "Savor the essence of Southern comfort with a pulled pork sandwich. Tender strands of slow-cooked pork, piled high atop a soft bun. It's a flavor-packed journey to BBQ heaven in every bite.",
-    category: "Sandwiches",
+    category: "sandwiches",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
   },
   {
@@ -342,7 +342,7 @@ export const menuList: IMenuItem[] = [
     price: 9.5,
     description:
       "Delight in the lighter side of barbecue with a pulled chicken sandwich. Succulent shredded chicken, nestled within a fluffy bun. It's a delightful twist on a classic favorite, perfect as a lighter but equally satisfying option.",
-    category: "Sandwiches",
+    category: "sandwiches",
     img: "https://images-ext-2.discordapp.net/external/5UljIDiN-mKkEbeel4KEtVOSkMmKFCvoMtu9KRpri0s/https/img.cdn4dd.com/cdn-cgi/image/fit%3Dcontain%2Cwidth%3D1200%2Cheight%3D672%2Cformat%3Dauto/https%3A/doordash-static.s3.amazonaws.com/media/photosV2/3bf86092-97f8-4121-9589-c9b314d65915-retina-large.jpg?format=webp&width=1087&height=611",
   },
   {
@@ -351,7 +351,7 @@ export const menuList: IMenuItem[] = [
     price: 21.0,
     description:
       "Enjoy the savory goodness of a pulled pork dinner, featuring tender, succulent pork infused with smoky flavors. It's a meal that's sure to satisfy your cravings for classic barbecue taste.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022164_1683832820.jpg?size=medium",
   },
   {
@@ -360,7 +360,7 @@ export const menuList: IMenuItem[] = [
     price: 24.0,
     description:
       "Savor the rich flavors of a brisket dinner, featuring tender slices of slow-smoked brisket. It's a hearty delight that promises pure satisfaction with every bite.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
   },
   {
@@ -369,7 +369,7 @@ export const menuList: IMenuItem[] = [
     price: 20.0,
     description:
       "Delight in a pulled chicken dinner, boasting juicy, flavorful chicken cooked to perfection. It's a lighter option that doesn't skimp on taste, offering a delicious twist on traditional barbecue fare.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
   },
   {
@@ -378,7 +378,7 @@ export const menuList: IMenuItem[] = [
     price: 16.5,
     description:
       "1/2 Chicken dinner comes with 1 1/2 smoked Chicken and your choice of 2 sides.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022156_1683221729.jpg?size=medium",
   },
   {
@@ -387,7 +387,7 @@ export const menuList: IMenuItem[] = [
     price: 25.0,
     description:
       "Indulge in barbecue bliss with a half slab rib dinner, showcasing tender ribs smothered in mouthwatering sauce. It's a finger-licking feast that'll leave you craving more.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022162_1683136793.jpg?size=medium",
   },
   {
@@ -396,7 +396,7 @@ export const menuList: IMenuItem[] = [
     price: 33.0,
     description:
       "Treat yourself to the ultimate barbecue experience with a full slab rib dinner, featuring a generous portion of fall-off-the-bone ribs. It's a hearty meal that's perfect for satisfying even the heartiest appetites.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000001525022160_1683130037.jpg?size=medium",
   },
   {
@@ -405,7 +405,7 @@ export const menuList: IMenuItem[] = [
     price: 24.0,
     description:
       "Your choice of any 2 meats! All Dinners Include 2 Sides! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Dinners",
+    category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
   },
   {
@@ -414,7 +414,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022192_1683063453.jpg?size=medium",
   },
   {
@@ -423,7 +423,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022194_1683063468.jpg?size=medium",
   },
   {
@@ -432,7 +432,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022196_1683117385.jpg?size=medium",
   },
   {
@@ -441,7 +441,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/8/item-800000001525022198_1683135224.jpg?size=medium",
   },
   {
@@ -450,7 +450,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/9/item-800000001534426489_1683063283.jpg?size=medium",
   },
   {
@@ -459,7 +459,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022452_1683135770.jpg?size=medium",
   },
   {
@@ -468,7 +468,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/3/item-800000001534426493_1683064245.jpg?size=medium",
   },
   {
@@ -477,7 +477,7 @@ export const menuList: IMenuItem[] = [
     price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000002863697770_1687972312.jpg?size=medium",
   },
   {
@@ -486,7 +486,7 @@ export const menuList: IMenuItem[] = [
     price: 2.0,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Desserts",
+    category: "desserts",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/5/item-800000001525022625_1683130949.jpg?size=medium",
   },
   {
@@ -495,7 +495,7 @@ export const menuList: IMenuItem[] = [
     price: 29.99,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Sides",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
   },
   {
@@ -504,7 +504,7 @@ export const menuList: IMenuItem[] = [
     price: 29.99,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "Beer",
+    category: "beer",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
   },
 ];
