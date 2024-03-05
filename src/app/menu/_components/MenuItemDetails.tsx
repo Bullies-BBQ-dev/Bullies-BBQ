@@ -1,6 +1,6 @@
 // "use client";
 import React, { Dispatch, SetStateAction } from "react";
-import { IMenuItem, menuList } from "@/app/_utilities";
+import { Category, IMenuItem, menuList } from "@/app/_utilities";
 import Link from "next/link";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { GrClose } from "react-icons/gr";
@@ -10,22 +10,16 @@ import { useRouter } from "next/navigation";
 export interface MenuItemDetailsProps {
   redRoseFont: NextFont;
   id: number;
+  category: Category;
 }
-// export interface MenuItemDetailsProps {
-//   redRoseFont: NextFont;
-//   menuItem: IMenuItem;
-//   setModalItem: Dispatch<SetStateAction<IMenuItem | null>>;
-// }
-
 export function MenuItemDetails({
-  // redRoseFont,
-  // menuItem,
-  // setModalItem,
   redRoseFont,
   id,
+  category,
 }: MenuItemDetailsProps) {
   const router = useRouter();
   const index = id - 1;
+  const currList = category ? menuList.filter((menuItem) => menuItem.category === category) : menuList;
   const nextOrPrevIndex = (next: boolean, currIndex: number) => {
     let nextOrPrevIndex: number = next
       ? (currIndex + 1) % menuList.length
@@ -74,7 +68,9 @@ export function MenuItemDetails({
           <div className="flex flex-col items-center justify-between h-full w-full max-w-screen-sm p-2 sm:p-10 relative animate-fade-in">
             <div className="w-full h-full flex flex-col justify-between">
               <span
-                className={`${redRoseFont.className} text-4xl sm:text-5xl  ${
+                className={`${
+                  redRoseFont.className
+                } text-4xl sm:text-5xl pb-2 ${
                   menuList[index].name === "Bull Dog\n(2 Meat Combo)"
                     ? "whitespace-pre"
                     : "sm:whitespace-pre"
@@ -85,15 +81,17 @@ export function MenuItemDetails({
 
               {menuList[index].category === "Sandwiches" ? (
                 <div
-                  className={`${redRoseFont.className} flex flex-wrap justify-around sm:flex-col py-2 gap-y-2 sm:gap-y-4 text-2xl sm:text-3xl sm:w-full`}
+                  className={`${redRoseFont.className} flex flex-wrap justify-around sm:flex-col py-2 sm:gap-y-4 text-2xl sm:text-3xl sm:w-full`}
                 >
-                  <div className="flex flex-col sm:flex-row justify-between sm:px-24">
-                    Regular
-                    <span>${menuList[index].price}</span>
-                  </div>
-                  <div className="flex flex-col sm:flex-row justify-between sm:px-24">
-                    Jumbo
-                    <span>${menuList[index].price + 2}</span>
+                  <div>
+                    <div className="flex flex-col sm:flex-row justify-between sm:pb-1 sm:px-24">
+                      Regular
+                      <span>${menuList[index].price}</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row justify-between sm:px-24">
+                      Jumbo
+                      <span>${menuList[index].price + 2}</span>
+                    </div>
                   </div>
                   <div className="flex justify-between items-center w-full px-2 text-xl sm:text-2xl sm:px-6">
                     <span className=" text-start">

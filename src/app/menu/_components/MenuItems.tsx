@@ -139,7 +139,13 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
           </div>
         </div>
       )}
-      {show && <MenuItemDetails redRoseFont={redRoseFont} id={Number(show)} />}
+      {show && (
+        <MenuItemDetails
+          redRoseFont={redRoseFont}
+          id={Number(show)}
+          category={currentCategory}
+        />
+      )}
     </section>
   );
 }

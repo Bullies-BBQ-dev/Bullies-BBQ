@@ -9,11 +9,12 @@ const sancreek = Sancreek({
 export function Banner({ backgroundURL, title, children }: BannerProps) {
   return (
     <div
-      className={" w-full shadow-md"}
+      className={" w-full shadow-md aspect-video"}
       style={{
         backgroundImage: `url("${backgroundURL}")`,
         backgroundSize: "cover",
-        height: "750px",
+        maxHeight: "750px",
+        minHeight: "400px",
       }}
     >
       <div className="bg-black/70 w-full h-full grid place-content-center select-none">
