@@ -98,7 +98,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
 
   return (
     <section ref={menuRef} className="min-h-screen mx-2 sm:mx-5">
-      <div className="grid sm:grid-cols-2 md:grid-cols-2 grid-cols-2 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10">
+      <div className="grid px-5 sm:px-0 sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10">
         {cateringCategories.map(mapCategories)}
       </div>
       <div
