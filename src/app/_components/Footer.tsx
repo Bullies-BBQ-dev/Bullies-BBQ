@@ -49,8 +49,8 @@ export function Footer() {
               <p>3 Regency Pkwy Hilton Head Island, SC 29928</p>
 
               <p>
-                Located 6/10's of a mile WEST of the Palmetto Dunes Entrance on
-                Hwy 278, Turn at the Red Roof Inn.
+                Located 6/10&apos;s of a mile WEST of the Palmetto Dunes
+                Entrance on Hwy 278, Turn at the Red Roof Inn.
               </p>
 
               <p>(843) 686-7427</p>
