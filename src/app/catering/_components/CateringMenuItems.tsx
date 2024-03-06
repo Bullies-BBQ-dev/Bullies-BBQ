@@ -38,7 +38,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     return (
       <div key={index} className="w-full flex justify-center">
         <div
-          className=" flex flex-col items-center rounded-lg group hover:shadow-gray-400 hover:scale-[1.02]  shadow-xl w-[85%] md:w-[90%] lg:w-[90%] xl:w-full  duration-500 cursor-pointer m-0 p-0"
+          className=" flex flex-col items-center rounded-lg group hover:shadow-gray-400 hover:scale-[1.02]  shadow-xl w-[95%] sm:w-full  duration-500 cursor-pointer m-0 p-0"
           onClick={() => handleItemClick(menuItem)}
         >
           <div className="flex flex-col">
@@ -51,15 +51,17 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
               />
             </div>
             <div className="flex flex-col justify-between h-full">
-              <div className="flex justify-between p-3 group-hover:text-red-800 duration-500">
-                <span className={`${redRoseFont.className} text-xl`}>
+              <div className="flex justify-between p-4 group-hover:text-red-800 duration-500">
+                <span className={`${redRoseFont.className} text-xl w-3/4`}>
                   {menuItem.name}
                 </span>
-                <span className={`${redRoseFont.className} text-xl`}>
+                <span className={`${redRoseFont.className} text-xl `}>
                   ${menuItem.price}
                 </span>
               </div>
-              <p className="p-3">{menuItem.description}</p>
+              <p className="px-4 pb-4 sm:px-4 sm:pb-5">
+                {menuItem.description}
+              </p>
             </div>
           </div>
         </div>
@@ -97,13 +99,13 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     : cateringMenuList;
 
   return (
-    <section ref={menuRef} className="min-h-screen mx-2 sm:mx-5">
-      <div className="grid px-5 sm:px-0 sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10">
+    <section ref={menuRef} className="min-h-screen">
+      <div className="grid sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10">
         {cateringCategories.map(mapCategories)}
       </div>
       <div
-        className="justify relative animate-fade-left-right grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-9 py-10"
-        style={{ gridColumnGap: "2%" }}
+        className="justify relative animate-fade-left-right grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-9 py-10 lg:pr-8"
+        style={{ gridColumnGap: "4%" }}
         key={currentCategory}
       >
         {filteredMenuItems.map(mapMenu)}

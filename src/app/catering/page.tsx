@@ -11,21 +11,21 @@ import {
 export default function Catering() {
   return (
     <SelectedItemsProvider>
-      <div className="">
-        <Banner
-          backgroundURL="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022184_1683832838.jpg?size=medium"
-          title="Catering"
-        />
-        <div className="mx-auto w-full min-w-60 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
-          <div className="flex flex-col md:flex-row  mx-2 sm:mx-5">
-            <div className="flex p-4 flex-col justify-center">
+      <Banner
+        backgroundURL="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022184_1683832838.jpg?size=medium"
+        title="Catering"
+      />
+      <div className="mx-5 sm:mx-10 my-10 lg:my-20">
+        <div className="mx-auto w-full min-w-60 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1800px]">
+          <div className="flex flex-col md:flex-row justify-between pb-5 lg:pb-10">
+            <div className="flex flex-col justify-center w-full sm:w-[570px] md:w-[690px] lg:w-[550px] lg:min-w-[550px] 2xl:w-[700px]">
               <h3
-                className={`text-red-800 text-3xl lg:text-4xl  ${redRoseFont.className}`}
+                className={`text-red-800 text-4xl lg:text-5xl  ${redRoseFont.className}`}
               >
                 Having a party ?
               </h3>
               <div className="">
-                <p className=" text-lg lg:text-xl py-4 w-full lg:w-3/4 text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600">
+                <p className=" text-lg py-4">
                   Keep Bullies in mind for party sized platters of BBQ and
                   fixin&apos;s. Bullies BBQ is good all year round. Winter
                   Holidays, Summer Picnics, Super Bowl Sunday, Graduation
@@ -33,7 +33,7 @@ export default function Catering() {
                 </p>
               </div>
               <div
-                className={`text-red-800 text-2xl lg:text-4xl ${redRoseFont.className}`}
+                className={`text-red-800 text-2xl sm:text-3xl max-w-[420px] sm:w-[455px] sm:max-w-[455px] 2xl:w-full 2xl:max-w-full ${redRoseFont.className}`}
               >
                 Please place {""}
                 <a
@@ -47,7 +47,7 @@ export default function Catering() {
                 or call{" "}
                 <a
                   href="tel:(843) 686-7427"
-                  className="hover:underline hover:underline-offset-[0.4rem] underline underline-offset-[0.4rem] decoration-2 hover:decoration-4 duration-1000"
+                  className="hover:underline hover:underline-offset-[0.4rem] underline underline-offset-[0.4rem] decoration-2 hover:decoration-4"
                 >
                   (843) 686-7427
                 </a>
@@ -57,7 +57,7 @@ export default function Catering() {
                 form
               </p>
             </div>
-            <div className="md:min-w-[80px] md:max-w-[880px] lg:flex justify-center items-center hidden p-10 pl-4">
+            <div className="md:min-w-[80px] md:max-w-[880px] lg:flex justify-center items-center hidden pl-8">
               <Image
                 src="/bullies-crew.png"
                 width={600}
