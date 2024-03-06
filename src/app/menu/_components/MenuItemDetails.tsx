@@ -1,5 +1,5 @@
 // "use client";
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { Category, IMenuItem, menuList } from "@/app/_utilities";
 import Link from "next/link";
 import { NextFont } from "next/dist/compiled/@next/font";
@@ -21,18 +21,17 @@ export function MenuItemDetails({
     (menuItem: IMenuItem) => menuItem.prodId === id
   ) as IMenuItem;
   const router = useRouter();
-  const index = id - 1;
   const currList = category
     ? menuList.filter((menuItem) => menuItem.category === category)
     : menuList;
-  const nextOrPrevIndex = (next: boolean, id: number) => {
-    let index = currList.findIndex(
-      (menuItem) => menuItem.prodId === currItem.prodId
-    );
+  let index = currList.findIndex(
+    (menuItem) => menuItem.prodId === currItem.prodId
+  );
+  const nextOrPrevIndex = (next: boolean) => {
     let nextOrPrevIndex: number = next
       ? (index + 1) % currList.length
       : (index - 1 + currList.length) % currList.length;
-    return currList[nextOrPrevIndex].prodId;
+    return nextOrPrevIndex;
   };
   return (
     <section
@@ -55,20 +54,20 @@ export function MenuItemDetails({
             <Link
               href={`/menu${category ? "?category=" + category : ""}`}
               scroll={false}
+              className="p-1"
             >
-              <button className="bg-orange-950 m-2 text-white p-2">
+              <button className="bg-red-800 h-full text-white py-2 pr-2 flex rounded items-center">
+                <HiMiniChevronLeft size={25} />
                 Back to Menu
               </button>
             </Link>
             <Link
               href={`/menu${category ? "?category=" + category : ""}`}
               scroll={false}
+              className="p-1"
             >
-              <button className="p-2">
-                <GrClose
-                  // onClick={() => setModalItem(null)}
-                  size={40}
-                />
+              <button className="p-2 hover:text-red-800 hover:bg-gray-300 duration-150 rounded">
+                <GrClose size={40} />
               </button>
             </Link>
           </div>
@@ -160,23 +159,23 @@ export function MenuItemDetails({
               className="bg-gray-100 sm:place-self-end w-full h-20 sm:w-60 flex items-center"
               href={`/menu?${
                 category ? "category=" + category + "&" : ""
-              }show=${nextOrPrevIndex(false, id)}`}
+              }show=${currList[nextOrPrevIndex(false)].prodId}`}
               scroll={false}
             >
               <HiMiniChevronLeft size={25} />
               <button className={`${redRoseFont.className} w-full h-full py-4`}>
-                {menuList[nextOrPrevIndex(false, id) - 1].name}{" "}
+                {currList[nextOrPrevIndex(false)].name}{" "}
               </button>
             </Link>
             <Link
               className="bg-gray-100 sm:place-self-start w-full h-20 sm:w-60 flex items-center"
               href={`/menu?${
                 category ? "category=" + category + "&" : ""
-              }show=${nextOrPrevIndex(true, id)}`}
+              }show=${currList[nextOrPrevIndex(true)].prodId}`}
               scroll={false}
             >
               <button className={`${redRoseFont.className} w-full h-full py-4`}>
-                {menuList[nextOrPrevIndex(true, id) - 1].name}{" "}
+                {currList[nextOrPrevIndex(true)].name}{" "}
               </button>
               <HiMiniChevronRight size={25} />
             </Link>

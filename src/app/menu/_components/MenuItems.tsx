@@ -2,7 +2,7 @@
 
 import { Category, IMenuItem } from "@/app/_utilities";
 import { useSearchParams } from "next/navigation";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { CategoryIcons } from ".";
@@ -14,6 +14,23 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const currCategory = useSearchParams().get("category") as Category;
   const menuRef = useRef<HTMLElement | null>(null);
   const show = useSearchParams().get("show");
+  const [navBarHeight, setNavBarHeight] = useState(0);
+
+  useEffect(() => {
+    const $navBar = document.querySelector("header");
+    const observer = new ResizeObserver(() => {
+      if ($navBar) {
+        setNavBarHeight($navBar.scrollHeight);
+        console.log($navBar?.scrollHeight);
+        console.log(navBarHeight);
+      }
+    });
+    if ($navBar) observer.observe($navBar);
+    return () => {
+      observer.disconnect();
+      console.log("Disconnecting");
+    };
+  }, []);
 
   const upperCaseFirst = (category: Category) => {
     if (category) return category.charAt(0).toUpperCase() + category.slice(1);
@@ -22,9 +39,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const mapMenu = (category: Category, index: number) => {
     return (
       <div key={index} className="flex flex-col">
-        <span
-          className={`${redRoseFont.className} text-5xl text-center underline`}
-        >
+        <span className={`${redRoseFont.className} text-5xl text-center`}>
           {upperCaseFirst(category)}
         </span>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
@@ -103,7 +118,10 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
 
   return (
     <section ref={menuRef} className="mx-2 sm:mx-5 min-h-screen">
-      <div className="grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-[72px] sm:top-20 z-10 bg-white shadow-md duration-200 mb-24">
+      <div
+        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-[72px] sm:top-[${navBarHeight}px] z-10 bg-white shadow-md duration-200 mb-24`}
+        style={{ top: navBarHeight }}
+      >
         {categories.map(mapCategoryButtons)}
       </div>
       <div

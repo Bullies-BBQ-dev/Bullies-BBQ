@@ -491,8 +491,8 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 20,
-    name: "The Chicken",
-    price: 29.99,
+    name: "Fries",
+    price: 4.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
@@ -500,11 +500,11 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 21,
-    name: "The Chicken",
+    name: "Test Sandwich",
     price: 29.99,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "beer",
+    category: "sandwiches",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
   },
 ];
