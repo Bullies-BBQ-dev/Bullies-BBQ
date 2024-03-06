@@ -267,7 +267,7 @@ export function MobileForm() {
                       )}
                     </div>
                   </div>
-                  <div className="w-1/2 flex justify-end pb-4">
+                  <div className="w-[200px] mx-auto flex justify-end pb-4">
                     <button
                       type="submit"
                       value="Send"
