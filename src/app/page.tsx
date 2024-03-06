@@ -49,18 +49,19 @@ export default function Home() {
                 redRoseFont.className + " text-2xl sm:text-3xl text-center"
               }
             >
-              It's not just food its a way of life!
+              It&apos;s not just food its a way of life!
             </p>
             <div className="grid text-center text-base gap-4">
               <p>
-                Only the Freshest Lean Pork is "Slow-Smoked" over Hickory and
-                Mesquite woods. Bullies Ribs smoke for up to 6 hours and pork
-                butt and briskets up to 14 hours in our large capacity smoker.
+                Only the Freshest Lean Pork is &quot;Slow-Smoked&quot; over
+                Hickory and Mesquite woods. Bullies Ribs smoke for up to 6 hours
+                and pork butt and briskets up to 14 hours in our large capacity
+                smoker.
               </p>
               <p>
                 Chef Bob Sutton is famous for his South Carolina Pulled Pork.
-                Served up dinner style or on a sandwich. Don't forget to add a
-                couple of "bones" of pure Memphis heaven.
+                Served up dinner style or on a sandwich. Don&apos;t forget to
+                add a couple of &quot;bones&quot; of pure Memphis heaven.
               </p>
             </div>
           </div>{" "}
@@ -102,8 +103,8 @@ export default function Home() {
               </p>
 
               <p>
-                Located 6/10's of a mile WEST of the Palmetto Dunes Entrance on
-                Hwy 278, Turn at the Red Roof Inn.
+                Located 6/10&apos;s of a mile WEST of the Palmetto Dunes
+                Entrance on Hwy 278, Turn at the Red Roof Inn.
               </p>
               <div className="py-2.5">
                 <button

@@ -22,9 +22,9 @@ export type Category =
   | null;
 
 export type CateringCategory =
-  | "ALA Carte & by the Pound"
-  | "Family Dinners to Go"
-  | "Sauces & Rub"
+  | "ALA Carte & by Pound"
+  | "Family Dinners"
+  | "Sauces & Rubs"
   | null;
 
 export interface IMenuItem {
