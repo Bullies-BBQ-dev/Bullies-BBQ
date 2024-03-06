@@ -11,6 +11,9 @@ const config: Config = {
       fontSize: {
         xxs: ".6rem",
       },
+      aspectRatio: {
+        "16/12": "16 / 12",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

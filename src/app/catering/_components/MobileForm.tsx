@@ -102,8 +102,8 @@ export function MobileForm() {
       >
         <div className="">
           <div className="flex w-full justify-center flex-col">
-            <div className="sticky top-[72px] bg-black/30 max-h-screen min-w-screen p-10 overflow-y-scroll">
-              <div className="w-full px-4 bg-white rounded-lg">
+            <div className="sticky top-[72px]  max-h-screen min-w-screen p-10 overflow-y-scroll">
+              <div className="w-full px-4 bg-white rounded-lg shadow-gray-800 shadow-2xl">
                 <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                   Catering Inquiry
                 </h3>
@@ -267,7 +267,7 @@ export function MobileForm() {
                       )}
                     </div>
                   </div>
-                  <div className="w-1/2 flex justify-end pb-4">
+                  <div className="w-[200px] mx-auto flex justify-end pb-4">
                     <button
                       type="submit"
                       value="Send"

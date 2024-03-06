@@ -23,7 +23,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         >
           {category}
         </span>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
           {menuList
             .filter((menuIem) => menuIem.category === category)
             .map(mapMenuItems)}

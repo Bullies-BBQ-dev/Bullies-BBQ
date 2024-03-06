@@ -83,7 +83,7 @@ export function CateringForm() {
           className="flex flex-col w-full mb-16 lg:mb-30 "
         >
           <div className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/2 lg:pr-2">
+            <div className="w-full">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
@@ -92,7 +92,9 @@ export function CateringForm() {
                 className={`mb-4 p-2 w-full focus:outline-red-800 border`}
               />
             </div>
-            <div className="w-full lg:w-1/2 lg:pl-2">
+          </div>
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
