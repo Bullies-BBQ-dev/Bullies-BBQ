@@ -17,7 +17,7 @@ export type Category =
   | "Dinners"
   | "Sides"
   | "Desserts"
-  | "Non-Alcoholic"
+  | "Sauces"
   | "Beer"
   | null;
 
@@ -28,6 +28,7 @@ export type CateringCategory =
   | null;
 
 export interface IMenuItem {
+  prodId: number;
   name: string;
   price: number;
   description: string;
@@ -46,13 +47,32 @@ export enum EMapHrefToTitle {
   "Catering" = "/catering",
   "About" = "/about",
   "Contact" = "/contact",
-  "Shop" = "/shop",
+  "Sauces" = "/sauces",
   "Home" = "/",
 }
 
-export type Page = "Order Now" | "Menu" | "Catering" | "Home" | "About";
+export type Page =
+  | "Order Now"
+  | "Menu"
+  | "Catering"
+  | "Home"
+  | "About"
+  | "Sauces";
 
 export type PopupProps = {
   isOpen: boolean;
   onClose: () => void;
 };
+
+export type Sauce =
+  | "Texas Sweet"
+  | "Slow Burn"
+  | "Original Mild Herb"
+  | "Carolina Mustard"
+  | "Carolina Vinegar";
+
+export interface ISauce {
+  name: Sauce;
+  description: string;
+  heat: 0 | 1 | 2;
+}

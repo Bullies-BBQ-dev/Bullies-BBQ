@@ -6,9 +6,15 @@ import { useState, useEffect } from "react";
 import { EMapHrefToTitle, Page } from "../_utilities";
 import { pageNames } from "../_utilities";
 import { GrMenu, GrClose } from "react-icons/gr";
+import { Red_Rose } from "next/font/google";
+import { NextFont } from "next/dist/compiled/@next/font";
 import { PromoBanner } from "./PromoBanner";
 
-export function NavBar() {
+interface NavBarProps {
+  redRoseFont: NextFont;
+}
+
+export function NavBar({ redRoseFont }: NavBarProps) {
   const [isScrolledToTop, setIsScrolledToTop] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathName = usePathname();
@@ -85,7 +91,7 @@ export function NavBar() {
     <header className="w-full fixed z-20 ">
       <PromoBanner />
       <nav
-        className={`flex justify-center items-center ease-in duration-100 text-lg ${
+        className={`flex justify-center items-center ease-in duration-100 text-lg px-6 ${
           isScrolledToTop
             ? "text-white ease-out duration-300"
             : " bg-white text-black hover:duration-100 shadow-md"
@@ -93,11 +99,11 @@ export function NavBar() {
       >
         <Link
           href={"/"}
-          className={`hidden absolute h-20 lg:left-1 xl:left-4 2xl:left-12 hover:scale-110 animate-fade-in duration-200 ${
+          className={`hidden w-52 mr-auto h-20 hover:scale-125 animate-fade-in duration-200 ${
             isScrolledToTop
               ? pathName === "/"
                 ? "hidden"
-                : "lg:flex scale-125"
+                : "lg:flex scale-110"
               : "lg:flex "
           }`}
         >
@@ -106,6 +112,26 @@ export function NavBar() {
         <div className="hidden sm:grid grid-cols-5 place-items-center xl:w-full xl:max-w-screen-lg  gap-0 md:gap-5 lg:gap-10 xl:gap-15 duration-300">
           {pageNames.map(mapNavLinks)}
         </div>
+        <Link
+          href={EMapHrefToTitle["Order Now"]}
+          className={`hidden w-52 ml-auto py-2 items-center justify-center h-20 hover:scale-110 animate-fade-in duration-200 ${
+            isScrolledToTop
+              ? pathName === "/"
+                ? "hidden"
+                : "lg:flex"
+              : "lg:flex "
+          }`}
+          target="_blank"
+        >
+          <button
+            className={
+              redRoseFont.className +
+              " w-52 py-4 px-8 max-w-fit bg-red-800 border-4 border-red-800 text-white text-2xl rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
+            }
+          >
+            Order Now
+          </button>
+        </Link>
         <div className="sm:hidden flex justify-between items-center w-full">
           <img
             src="/Bullies-BBQ-Name.png"
