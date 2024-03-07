@@ -1,13 +1,10 @@
 export function HomePageMenuItems() {
   const menuItems = [
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022462_1683134550.jpg?size=medium",
+    "/chicken-cole-slaw-dinner.png",
+    "/chicken-macaroni-dinner.png",
+    "/ribs.png",
     "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/3/item-800000001534426493_1683064245.jpg?size=medium",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022464_1683134927.jpg?size=medium",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022456_1685390999.jpg?size=medium",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022156_1683221729.jpg?size=medium",
     "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022162_1683136793.jpg?size=medium",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
     "https://destination-bbq.com/wp-content/uploads/2015/04/Full-Slab-Dinner-Patty-Ricalton-1024x768.jpg.webp",
   ];
   const mapMenuItems = (menuItem: string) => {

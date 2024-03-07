@@ -126,7 +126,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
           <button
             className={
               redRoseFont.className +
-              " w-52 py-4 px-8 max-w-fit bg-red-800 border-4 border-red-800 text-white text-2xl rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
+              " w-52 py-3 px-8 max-w-fit bg-red-800 border-[1px] border-red-800 text-white text-2xl rounded duration-300 tracking-wide"
             }
           >
             Order Now
