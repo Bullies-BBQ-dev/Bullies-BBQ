@@ -91,7 +91,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "This smoked 1/2 chicken is Juicy, Delicious, and simply can't be beat.",
     category: "ALA Carte & by Pound",
-    img: "/catering/1:2-smoked-chicken.jpeg",
+    img: "/catering/half-smoked-chicken.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-smoked-chicken_0cbfdfe1-1aa0-4951-9d90-b18cfbc2a0c7",
   },
   {
