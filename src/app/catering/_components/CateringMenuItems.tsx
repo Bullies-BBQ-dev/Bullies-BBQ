@@ -42,12 +42,13 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
           onClick={() => handleItemClick(menuItem)}
         >
           <div className="flex flex-col">
-            {" "}
             <div className="flex justify-center w-full">
-              <img
+              <Image
                 src={menuItem.img}
                 alt={menuItem.name}
-                className="object-fit rounded-t-lg max-h-content  aspect-square"
+                width={450}
+                height={450}
+                className="object-fit rounded-t-lg   aspect-square"
               />
             </div>
             <div className="flex flex-col justify-between h-full">

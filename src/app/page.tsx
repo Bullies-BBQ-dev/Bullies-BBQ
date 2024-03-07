@@ -1,11 +1,10 @@
-import { HomePageMenuItems, NavBar, Banner } from "./_components";
+import { HomePageMenuItems, Banner } from "./_components";
+import { StoreStatus } from "./_components/StoreStatus";
 import { redRoseFont } from "./layout";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      {/* <NavBar /> */}
-
       <Banner
         backgroundURL={
           "https://destination-bbq.com/wp-content/uploads/2015/04/Bullies-Interior-1024x576.jpg.webp"
@@ -22,6 +21,7 @@ export default function Home() {
             >
               Barbecue in <br /> Hilton Head
             </span>
+
             <button
               className={
                 redRoseFont.className +
@@ -65,7 +65,7 @@ export default function Home() {
               </p>
             </div>
           </div>{" "}
-          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px]">
+          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px] ">
             <img
               className="object-fill"
               src="/outside-view.png"
@@ -121,6 +121,7 @@ export default function Home() {
               className={`${redRoseFont.className} flex flex-col gap-4 text-base`}
             >
               <h3 className="text-3xl text-red-800">Hours</h3>
+              <StoreStatus />
               <p>
                 Monday - Saturday:
                 <br />
