@@ -14,7 +14,7 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
         backgroundImage: `url("${backgroundURL}")`,
         backgroundSize: "cover",
         maxHeight: "750px",
-        minHeight: "400px",
+        minHeight: "450px",
       }}
     >
       <div className="bg-black/70 w-full h-full grid place-content-center select-none">
@@ -25,7 +25,7 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
             {title}
           </span>
         ) : (
-          <div className="animate-fade-in">{children}</div>
+          <div className="animate-fade-in px-8">{children}</div>
         )}
       </div>
     </div>

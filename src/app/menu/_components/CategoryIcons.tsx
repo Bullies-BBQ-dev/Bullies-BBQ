@@ -12,17 +12,17 @@ import { IoBeer } from "react-icons/io5";
 export function CategoryIcons({ category }: { category: Category }) {
   // const [currentCategory, setCurrentCategory] = useState<Category>(null);
   switch (category) {
-    case "Sandwiches":
+    case "sandwiches":
       return <FaBurger className="sm:hidden" size={35}></FaBurger>;
-    case "Dinners":
+    case "dinners":
       return <GiHotMeal className="sm:hidden" size={35}></GiHotMeal>;
-    case "Sides":
+    case "sides":
       return <GiFrenchFries className="sm:hidden" size={35}></GiFrenchFries>;
-    case "Desserts":
+    case "desserts":
       return <GiCupcake className="sm:hidden" size={35}></GiCupcake>;
-    case "Non-Alcoholic":
+    case "sauces":
       return <BsCupStraw className="sm:hidden" size={35}></BsCupStraw>;
-    case "Beer":
+    case "beer":
       return <IoBeer className="sm:hidden" size={35}></IoBeer>;
     default:
       return <></>;

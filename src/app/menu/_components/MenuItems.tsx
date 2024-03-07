@@ -19,17 +19,10 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   useEffect(() => {
     const $navBar = document.querySelector("header");
     const observer = new ResizeObserver(() => {
-      if ($navBar) {
-        setNavBarHeight($navBar.scrollHeight);
-        console.log($navBar?.scrollHeight);
-        console.log(navBarHeight);
-      }
+      if ($navBar) setNavBarHeight($navBar.scrollHeight);
     });
     if ($navBar) observer.observe($navBar);
-    return () => {
-      observer.disconnect();
-      console.log("Disconnecting");
-    };
+    return () => observer.disconnect();
   }, []);
 
   const upperCaseFirst = (category: Category) => {
@@ -42,7 +35,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         <span className={`${redRoseFont.className} text-5xl text-center`}>
           {upperCaseFirst(category)}
         </span>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
           {menuList
             .filter((menuIem) => menuIem.category === category)
             .map(mapMenuItems)}
@@ -81,6 +74,9 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   };
 
   const mapCategoryButtons = (category: Category, index: number) => {
+    const categoryClasses = `relative py-1 rounded hover:bg-red-800/[0.85] duration-200 bg-red-800 text-white w-full grid place-items-center ${
+      currCategory === category ? " outline-4 outline outline-yellow-500" : ""
+    }`;
     return (
       <Link
         href={`/menu${
@@ -91,11 +87,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         scroll={false}
       >
         <button
-          className={`w-full py-1 rounded border-4 border-red-800 relative duration-300 hover:bg-white hover:text-red-800 grid place-items-center ${
-            category === currCategory
-              ? "bg-white text-red-800"
-              : "bg-red-800 text-white"
-          }`}
+          className={categoryClasses}
           onClick={() => {
             // if (category === currCategory) setcurrCategory(null);
             // else setcurrCategory(category);
@@ -119,13 +111,13 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   return (
     <section ref={menuRef} className="mx-2 sm:mx-5 min-h-screen">
       <div
-        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky top-[72px] sm:top-[${navBarHeight}px] z-10 bg-white shadow-md duration-200 mb-24`}
+        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md`}
         style={{ top: navBarHeight }}
       >
         {categories.map(mapCategoryButtons)}
       </div>
       <div
-        className="relative animate-fade-left-right "
+        className="relative animate-fade-left-right mt-24"
         style={{ gridColumnGap: "4%" }}
         key={currCategory}
       >

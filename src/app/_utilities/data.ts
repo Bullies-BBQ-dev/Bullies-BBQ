@@ -2,6 +2,7 @@ import {
   Category,
   CateringCategory,
   CateringItems,
+  ICateringItems,
   IMenuItem,
   ISauce,
   Page,
@@ -59,7 +60,7 @@ export const cateringCategories: CateringCategory[] = [
   "Sauces & Rubs",
 ];
 
-export const cateringMenuList: IMenuItem[] = [
+export const cateringMenuList: ICateringItems[] = [
   {
     name: "1-pound Smoked Pulled Pork",
     price: 17.0,
@@ -500,11 +501,20 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 21,
-    name: "Test Sandwich",
-    price: 29.99,
+    name: "Brisket Chili",
+    price: 5.5,
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
-    category: "sandwiches",
+    category: "sides",
+    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022456_1685390999.jpg?size=medium",
+  },
+  {
+    prodId: 22,
+    name: "Brunswick Stew",
+    price: 5.5,
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+    category: "sides",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
   },
 ];

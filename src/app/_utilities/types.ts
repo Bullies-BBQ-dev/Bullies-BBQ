@@ -18,8 +18,7 @@ export type Category =
   | "sides"
   | "desserts"
   | "sauces"
-  | "beer"
-  | null;
+  | "beer";
 
 export type CateringCategory =
   | "ALA Carte & by Pound"
@@ -27,18 +26,25 @@ export type CateringCategory =
   | "Sauces & Rubs"
   | null;
 
-export interface IMenuItem {
-  prodId: number;
+export interface IFoodItem {
   name: string;
   price: number;
   description: string;
-  category: Category | CateringCategory;
   img: string;
   url?: string;
 }
 
-export interface CateringItems extends IMenuItem {
+export interface IMenuItem extends IFoodItem {
+  prodId: number;
+  category: Category;
+}
+
+export interface CateringItems extends IFoodItem {
+  category: Category | CateringCategory;
   quantity: number;
+}
+export interface ICateringItems extends IFoodItem {
+  category: Category | CateringCategory;
 }
 
 export enum EMapHrefToTitle {
