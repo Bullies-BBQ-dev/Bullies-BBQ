@@ -80,7 +80,7 @@ export function MenuItemDetails({
               scroll={false}
               className="p-1 place-self-end self-start"
             >
-              <button className="p-2 hover:text-red-800 hover:bg-gray-300 duration-150 rounded">
+              <button className="p-2 hover:bg-gray-300 duration-150 rounded">
                 <GrClose size={40} />
               </button>
             </Link>
@@ -148,7 +148,11 @@ export function MenuItemDetails({
             <div className="w-full h-full flex flex-col justify-between">
               <p>{currItem.description}</p>
               <Link
-                href={"https://order.toasttab.com/online/bullies-bbq"}
+                href={
+                  currItem.url
+                    ? currItem.url
+                    : "https://order.toasttab.com/online/bullies-bbq"
+                }
                 target="_blank"
                 className={`h-20 lg:right-1 xl:right-4 2xl:right-12 hover:scale-110 animate-fade-in duration-200 py-3 
             `}

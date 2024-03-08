@@ -328,6 +328,7 @@ export const menuList: IMenuItem[] = [
       "Dive into a brisket sandwich: tender, slow-smoked brisket hugged by a toasted bun. It's a meaty masterpiece, pure and simple.",
     category: "sandwiches",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001534292476_1683832386.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-j-brisket-sandwich-combo-34-lb_a3f3e0a3-dee6-48e1-b78e-6f3b82b5de59",
   },
   {
     prodId: 2,
@@ -337,6 +338,7 @@ export const menuList: IMenuItem[] = [
       "Savor the essence of Southern comfort with a pulled pork sandwich. Tender strands of slow-cooked pork, piled high atop a soft bun. It's a flavor-packed journey to BBQ heaven in every bite.",
     category: "sandwiches",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-j-pulled-pork-sandwich-combo-34-lb_200fdb47-0f2d-4ac3-9ef8-d35043be3901",
   },
   {
     prodId: 3,
@@ -355,6 +357,7 @@ export const menuList: IMenuItem[] = [
       "Enjoy the savory goodness of a pulled pork dinner, featuring tender, succulent pork infused with smoky flavors. It's a meal that's sure to satisfy your cravings for classic barbecue taste.",
     category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022164_1683832820.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-pulled-pork-dinner_0f52cd74-8c4a-4cf0-8d62-052394188357",
   },
   {
     prodId: 5,
@@ -382,6 +385,7 @@ export const menuList: IMenuItem[] = [
       "1/2 Chicken dinner comes with 1 1/2 smoked Chicken and your choice of 2 sides.",
     category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022156_1683221729.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-12-smoked-chicken-dinner_ff2eceb9-6749-4deb-9618-27e8a8c9c175",
   },
   {
     prodId: 8,
@@ -391,6 +395,7 @@ export const menuList: IMenuItem[] = [
       "Indulge in barbecue bliss with a half slab rib dinner, showcasing tender ribs smothered in mouthwatering sauce. It's a finger-licking feast that'll leave you craving more.",
     category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022162_1683136793.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-12-slab-dinner_9cbec28f-ed10-4e29-a1de-a899961f9569",
   },
   {
     prodId: 9,
@@ -400,6 +405,7 @@ export const menuList: IMenuItem[] = [
       "Treat yourself to the ultimate barbecue experience with a full slab rib dinner, featuring a generous portion of fall-off-the-bone ribs. It's a hearty meal that's perfect for satisfying even the heartiest appetites.",
     category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000001525022160_1683130037.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-full-slab-dinner_18725acc-6c85-42f0-bf2c-1075db286ba4",
   },
   {
     prodId: 10,
@@ -417,7 +423,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022192_1683063453.jpg?size=medium",
+    img: "/catering/1-pound-baked-potato-salad.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-baked-potato-salad_b06fab5c-f944-4b6b-8ba8-9d53d461b93b",
   },
   {
     prodId: 12,
@@ -426,7 +433,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022194_1683063468.jpg?size=medium",
+    img: "/catering/1-pound-creamy-cole-slaw.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-creamy-cole-slaw_0ad6b84f-5a91-49b7-a05b-ee729a43ab8f",
   },
   {
     prodId: 13,
@@ -435,7 +443,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022196_1683117385.jpg?size=medium",
+    img: "/catering/1-pound-carolina-cole-slaw.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-carolina-cole-slaw_ca84d06e-c9de-40a1-92a3-5df039b629c3",
   },
   {
     prodId: 14,
@@ -444,7 +453,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/8/item-800000001525022198_1683135224.jpg?size=medium",
+    img: "/catering/1-pound-zesty-3-bean-bake.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-zesty-3-bean-bake_17cb6d73-ff14-48de-bcf0-307094d9fc3d",
   },
   {
     prodId: 15,
@@ -453,7 +463,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/9/item-800000001534426489_1683063283.jpg?size=medium",
+    img: "/catering/collard-greens.jpg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-collard-greens_d0ea0ed9-833e-4870-b600-3b3444bf84c0",
   },
   {
     prodId: 16,
@@ -462,7 +473,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022452_1683135770.jpg?size=medium",
+    img: "/catering/1-pound-mac-&-cheese.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-mac-cheese_ec882917-4b6d-45d0-8135-1797b3098baa",
   },
   {
     prodId: 17,
@@ -471,7 +483,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/3/item-800000001534426493_1683064245.jpg?size=medium",
+    img: "/catering/jalapeno-cheddar-corn-bread.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-of-jalapeno-chedder-corn-bread-3-peices_aa8bc335-4fbf-417b-9763-e3d569af079a",
   },
   {
     prodId: 18,
@@ -480,7 +493,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000002863697770_1687972312.jpg?size=medium",
+    img: "/catering/1-pound-green-beans.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-green-beans_5c982213-12bd-4813-bc27-f7f95b6514ae",
   },
   {
     prodId: 19,
@@ -490,6 +504,7 @@ export const menuList: IMenuItem[] = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "desserts",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/5/item-800000001525022625_1683130949.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-brownie_d8a5ff72-ad8c-4b90-9992-5962451864e8",
   },
   {
     prodId: 20,
@@ -498,7 +513,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
+    img: "/catering/fries.jpg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-fries_c69be82c-4663-4bca-a3b3-3eec27b48ab5",
   },
   {
     prodId: 21,
@@ -507,7 +523,8 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022456_1685390999.jpg?size=medium",
+    img: "/catering/brisket-chili.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-brisket-chili_05746092-498f-4e0f-87df-eb5e4afbb5b8",
   },
   {
     prodId: 22,
@@ -516,6 +533,7 @@ export const menuList: IMenuItem[] = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
     category: "sides",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
+    img: "/catering/brunswick-stew.jpg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-brunswick-stew_51fc829d-84ed-4462-8549-9eced3ef3d83",
   },
 ];

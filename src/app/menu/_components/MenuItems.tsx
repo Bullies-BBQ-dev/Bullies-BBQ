@@ -19,7 +19,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   useEffect(() => {
     const $navBar = document.querySelector("header");
     const observer = new ResizeObserver(() => {
-      if ($navBar) setNavBarHeight($navBar.scrollHeight);
+      if ($navBar) setNavBarHeight($navBar.scrollHeight - 2);
     });
     if ($navBar) observer.observe($navBar);
     return () => observer.disconnect();

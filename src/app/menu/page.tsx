@@ -12,12 +12,7 @@ export default function Menu() {
       //   backgroundSize: "contain",
       // }}
     >
-      <Banner
-        backgroundURL={
-          "https://destination-bbq.com/wp-content/uploads/2015/04/Full-Slab-Dinner-Patty-Ricalton-1024x768.jpg.webp"
-        }
-        title={"Menu"}
-      ></Banner>
+      <Banner backgroundURL={"/banner/menu.jpg"} title={"Menu"}></Banner>
       <MenuItems redRoseFont={redRoseFont} />
     </main>
   );
