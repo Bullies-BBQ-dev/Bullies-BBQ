@@ -67,16 +67,6 @@ export function MobileForm() {
     }
   };
 
-  // function updateQuantity(index: number, quantity: number) {
-  //   const updatedItems = [...selectedItems];
-  //   if (quantity > 0) {
-  //     updatedItems[index].quantity = quantity;
-  //   } else {
-  //     updatedItems.splice(index, 1);
-  //   }
-  //   setSelectedItems(updatedItems);
-  // }
-
   const today = new Date();
   const maxDate = new Date(today.setDate(today.getDate() + 30))
     .toISOString()
