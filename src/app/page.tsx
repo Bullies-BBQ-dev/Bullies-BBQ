@@ -35,53 +35,55 @@ export default function Home() {
       </Banner>
 
       <section className="flex min-w-60 mx-5 flex-col">
-        <div className="flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
-          <div className="flex w-5/6 sm:w-[560px] lg:w-[478px] xl:min-w-[655px] xl:pr-20 pb-10  lg:pr-3 lg:pt-3 xl:py-10 flex-col gap-6 xl:gap-8">
-            <h1
-              className={
-                redRoseFont.className + " text-5xl sm:text-6xl text-center"
-              }
-            >
-              Bullies BBQ
-            </h1>
-            <p
-              className={
-                redRoseFont.className + " text-2xl sm:text-3xl text-center"
-              }
-            >
-              It&apos;s not just food its a way of life!
-            </p>
-            <div className="grid text-center text-base gap-4">
-              <p>
-                Only the Freshest Lean Pork is &quot;Slow-Smoked&quot; over
-                Hickory and Mesquite woods. Bullies Ribs smoke for up to 6 hours
-                and pork butt and briskets up to 14 hours in our large capacity
-                smoker.
-              </p>
-              <p>
-                Chef Bob Sutton is famous for his South Carolina Pulled Pork.
-                Served up dinner style or on a sandwich. Don&apos;t forget to
-                add a couple of &quot;bones&quot; of pure Memphis heaven.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <button
+        <div className="bg-gray-300/[0.70] my-16 w-screen">
+          <div className=" flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
+            <div className="flex w-5/6 sm:w-[560px] lg:w-[478px] xl:min-w-[655px] xl:pr-20 pb-10  lg:pr-3 lg:pt-3 xl:py-10 flex-col gap-6 xl:gap-8">
+              <h1
                 className={
-                  redRoseFont.className +
-                  " text-white border-[1px] border-black bg-red-800 hover:bg-red-800/[0.85] duration-300 mt-2 py-2 px-10 rounded w-60 text-xl tracking-wide active:border-white"
+                  redRoseFont.className + " text-5xl sm:text-6xl text-center"
                 }
               >
-                View Our Menu
-              </button>
+                Bullies BBQ
+              </h1>
+              <p
+                className={
+                  redRoseFont.className + " text-2xl sm:text-3xl text-center"
+                }
+              >
+                It&apos;s not just food its a way of life!
+              </p>
+              <div className="grid text-center text-base gap-4">
+                <p>
+                  Only the Freshest Lean Pork is &quot;Slow-Smoked&quot; over
+                  Hickory and Mesquite woods. Bullies Ribs smoke for up to 6
+                  hours and pork butt and briskets up to 14 hours in our large
+                  capacity smoker.
+                </p>
+                <p>
+                  Chef Bob Sutton is famous for his South Carolina Pulled Pork.
+                  Served up dinner style or on a sandwich. Don&apos;t forget to
+                  add a couple of &quot;bones&quot; of pure Memphis heaven.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <button
+                  className={
+                    redRoseFont.className +
+                    " text-white border-[1px] border-black bg-red-800 hover:bg-red-800/[0.85] duration-300 mt-2 py-2 px-10 rounded w-60 text-xl tracking-wide active:border-white"
+                  }
+                >
+                  View Our Menu
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px]">
-            <img
-              className="object-fill"
-              src="/bullies-bbq-outside-view-1.png"
-              alt="outside view bullies bbq restuarant"
-            />
+            <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px]">
+              <img
+                className="object-fill"
+                src="/bullies-bbq-outside-view-1.png"
+                alt="outside view bullies bbq restuarant"
+              />
+            </div>
           </div>
         </div>
 
