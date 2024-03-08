@@ -32,10 +32,16 @@ export default function Catering() {
                   Parties and more!
                 </p>
               </div>
-              <div
-                className={`text-red-800 text-2xl sm:text-3xl max-w-[420px] sm:w-[455px] sm:max-w-[455px] 2xl:w-full 2xl:max-w-full ${redRoseFont.className}`}
+
+              <p
+                className={`${redRoseFont.className} text-red-800 pb-4 text-3xl sm:text-4xl max-w-[420px] sm:w-[455px] sm:max-w-[455px] 2xl:w-full 2xl:max-w-full `}
               >
-                Please place {""}
+                Click to add items to catering inquiry form
+              </p>
+              <p
+                className={` text-yellow-600 text-xl max-w-[420px] sm:w-[500px] sm:max-w-[500px] 2xl:w-full 2xl:max-w-full `}
+              >
+                *For smaller orders, please place {""}
                 <a
                   href="https://order.toasttab.com/online/bullies-bbq"
                   className="hover:underline hover:underline-offset-[0.4rem] underline underline-offset-[0.4rem] decoration-2 hover:decoration-4"
@@ -51,10 +57,10 @@ export default function Catering() {
                 >
                   (843) 686-7427
                 </a>
-              </div>
-              <p className="font-extrabold py-4 text-lg text-yellow-600">
-                *1 pound serves about 3-5 people <br /> *Click to add item to
-                form
+              </p>
+
+              <p className={` py-4 text-xl text-yellow-600`}>
+                *1 pound serves about 3-5 people
               </p>
             </div>
             <div className="md:min-w-[80px] md:max-w-[880px] lg:flex justify-center items-center hidden pl-8">
@@ -77,10 +83,10 @@ export default function Catering() {
                 <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                   Catering Inquiry
                 </h3>
-                <p className="text-md text-center pb-10 px-4">
-                  *Contact us for catering information we will get back to you
-                  soon, order not confirmed until you receive confirmation
-                  email*
+                <p className="text-md pb-10 px-4">
+                  *Contact us for catering information
+                  <br />
+                  *Order not confirmed until you receive confirmation email
                 </p>
                 <div className="sticky top-0  ">
                   <CateringForm />
