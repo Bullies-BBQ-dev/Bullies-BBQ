@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { useSelectedItemsContext } from "./index";
 import emailjs from "@emailjs/browser";
 import { CiCircleCheck } from "react-icons/ci";
+import { FaTrashAlt, FaMinus, FaPlus } from "react-icons/fa";
 
 export function MobileForm() {
   const [selectedTime, setSelectedTime] = useState("");
@@ -17,6 +18,20 @@ export function MobileForm() {
 
   function toggleForm() {
     setIsOpen(!isOpen);
+  }
+  function updateQuantity(
+    index: number,
+    action: "add" | "subtract" | "delete"
+  ) {
+    const updatedItems = [...selectedItems];
+    if (action === "add") {
+      updatedItems[index].quantity++;
+    } else if (action === "subtract") {
+      if (updatedItems[index].quantity > 1) updatedItems[index].quantity--;
+    } else {
+      updatedItems.splice(index, 1);
+    }
+    setSelectedItems(updatedItems);
   }
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const time = event.target.value;
@@ -51,16 +66,6 @@ export function MobileForm() {
         );
     }
   };
-
-  function updateQuantity(index: number, quantity: number) {
-    const updatedItems = [...selectedItems];
-    if (quantity > 0) {
-      updatedItems[index].quantity = quantity;
-    } else {
-      updatedItems.splice(index, 1);
-    }
-    setSelectedItems(updatedItems);
-  }
 
   const today = new Date();
   const maxDate = new Date(today.setDate(today.getDate() + 30))
@@ -224,20 +229,37 @@ export function MobileForm() {
                               />
                             </div>
                             <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end">
+                              <button
+                                type="button"
+                                className="p-1 h-full border"
+                                onClick={() =>
+                                  updateQuantity(index, "subtract")
+                                }
+                              >
+                                <FaMinus size={20} />{" "}
+                              </button>
                               <input
+                                readOnly
                                 id={`quantity-${index}`}
-                                type="number"
+                                type="text"
                                 name="quantity"
                                 min="0"
                                 value={`${item.quantity}`}
-                                onChange={(e) =>
-                                  updateQuantity(
-                                    index,
-                                    parseInt(e.target.value)
-                                  )
-                                }
-                                className="mb-4 p-2 w-1/2 focus:outline-red-800 border"
+                                className="p-2 w-1/2 focus:outline-red-800 border text-center pointer-events-none"
                               />
+                              <button
+                                type="button"
+                                className="p-1 h-full border"
+                                onClick={() => updateQuantity(index, "add")}
+                              >
+                                <FaPlus size={15} />
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => updateQuantity(index, "delete")}
+                              >
+                                <FaTrashAlt size={15} />
+                              </button>
                             </div>
                             <div className="hidden">
                               <input
@@ -246,12 +268,6 @@ export function MobileForm() {
                                 name="selectedItems"
                                 readOnly
                                 value={`${item.quantity} ${item.name}`}
-                                onChange={(e) =>
-                                  updateQuantity(
-                                    index,
-                                    parseInt(e.target.value)
-                                  )
-                                }
                               />
                             </div>
                           </div>

@@ -34,12 +34,7 @@ export default function Sauces() {
   };
   return (
     <main className="flex min-h-screen flex-col items-center pb-20 ">
-      <Banner
-        backgroundURL={
-          "https://destination-bbq.com/wp-content/uploads/2015/04/Sauces-1024x768.jpg.webp"
-        }
-        title={"Sauces"}
-      />
+      <Banner backgroundURL={"/banner/sauces.jpg"} title={"Sauces"} />
       <div
         className={`${redRoseFont.className} bg-[url('https://static.basicinvite.com/media/bi/33703/woodgrain-cottage-wallpaper-2x.jpg?q=1683830497')]  bg-cover bg-no-repeat	 relative grid md:grid-cols-2 place-items-baseline max-w-screen-lg gap-20 text-3xl text-center border-solid border-4 rounded-2xl py-20 px-16 mt-32 `}
       >

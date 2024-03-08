@@ -4,8 +4,9 @@ import {
   IMenuItem,
   cateringMenuList,
   cateringCategories,
+  ICateringItems,
 } from "@/app/_utilities";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 import { useSelectedItemsContext } from "./index";
@@ -15,9 +16,19 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     useState<CateringCategory>(null);
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
   const menuRef = useRef<HTMLElement | null>(null);
+  const [navBarHeight, setNavBarHeight] = useState(0);
 
-  const mapMenu = (menuItem: IMenuItem, index: number) => {
-    function handleItemClick(menuItem: IMenuItem) {
+  useEffect(() => {
+    const $navBar = document.querySelector("header");
+    const observer = new ResizeObserver(() => {
+      if ($navBar) setNavBarHeight($navBar.scrollHeight);
+    });
+    if ($navBar) observer.observe($navBar);
+    return () => observer.disconnect();
+  }, []);
+
+  const mapMenu = (menuItem: ICateringItems, index: number) => {
+    function handleItemClick(menuItem: ICateringItems) {
       const existingItemIndex = selectedItems.findIndex(
         (item) => item.name === menuItem.name
       );
@@ -101,7 +112,10 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
 
   return (
     <section ref={menuRef} className="min-h-screen">
-      <div className="grid sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10">
+      <div
+        className="grid sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10"
+        style={{ top: navBarHeight }}
+      >
         {cateringCategories.map(mapCategories)}
       </div>
       <div

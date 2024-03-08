@@ -21,14 +21,11 @@ export function NavBar({ redRoseFont }: NavBarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 250) {
-        setIsScrolledToTop(false);
-      } else {
-        setIsScrolledToTop(true);
-      }
+      const isAtTop = window.scrollY <= 250;
+      setIsScrolledToTop(isAtTop);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -91,7 +88,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
     <header className="w-full fixed z-20 ">
       <PromoBanner />
       <nav
-        className={`flex justify-center items-center ease-in duration-100 text-lg px-6 ${
+        className={`flex justify-center items-center ease-in duration-100 text-lg sm:px-6 ${
           isScrolledToTop
             ? "text-white ease-out duration-300"
             : " bg-white text-black hover:duration-100 shadow-md"
@@ -132,12 +129,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             Order Now
           </button>
         </Link>
-        <div className="sm:hidden flex justify-between items-center w-full">
-          <img
-            src="/Bullies-BBQ-Name.png"
-            alt="Bullies-BBQ"
-            className="h-16 ms-2"
-          />
+        <div className="sm:hidden flex flex-row-reverse justify-between items-center w-full">
           <GrMenu
             className={`${
               isScrolledToTop ? "border-2 border-white" : ""
@@ -145,6 +137,15 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             size={45}
             onClick={() => setIsModalOpen(true)}
           />
+          <Link href={"/"}>
+            <img
+              src="/Bullies-BBQ-Name.png"
+              alt="Bullies-BBQ"
+              className={`h-16 ms-2 ${
+                pathName === "/" && isScrolledToTop ? "hidden" : ""
+              }`}
+            />
+          </Link>
         </div>
         {isModalOpen && (
           <div className="fixed z-20 w-screen h-screen bg-black/90 animate-fade-in top-0">
