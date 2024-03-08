@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { HomePageMenuItems, Banner } from "./_components";
 import { StoreStatus } from "./_components/StoreStatus";
 import { redRoseFont } from "./layout";
+import { EMapHrefToTitle } from "./_utilities";
 
 export default function Home() {
   return (
@@ -21,14 +23,16 @@ export default function Home() {
             >
               Barbecue in <br /> Hilton Head
             </span>
-            <button
-              className={
-                redRoseFont.className +
-                " py-3 px-16 max-w-fit bg-red-800 border-[1px] border-red-800 hover:border-white text-white text-2xl tracking-wide rounded duration-300"
-              }
-            >
-              Order Now
-            </button>
+            <Link href={EMapHrefToTitle["Order Now"]} target="_blank">
+              <button
+                className={
+                  redRoseFont.className +
+                  " py-3 px-16 max-w-fit bg-red-800 border-[1px] border-red-800 hover:border-white text-white text-2xl tracking-wide rounded duration-300"
+                }
+              >
+                Order Now
+              </button>
+            </Link>
           </div>
         </div>
       </Banner>
@@ -65,14 +69,16 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex justify-center">
-                <button
-                  className={
-                    redRoseFont.className +
-                    " text-white border-[1px] border-black bg-red-800 hover:bg-red-800/[0.85] duration-300 mt-2 py-2 px-10 rounded w-60 text-xl tracking-wide active:border-white"
-                  }
-                >
-                  View Our Menu
-                </button>
+                <Link href={"/menu"}>
+                  <button
+                    className={
+                      redRoseFont.className +
+                      " text-white border-[1px] border-black bg-red-800 hover:bg-red-800/[0.85] duration-300 mt-2 py-2 px-10 rounded w-60 text-xl tracking-wide active:border-white"
+                    }
+                  >
+                    View Our Menu
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -113,14 +119,19 @@ export default function Home() {
                 Entrance on Hwy 278, Turn at the Red Roof Inn.
               </p>
               <div className="py-2.5">
-                <button
-                  className={
-                    redRoseFont.className +
-                    " py-2 px-10 w-60 bg-red-800 border-black border-[1px] hover:bg-red-800/[0.85] text-white text-xl tracking-wide rounded duration-300 active:border-white"
-                  }
+                <Link
+                  href="https://maps.app.goo.gl/KzRmmANU2esut4J79"
+                  target="_blank"
                 >
-                  Get Directions
-                </button>
+                  <button
+                    className={
+                      redRoseFont.className +
+                      " py-2 px-10 w-60 bg-red-800 border-black border-[1px] hover:bg-red-800/[0.85] text-white text-xl tracking-wide rounded duration-300 active:border-white"
+                    }
+                  >
+                    Get Directions
+                  </button>
+                </Link>
               </div>
             </div>
             <div
