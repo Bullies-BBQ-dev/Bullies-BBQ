@@ -82,3 +82,12 @@ export interface ISauce {
   description: string;
   heat: 0 | 1 | 2;
 }
+
+export type ReviewsProps = {
+  id: number;
+  name: string;
+  stars?: 1 | 2 | 3 | 4 | 5;
+  img: string;
+  date: string;
+  review: string;
+};

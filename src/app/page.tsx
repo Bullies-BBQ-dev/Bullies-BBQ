@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { HomePageMenuItems, Banner } from "./_components";
 import { StoreStatus } from "./_components/StoreStatus";
 import { redRoseFont } from "./layout";
+import { EMapHrefToTitle } from "./_utilities";
 
 export default function Home() {
   return (
@@ -21,63 +23,73 @@ export default function Home() {
             >
               Barbecue in <br /> Hilton Head
             </span>
-
-            <button
-              className={
-                redRoseFont.className +
-                " py-3 px-16 max-w-fit bg-red-800 border-4 border-red-800 text-white text-2xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
-              }
-            >
-              Order Now
-            </button>
+            <Link href={EMapHrefToTitle["Order Now"]} target="_blank">
+              <button
+                className={
+                  redRoseFont.className +
+                  " py-3 px-16 max-w-fit bg-red-800 border-[1px] border-red-800 hover:border-white text-white text-2xl tracking-wide rounded duration-300"
+                }
+              >
+                Order Now
+              </button>
+            </Link>
           </div>
         </div>
       </Banner>
 
       <section className="flex min-w-60 mx-5 flex-col">
-        <div className="flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
-          <div className="flex w-5/6 sm:w-[560px] lg:w-[417px] xl:min-w-[655px] lg:pr-10 xl:pr-20 pb-10 lg:py-10 flex-col gap-6">
-            <h1
-              className={
-                redRoseFont.className + " text-5xl sm:text-6xl text-center"
-              }
-            >
-              Bullies BBQ
-            </h1>
-            <p
-              className={
-                redRoseFont.className + " text-2xl sm:text-3xl text-center"
-              }
-            >
-              It&apos;s not just food its a way of life!
-            </p>
-            <div className="grid text-center text-base gap-4">
-              <p>
-                Only the Freshest Lean Pork is &quot;Slow-Smoked&quot; over
-                Hickory and Mesquite woods. Bullies Ribs smoke for up to 6 hours
-                and pork butt and briskets up to 14 hours in our large capacity
-                smoker.
+        <div className="bg-gray-300/[0.70] my-16 w-screen">
+          <div className=" flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
+            <div className="flex w-5/6 sm:w-[560px] lg:w-[478px] xl:min-w-[655px] xl:pr-20 pb-10  lg:pr-3 lg:pt-3 xl:py-10 flex-col gap-6 xl:gap-8">
+              <h1
+                className={
+                  redRoseFont.className + " text-5xl sm:text-6xl text-center"
+                }
+              >
+                Bullies BBQ
+              </h1>
+              <p
+                className={
+                  redRoseFont.className + " text-2xl sm:text-3xl text-center"
+                }
+              >
+                It&apos;s not just food its a way of life!
               </p>
-              <p>
-                Chef Bob Sutton is famous for his South Carolina Pulled Pork.
-                Served up dinner style or on a sandwich. Don&apos;t forget to
-                add a couple of &quot;bones&quot; of pure Memphis heaven.
-              </p>
+              <div className="grid text-center text-base gap-4">
+                <p>
+                  Only the Freshest Lean Pork is &quot;Slow-Smoked&quot; over
+                  Hickory and Mesquite woods. Bullies Ribs smoke for up to 6
+                  hours and pork butt and briskets up to 14 hours in our large
+                  capacity smoker.
+                </p>
+                <p>
+                  Chef Bob Sutton is famous for his South Carolina Pulled Pork.
+                  Served up dinner style or on a sandwich. Don&apos;t forget to
+                  add a couple of &quot;bones&quot; of pure Memphis heaven.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <Link href={"/menu"}>
+                  <button
+                    className={
+                      redRoseFont.className +
+                      " text-white border-[1px] border-black bg-red-800 hover:bg-red-800/[0.85] duration-300 mt-2 py-2 px-10 rounded w-60 text-xl tracking-wide active:border-white"
+                    }
+                  >
+                    View Our Menu
+                  </button>
+                </Link>
+              </div>
             </div>
-          </div>{" "}
-          <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px] ">
-            <img
-              className="object-fill"
-              src="/outside-view.png"
-              alt="outside view bullies bbq restuarant"
-            />
-          </div>
-        </div>
 
-        <div className="flex justify-center pb-10 sm:pb-20">
-          <button className=" text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white duration-300 py-4 px-2">
-            VIEW OUR MENU
-          </button>
+            <div className="flex justify-center lg:justify-end max-w-[420px] xl:max-w-[520px]">
+              <img
+                className="object-fill"
+                src="/bullies-bbq-outside-view-1.png"
+                alt="outside view bullies bbq restuarant"
+              />
+            </div>
+          </div>
         </div>
 
         <HomePageMenuItems />
@@ -91,7 +103,7 @@ export default function Home() {
         </h2>
 
         <div className="flex flex-col-reverse justify-evenly mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
-          <div className="flex w-1/3 justify-center flex-col pt-10 px-5 w-[310px]">
+          <div className="flex w-1/3 justify-center flex-col pt-10 px-5 max-w-[310px]">
             <div
               className={`${redRoseFont.className} flex flex-col gap-5 sm:gap-6 text-base pb-10`}
             >
@@ -107,14 +119,19 @@ export default function Home() {
                 Entrance on Hwy 278, Turn at the Red Roof Inn.
               </p>
               <div className="py-2.5">
-                <button
-                  className={
-                    redRoseFont.className +
-                    " py-2 px-10 w-56 bg-red-800 border-black border-2 hover:border-red-800 text-white text-1xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
-                  }
+                <Link
+                  href="https://maps.app.goo.gl/KzRmmANU2esut4J79"
+                  target="_blank"
                 >
-                  Get Directions
-                </button>
+                  <button
+                    className={
+                      redRoseFont.className +
+                      " py-2 px-10 w-60 bg-red-800 border-black border-[1px] hover:bg-red-800/[0.85] text-white text-xl tracking-wide rounded duration-300 active:border-white"
+                    }
+                  >
+                    Get Directions
+                  </button>
+                </Link>
               </div>
             </div>
             <div

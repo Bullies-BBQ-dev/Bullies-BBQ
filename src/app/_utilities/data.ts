@@ -6,6 +6,7 @@ import {
   IMenuItem,
   ISauce,
   Page,
+  ReviewsProps,
 } from ".";
 
 export const pageNames: Page[] = [
@@ -535,5 +536,62 @@ export const menuList: IMenuItem[] = [
     category: "sides",
     img: "/catering/brunswick-stew.jpg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brunswick-stew_51fc829d-84ed-4462-8549-9eced3ef3d83",
+  },
+];
+
+export const reviewList: ReviewsProps[] = [
+  {
+    id: 1,
+    name: "Paul K.",
+    stars: 5,
+    img: "https://s3-media0.fl.yelpcdn.com/photo/-vU5d6laigXOgNfxNePf4g/ls.jpg",
+    date: "Jan 1, 2024",
+    review:
+      "One of our favorites in Hilton head. Amazing bbq, great sauces. Exactly what you would expect of great bbq. Ribs are perfect and the staff are very pleasant. Make this a must stop during your visit here. We can't wait to go back! Try the slaw too!!",
+  },
+  {
+    id: 2,
+    name: "Kevin S.",
+    stars: 5,
+    img: "https://s3-media0.fl.yelpcdn.com/assets/public/default_user_avatar_120x120_v2.yji-de626b6fb1609a681724.png",
+    date: "Nov 20, 2023",
+    review:
+      "Great Customer Service, great BBQ Sauce choices and the taste is amazing, the meat was well cooked and tender,I highly recommend this place and looking forward to to eat there again",
+  },
+  {
+    id: 3,
+    name: "Mike B.",
+    stars: 5,
+    img: "https://s3-media0.fl.yelpcdn.com/assets/public/default_user_avatar_120x120_v2.yji-de626b6fb1609a681724.png",
+    date: "Jul 20, 2023",
+    review:
+      "Really good BBQ, pulled pork and brisket sandwiches were tender, flavorful and juicy. Same experience with 1/2 rack of ribs. Solid sides included cole slaw, and potato salad, Mac and cheese was a miss though. They also had Mello Yello fountain soda, that's a throwback worth recognizing.",
+  },
+  {
+    id: 4,
+    stars: 5,
+    img: "https://s3-media0.fl.yelpcdn.com/photo/nCPJL1H_N099vu-IizMqzQ/ls.jpg",
+    name: "Coti H",
+    date: "Jun 10, 2023",
+    review:
+      "I got takeout from Bullies on a whim, after reading some of the reviews. I arrived in time for a late lunch and they were still pretty busy but I had great, kind service.\nOrdered the Pulled Pork Sandwich, a couple of sauces, Mac 'n cheese and the jalapeño cornbread.My favorite part was the cornbread. It was some of the best I've had! The bread was so moist (more like a cake than cornbread) and full of flavor. The jalapeño flavor really came through and it was delicious, especially with a little spread of butter.My least favorite was the Mac n cheese but that was just personal preference. It was more like an Alfredo than a cheese but",
+  },
+  {
+    id: 5,
+    name: "Claire R.",
+    stars: 5,
+    img: "https://s3-media0.fl.yelpcdn.com/photo/UXKZIh6mqxhC22PB4kHF5w/ls.jpg",
+    date: "Jun 5, 2023",
+    review:
+      "I really recommend Bullies. The employees are very kind. The food is some of the best barbecue food I've ever had. I might even say it's better than having a cookout in your backyard!!!. As soon as I walked in the door the smells hit me. I wanted to order everything. They have 6 very different sauces to choose from.The only complaint I have was that the brisket machine was down which prevented me and my family of five from ordering a family meal. If your searching for a place to eat with family and friends for a casual lunch/dinner I would suggest this amazing French bulldog themed restaurant.",
+  },
+  {
+    id: 6,
+    name: "Vanessa O.",
+    stars: 5,
+    img: "https://s3-media0.fl.yelpcdn.com/photo/gYuhZ7geVSpeu-U2nVwgHg/ls.jpg",
+    date: "Nov 19, 2021",
+    review:
+      "We stopped in for lunch takeout. The people were friendly and allowed us time to scope the menu. They have plenty seating areas but we just wanted to head back to hotel.We chose the full slab of ribs (it is a dry rub but there's about five sauces to choose from) with a side of cornbread (3 pieces) and mac and cheese. The mac and cheese was really cheesy and tasty; wish it came with more of a portion as a side. Ribs were delicious, especially with the slow burn sauce. It was hot but after the initial kick, you'd get used to it. Nice little spot not too far from the hotel area.",
   },
 ];
