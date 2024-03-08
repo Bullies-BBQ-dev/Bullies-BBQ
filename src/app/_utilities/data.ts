@@ -65,7 +65,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 17.0,
     description: "1 Pound of Smoked Pulled Pork (Feeds 2-3 People)",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022184_1683832838.jpg?size=medium",
+    img: "/catering/pulled-pork.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-smoked-pulled-pork_18295f17-cb44-41c1-9eb6-796bea157a57",
   },
   {
@@ -73,7 +73,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 10.0,
     description: "1/2 Pound of Smoked Pulled Pork ",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022184_1683832838.jpg?size=medium",
+    img: "/catering/pulled-pork.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12pound-pork_fb7bfb45-af0b-46a9-94ac-e72666bf95e9",
   },
   {
@@ -82,7 +82,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "This smoked whole chicken is Juicy, Delicious, and simply can't be beat.",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000001525022190_1683154136.jpg?size=medium",
+    img: "/catering/1-whole-smoked-chicken.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1-whole-smoked-chicken_414aaa3c-dd0f-4a5a-b947-01845426a445",
   },
   {
@@ -91,7 +91,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "This smoked 1/2 chicken is Juicy, Delicious, and simply can't be beat.",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/8/item-800000001525022188_1683134525.jpg?size=medium",
+    img: "/catering/half-smoked-chicken.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-smoked-chicken_0cbfdfe1-1aa0-4951-9d90-b18cfbc2a0c7",
   },
   {
@@ -100,7 +100,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "Baked Potatoes, sour cream, bacon and chives. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022192_1683063453.jpg?size=medium",
+    img: "/catering/1-pound-baked-potato-salad.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-baked-potato-salad_a6f9fffa-d0f9-46c4-adaf-0144dc00de1e",
   },
   {
@@ -108,7 +108,8 @@ export const cateringMenuList: IMenuItem[] = [
     price: 7.0,
     description: "Traditional Creamy Slaw. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022194_1683063468.jpg?size=medium",
+
+    img: "/catering/1-pound-creamy-cole-slaw.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-creamy-cole-slaw_295dd48d-29f2-4e8c-a2f7-85fd6ec446cb",
   },
   {
@@ -116,7 +117,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 7.0,
     description: "Carolina Vinegar Based Slaw. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022196_1683117385.jpg?size=medium",
+    img: "/catering/1-pound-carolina-cole-slaw.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-carolina-cole-slaw_894fe99a-0ecb-4ddc-94f6-899684f93ea6",
   },
   {
@@ -124,7 +125,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 7.0,
     description: "",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000002863697770_1687972312.jpg?size=medium",
+    img: "/catering/1-pound-green-beans.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-green-beans_af5796fa-0eb9-484d-9a9a-d88344c22563",
   },
   {
@@ -132,7 +133,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 8.0,
     description: "Baked Beans Bullies Style. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/8/item-800000001525022198_1683135224.jpg?size=medium",
+    img: "/catering/1-pound-zesty-3-bean-bake.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-zesty-3-bean-bake_6e856b7d-6fe0-44e1-924d-bc72c0945499",
   },
   {
@@ -140,7 +141,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 8.0,
     description: "Made with Smoked Guda Cheese, and Bacon. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022452_1683135770.jpg?size=medium",
+    img: "/catering/1-pound-mac-&-cheese.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-mac-cheese_117ab635-c87c-4b6d-9de4-5573c9170ba5",
   },
   {
@@ -149,15 +150,15 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "Homemade Chili with Smoked Brisket Burnt Ends paired with fresh Green Peppers, Onions, Diced Tomatoes, and Pinto Beans. Includes 2 pieces of Jalapeno Chedder Cornbread.",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022456_1685390999.jpg?size=medium",
+    img: "/catering/brisket-chili.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-brisket-chili_2c5fb402-ad76-4d3f-b675-99f7cb8a5452",
   },
   {
-    name: "Jalapeno Chedder Corn Bread (12 Pieces)",
+    name: "Jalapeno Cheddar Corn Bread (12 Pieces)",
     price: 12.0,
     description: "Baked fresh with Jalapeno peppers, and Chedder cheese",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/8/item-800000001525022458_1683064207.jpg?size=medium",
+    img: "/catering/jalapeno-cheddar-corn-bread.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-jalapeno-chedder-corn-bread-12-pieces_aea062c2-6cd3-4b62-ae07-0795fcbfd8ab",
   },
   {
@@ -165,7 +166,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 0.75,
     description: "",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022474_1683128209.jpg?size=medium",
+    img: "/catering/dinner-rolls.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-rolls_308028c1-58bc-4785-87b8-825b22418adb",
   },
   {
@@ -173,7 +174,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 4.5,
     description: "",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022474_1683128209.jpg?size=medium",
+    img: "/catering/dinner-rolls.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-rolls-6_9690a642-6a6d-421e-9c60-f2370ce8a361",
   },
   {
@@ -181,7 +182,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 9.0,
     description: "",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022474_1683128209.jpg?size=medium",
+    img: "/catering/dinner-rolls.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-rolls-12_38b3e9e1-5e10-49b4-a47c-7c86294d61bc",
   },
   {
@@ -189,7 +190,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 5.0,
     description: "",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022476_1683128226.jpg?size=medium",
+    img: "/catering/slider-rolls.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-slider-rolls-12_56dc5571-d550-4d87-a34d-b4eac3ec835d",
   },
   {
@@ -197,7 +198,7 @@ export const cateringMenuList: IMenuItem[] = [
     price: 5.0,
     description: "",
     category: "ALA Carte & by Pound",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/7/item-800000001563858267_1683154571.jpg?size=medium",
+    img: "/catering/pickles-1-lb.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-pickles-1-lb_dfbb5523-5dac-46c6-a514-c4cf738e9d01",
   },
   {
@@ -286,7 +287,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "Includes ribs, pulled pork, brisket, pulled chicken, jalapeno cheddar cornbread and your choice of 2 sides.",
     category: "Family Dinners",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000001525022170_1683154103.jpg?size=medium",
+    img: "/catering/family-dinner-1.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-family-dinner-for-23-people_3adfea65-0675-4b01-8bb2-a8406fff7c30",
   },
   {
@@ -295,7 +296,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "Includes ribs, pulled pork, brisket, pulled chicken, jalapeno cheddar cornbread and your choice of 2 sides.",
     category: "Family Dinners",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
+    img: "/catering/family-dinner-2.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-family-dinner-for-46-people_bb9b2696-a340-4368-8948-5fb66a6546da",
   },
   {
@@ -304,7 +305,7 @@ export const cateringMenuList: IMenuItem[] = [
     description:
       "Includes ribs, pulled pork, beef brisket, pulled chicken, jalapeno cheddar cornbread, and your choice of 2 sides.",
     category: "Family Dinners",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022174_1684870092.jpg?size=medium",
+    img: "/catering/family-dinner-2.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-family-dinner-for-810-people_9a42d425-dc25-4020-859a-af1c75898449",
   },
   {
