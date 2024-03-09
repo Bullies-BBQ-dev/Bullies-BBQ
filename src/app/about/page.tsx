@@ -33,7 +33,7 @@ export default function About() {
           <div className="grid grid-cols-2 xl:grid-cols-6 gap-5 sm:gap-8 pb-10 sm:pb-20">
             <div className="flex flex-col items-center col-span-2 pb-5 sm:pb-10">
               <img
-                src="/outside-view.png"
+                src="/bullies-bbq-outside-view-1.png"
                 alt=""
                 className="w-[550px] lg:w-full lg:max-w-[550px] lg:min-w-60 pb-2.5 sm:pb-5 aspect-square object-cover"
               />
