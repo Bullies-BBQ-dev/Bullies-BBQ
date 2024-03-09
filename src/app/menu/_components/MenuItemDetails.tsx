@@ -12,7 +12,7 @@ export interface MenuItemDetailsProps {
   id: number;
   category: Category;
 }
-export function MenuItemDetails({
+export default function MenuItemDetails({
   redRoseFont,
   id,
   category,
