@@ -1,12 +1,16 @@
 import Image from "next/image";
 import { Banner } from "../_components";
-import { redRoseFont } from "../layout";
 import {
   CateringMenuItems,
   CateringForm,
   SelectedItemsProvider,
   MobileForm,
 } from "./_components";
+import { Red_Rose } from "next/font/google";
+const redRoseFont = Red_Rose({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Catering() {
   return (

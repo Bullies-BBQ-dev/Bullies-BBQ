@@ -1,7 +1,10 @@
+import { Red_Rose } from "next/font/google";
 import { Banner } from "../_components";
-import { redRoseFont } from "../layout";
 import { Reviews } from "./_components/Reviews";
-
+const redRoseFont = Red_Rose({
+  weight: "400",
+  subsets: ["latin"],
+});
 export default function About() {
   return (
     <>

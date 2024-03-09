@@ -4,7 +4,7 @@ import "./globals.css";
 import { Footer, NavBar } from "./_components";
 
 const inter = Inter({ subsets: ["latin"] });
-export const redRoseFont = Red_Rose({
+const redRoseFont = Red_Rose({
   weight: "400",
   subsets: ["latin"],
 });

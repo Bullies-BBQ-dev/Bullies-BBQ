@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { EMapHrefToTitle, Page } from "../_utilities";
 import { pageNames } from "../_utilities";
 import { GrMenu, GrClose } from "react-icons/gr";
-import { Red_Rose } from "next/font/google";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { PromoBanner } from "./PromoBanner";
 

@@ -3,7 +3,11 @@ import { BsYelp } from "react-icons/bs";
 import { LuFacebook } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
-import { redRoseFont } from "../layout";
+import { Red_Rose } from "next/font/google";
+const redRoseFont = Red_Rose({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export function Footer() {
   return (
