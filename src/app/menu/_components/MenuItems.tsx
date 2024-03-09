@@ -7,8 +7,12 @@ import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { CategoryIcons } from ".";
 import Link from "next/link";
-import { MenuItemDetails } from "./MenuItemDetails";
+// import { MenuItemDetails } from "./MenuItemDetails";
 import { GrClose } from "react-icons/gr";
+import dynamic from "next/dynamic";
+const MenuItemDetails = dynamic(() => import("./MenuItemDetails"), {
+  ssr: false,
+});
 
 export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const currCategory = useSearchParams().get("category") as Category;
