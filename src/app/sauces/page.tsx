@@ -1,8 +1,12 @@
 import { NextFont } from "next/dist/compiled/@next/font";
 import { ISauce, sauces } from "../_utilities";
-import { redRoseFont } from "../layout";
 import { Banner } from "../_components";
 import { FaPepperHot } from "react-icons/fa";
+import { Red_Rose } from "next/font/google";
+const redRoseFont = Red_Rose({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Sauces() {
   const mapSauces = (sauce: ISauce, index: number) => {
