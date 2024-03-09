@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { HomePageMenuItems, Banner } from "./_components";
 import { StoreStatus } from "./_components/StoreStatus";
-import { redRoseFont } from "./layout";
 import { EMapHrefToTitle } from "./_utilities";
+import { Red_Rose } from "next/font/google";
+const redRoseFont = Red_Rose({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (

@@ -7,12 +7,14 @@ import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { CategoryIcons } from ".";
 import Link from "next/link";
-// import { MenuItemDetails } from "./MenuItemDetails";
 import { GrClose } from "react-icons/gr";
 import dynamic from "next/dynamic";
-const MenuItemDetails = dynamic(() => import("./MenuItemDetails"), {
-  ssr: false,
-});
+const MenuItemDetails = dynamic(
+  () => import("@/app/menu/_components/MenuItemDetails"),
+  {
+    ssr: false,
+  }
+);
 
 export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const currCategory = useSearchParams().get("category") as Category;
@@ -93,9 +95,6 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         <button
           className={categoryClasses}
           onClick={() => {
-            // if (category === currCategory) setcurrCategory(null);
-            // else setcurrCategory(category);
-            // menuRef.current?.scrollTo(0, 0);
             menuRef.current?.scrollIntoView({ behavior: "smooth" });
           }}
         >
