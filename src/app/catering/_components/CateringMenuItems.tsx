@@ -59,7 +59,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
                 alt={menuItem.name}
                 width={450}
                 height={450}
-                className="object-fit rounded-t-lg   aspect-square"
+                className="object-cover rounded-t-lg   aspect-[4/3]"
               />
             </div>
             <div className="flex flex-col justify-between h-full">

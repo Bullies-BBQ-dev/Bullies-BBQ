@@ -191,30 +191,33 @@ export function CateringForm() {
                       className="py-2 w-full border-none bg-inherit select-none focus:outline-none"
                     />
                   </div>
-                  <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end items-center">
-                    <button
-                      type="button"
-                      className="p-1 h-full border"
-                      onClick={() => updateQuantity(index, "subtract")}
-                    >
-                      <FaMinus size={20} />{" "}
-                    </button>
-                    <input
-                      readOnly
-                      id={`quantity-${index}`}
-                      type="text"
-                      name="quantity"
-                      min="0"
-                      value={`${item.quantity}`}
-                      className="p-2 w-1/2 focus:outline-red-800 border text-center pointer-events-none"
-                    />
-                    <button
-                      type="button"
-                      className="p-1 h-full border"
-                      onClick={() => updateQuantity(index, "add")}
-                    >
-                      <FaPlus size={15} />
-                    </button>
+                  <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end items-center gap-2">
+                    <div className="gap-2 flex items-center">
+                      <button
+                        type="button"
+                        className="p-1 h-full "
+                        onClick={() => updateQuantity(index, "subtract")}
+                      >
+                        <FaMinus size={20} />{" "}
+                      </button>
+                      <input
+                        readOnly
+                        id={`quantity-${index}`}
+                        type="text"
+                        name="quantity"
+                        min="0"
+                        value={`${item.quantity}`}
+                        className="p-2 w-1/2 focus:outline-red-800 border text-center pointer-events-none min-w-[2rem]"
+                      />
+                      <button
+                        type="button"
+                        className="p-1 h-full "
+                        onClick={() => updateQuantity(index, "add")}
+                      >
+                        <FaPlus size={15} />
+                      </button>
+                    </div>
+
                     <button
                       type="button"
                       onClick={() => updateQuantity(index, "delete")}
