@@ -4,19 +4,11 @@ export function StoreStatus() {
   const isOpen = () => {
     const now = new Date();
 
-    const timeZone = "America/New_York"; // Set the timezone to Eastern Standard Time (EST)
-
     const openTime = new Date();
-    openTime.setHours(11, 0, 0); // Set opening time to 11am
-    openTime.toLocaleString("en-US", { timeZone: timeZone });
+    openTime.setHours(7, 0, 0); // Set opening time to 11am
 
     const closeTime = new Date();
-    closeTime.setHours(20, 0, 0); // Set closing time to 8pm
-    closeTime.toLocaleString("en-US", { timeZone: timeZone });
-
-    const currentTime = new Date().toLocaleString("en-US", {
-      timeZone: timeZone,
-    });
+    closeTime.setHours(16, 0, 0); // Set closing time to 8pm
 
     const openingSoonTime = new Date(openTime);
     openingSoonTime.setHours(openTime.getHours() - 1); // Set opening soon time to 1 hour before opening
