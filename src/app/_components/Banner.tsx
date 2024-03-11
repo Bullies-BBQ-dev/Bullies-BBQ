@@ -22,15 +22,18 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
   return (
     <div
       ref={bannerRef}
-      className={" w-full shadow-md aspect-video"}
+      className={" w-full shadow-md aspect-video relative"}
       style={{
-        backgroundImage: `url("${backgroundURL}")`,
-        backgroundSize: "cover",
         maxHeight: "750px",
         minHeight: "450px",
       }}
     >
-      <div className="bg-black/70 w-full h-full grid place-content-center select-none relative">
+      <img
+        src={backgroundURL}
+        alt="banner-image"
+        className="object-cover w-full h-full"
+      />
+      <div className="bg-black/70 w-full h-full grid place-content-center select-none absolute inset-0">
         {title ? (
           <span
             className={`${sancreek.className} text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl animate-fade-in`}
