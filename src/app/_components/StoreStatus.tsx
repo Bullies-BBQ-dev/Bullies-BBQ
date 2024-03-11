@@ -3,30 +3,33 @@ import { FaCircle } from "react-icons/fa";
 
 export function StoreStatus() {
   const isOpen = () => {
-    const now = new Date();
-
+    // const now = new Date().getTime();
+    // const openTime = new Date();
+    // openTime.setUTCHours(18, 0, 0); // Set opening time to 11am UTC
+    // const closeTime = new Date();
+    // closeTime.setUTCHours(27, 0, 0); // Set closing time to 8pm UTC
+    const now = new Date().getTime();
     const openTime = new Date();
-    openTime.setHours(11, 0, 0); // Set opening time to 11am
-
+    openTime.setUTCHours(15, 0, 0); // Set opening time to 11am UTC
     const closeTime = new Date();
-    closeTime.setHours(20, 0, 0); // Set closing time to 8pm
+    closeTime.setUTCHours(24, 0, 0); // Set closing time to 8pm UTC
 
-    const openingSoonTime = new Date(openTime.getTime() - 3600 * 1000);
-    const closingSoonTime = new Date(closeTime.getTime() - 3600 * 1000); // Set closing soon time to 1 hour before closing
-    console.log("close-time:", closeTime, "open-time:", openTime, "now:", now);
-    if (now >= openTime && now <= closeTime) {
-      if (now >= closingSoonTime) {
+    console.log("openTime", openTime);
+    console.log("closeTime", closeTime);
+    console.log("now", now);
+    if (now >= openTime.getTime() && now <= closeTime.getTime()) {
+      if (now >= closeTime.getTime() - 3600 * 1000) {
         return "closingSoon";
       } else {
         return "open";
       }
-    } else if (now >= openingSoonTime) {
+    } else if (now >= openTime.getTime() - 3600 * 1000) {
       return "openingSoon";
     } else {
       return "closed";
     }
   };
-
+  console.log(isOpen());
   return (
     <>
       {isOpen() === "open" ? (
