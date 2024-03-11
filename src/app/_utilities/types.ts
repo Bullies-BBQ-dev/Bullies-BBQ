@@ -72,10 +72,10 @@ export type PopupProps = {
 
 export type Sauce =
   | "Texas Sweet"
-  | "Slow Burn"
   | "Original Mild Herb"
   | "Carolina Mustard"
-  | "Carolina Vinegar";
+  | "Carolina Vinegar"
+  | "Slow Burn";
 
 export interface ISauce {
   name: Sauce;
