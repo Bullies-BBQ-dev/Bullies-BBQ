@@ -16,8 +16,11 @@ export default function Home() {
           "https://destination-bbq.com/wp-content/uploads/2015/04/Bullies-Interior-1024x576.jpg.webp"
         }
       >
-        <div className="grid md:grid-cols-2 place-content-center gap-1 sm:gap-4 md:gap-16 lg:gap-24">
-          <img className="" src="/Bullies-BBQ-Name.png" alt="" />
+        <div className="grid sm:grid-cols-2 place-content-center gap-1 sm:gap-4 md:gap-16 lg:gap-24">
+          <div className="pt-14 sm:pt-0 max-w-[360px] sm:max-w-full">
+            <img className="" src="/Bullies-BBQ-Name.png" alt="" />
+          </div>
+
           <div className="flex flex-col justify-center items-center md:items-start">
             <span
               className={
@@ -47,7 +50,8 @@ export default function Home() {
             <div className="flex w-5/6 sm:w-[560px] lg:w-[478px] xl:min-w-[655px] xl:pr-20 pb-10  lg:pr-3 lg:pt-3 xl:py-10 flex-col gap-6 xl:gap-8">
               <h1
                 className={
-                  redRoseFont.className + " text-5xl sm:text-6xl text-center"
+                  redRoseFont.className +
+                  " text-5xl sm:text-6xl text-center text-black sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600"
                 }
               >
                 Bullies BBQ
