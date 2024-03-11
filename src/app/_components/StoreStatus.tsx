@@ -5,10 +5,10 @@ export function StoreStatus() {
     const now = new Date();
 
     const openTime = new Date();
-    openTime.setHours(7, 0, 0); // Set opening time to 11am
+    openTime.setHours(15, 0, 0); // Set opening time to 11am
 
     const closeTime = new Date();
-    closeTime.setHours(16, 0, 0); // Set closing time to 8pm
+    closeTime.setHours(24, 0, 0); // Set closing time to 8pm
 
     const openingSoonTime = new Date(openTime);
     openingSoonTime.setHours(openTime.getHours() - 1); // Set opening soon time to 1 hour before opening
