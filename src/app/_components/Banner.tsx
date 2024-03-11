@@ -31,11 +31,7 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
       <img
         src={backgroundURL}
         alt="banner-image"
-        className="object-cover w-full"
-        style={{
-          maxHeight: "750px",
-          minHeight: "450px",
-        }}
+        className="object-cover w-full h-full"
       />
       <div className="bg-black/70 w-full h-full grid place-content-center select-none absolute inset-0">
         {title ? (
