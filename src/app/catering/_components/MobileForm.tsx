@@ -228,10 +228,10 @@ export function MobileForm() {
                                 className="py-2 w-full border-none bg-inherit select-none focus:outline-none"
                               />
                             </div>
-                            <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end">
+                            <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end gap-2">
                               <button
                                 type="button"
-                                className="p-1 h-full border"
+                                className="p-1 h-full "
                                 onClick={() =>
                                   updateQuantity(index, "subtract")
                                 }
@@ -245,11 +245,11 @@ export function MobileForm() {
                                 name="quantity"
                                 min="0"
                                 value={`${item.quantity}`}
-                                className="p-2 w-1/2 focus:outline-red-800 border text-center pointer-events-none"
+                                className="p-2 w-1/2 focus:outline-red-800 border text-center pointer-events-none mb-1"
                               />
                               <button
                                 type="button"
-                                className="p-1 h-full border"
+                                className="p-1 h-full "
                                 onClick={() => updateQuantity(index, "add")}
                               >
                                 <FaPlus size={15} />
