@@ -41,7 +41,7 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
           <div className="animate-fade-in px-8">{children}</div>
         )}
         <button
-          className="absolute p-2 bottom-0 place-self-center animate-bounce-slow"
+          className="absolute p-2 bottom-0 place-self-center animate-bounce-slow md:block hidden"
           onClick={handleChevronDownClick}
         >
           <HiOutlineChevronDown className="text-white" size={40} />
