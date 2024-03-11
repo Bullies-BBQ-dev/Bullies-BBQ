@@ -20,7 +20,7 @@ export function PromoBanner() {
               <span>Having a party? Check out our catering menu!</span>
             </div>
           </Link>
-          <div className="bg-yellow-400 absolute right-0 px-4">
+          <div className="bg-yellow-400 absolute right-0 px-2">
             <IoMdClose
               className="text-2xl cursor-pointer"
               onClick={handleClose}
