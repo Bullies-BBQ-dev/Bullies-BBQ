@@ -8,7 +8,7 @@ export function StoreStatus() {
     openTime.setHours(11, 0, 0); // Set opening time to 11am
 
     const closeTime = new Date();
-    closeTime.setHours(20, 0, 0); // Set closing time to 8pm
+    closeTime.setHours(17, 0, 0); // Set closing time to 8pm
 
     const openingSoonTime = new Date(openTime);
     openingSoonTime.setHours(openTime.getHours() - 1); // Set opening soon time to 1 hour before opening
