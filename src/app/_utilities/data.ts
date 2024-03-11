@@ -32,11 +32,7 @@ export const sauces: ISauce[] = [
     description: "Touches of Citrus, Pineapple & Brown Sugar",
     heat: 0,
   },
-  {
-    name: "Slow Burn",
-    description: "Starts out Sweet and has a Slow Heat",
-    heat: 2,
-  },
+  
   {
     name: "Original Mild Herb",
     description: "Vinegar base with Sweet Basil, Oregano & Rosemarry",
@@ -52,6 +48,11 @@ export const sauces: ISauce[] = [
     name: "Carolina Vinegar",
     description: "Classic Carolina Vinegar, Slightly Peppery",
     heat: 1,
+  },
+  {
+    name: "Slow Burn",
+    description: "Starts out Sweet and has a Slow Heat",
+    heat: 2,
   },
 ];
 
