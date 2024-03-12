@@ -173,7 +173,7 @@ export function MobileForm() {
                         type="date"
                         name="date"
                         required
-                        className="mb-4 p-2 w-full focus:outline-red-800 border"
+                        className="mb-4 p-2 w-full focus:outline-red-800 border hover:cursor-pointer"
                         min={minDate}
                         max={maxDate}
                         onChange={(e) => {
@@ -193,7 +193,7 @@ export function MobileForm() {
                         type="time"
                         name="time"
                         required
-                        className="mb-4 p-2 w-full focus:outline-red-800 border"
+                        className="mb-4 p-2 w-full focus:outline-red-800 border hover:cursor-pointer"
                         value={selectedTime}
                         onChange={handleTimeChange}
                         min={minTime}
@@ -291,9 +291,7 @@ export function MobileForm() {
                       type="submit"
                       value="Send"
                       disabled={isSubmitted || total === 0}
-                      className={` px-4 py-1 w-full text-white font-medium bg-red-800  transition ease-in-out
-              rounded border-4 border-red-800 hover:border-4 duration-300 hover:bg-white hover:text-red-800
-                `}
+                      className={` w-60 mx-auto py-2 text-lg bg-red-800 border-black border-[1px] text-white  tracking-wide rounded active:scale-95 hover:scale-105 duration-300 hover:cursor-pointer`}
                     >
                       {isSubmitted ? "Sent!" : "Send Inquiry"}
                     </button>

@@ -16,27 +16,27 @@ export function Footer() {
         <Link
           href="https://www.facebook.com/pages/Bullies-BBQ-Burgers-and-Wings/190373154321712"
           target="_blank"
-          className="p-2"
+          className="flex p-2"
         >
-          <span className="text-amber-400 drop-shadow-md">
-            <LuFacebook size={30} />
+          <span className="text-amber-400 drop-shadow-md hover:scale-90 active:scale-95 duration-300">
+            <LuFacebook size={30} className="" />
           </span>
         </Link>
         <Link
           href="https://www.yelp.com/biz/bullies-bbq-hilton-head-island"
           target="_blank"
-          className="p-2"
+          className="flex p-2"
         >
-          <span className="text-amber-400 drop-shadow-md">
+          <span className="text-amber-400 drop-shadow-md hover:scale-90 active:scale-95 duration-300">
             <BsYelp size={29} />
           </span>
         </Link>
         <Link
           href="https://www.instagram.com/explore/locations/472508119426826/bullies-bbq-hilton-head-island/"
           target="_blank"
-          className="p-2"
+          className="flex p-2"
         >
-          <span className="text-amber-400 drop-shadow-md">
+          <span className="text-amber-400 drop-shadow-md hover:scale-90 active:scale-95 duration-300">
             <FaInstagram size={30} />
           </span>
         </Link>
@@ -46,7 +46,7 @@ export function Footer() {
           <div
             className={
               redRoseFont.className +
-              " flex col-span-3 grid md:grid-cols-4 sm:grid-cols-1 gap-8"
+              " col-span-3 grid md:grid-cols-4 sm:grid-cols-1 gap-8"
             }
           >
             <div className="flex flex-col col-span-2 justify-between h-44 w-72">
