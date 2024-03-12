@@ -65,7 +65,7 @@ export default function MenuItemDetails({
               scroll={false}
               className="p-2 sm:p-1 w-fit h-fit"
             >
-              <button className="bg-red-800 py-1 text-white px-2 sm:px-0 sm:py-2 sm:pr-2 flex rounded items-center">
+              <button className=" flex items-center py-2 pl-2 pr-5 bg-red-800 border-black border-[1px] text-white text-xl tracking-wide rounded active:border-white hover:scale-105 active:scale-95 duration-300">
                 <HiMiniChevronLeft size={35} />
                 <span className="hidden sm:flex">Back to Menu</span>
               </button>
@@ -147,25 +147,25 @@ export default function MenuItemDetails({
             </div>
             <div className="w-full h-full flex flex-col justify-between">
               <p>{currItem.description}</p>
-              <Link
-                href={
-                  currItem.url
-                    ? currItem.url
-                    : "https://order.toasttab.com/online/bullies-bbq"
-                }
-                target="_blank"
-                className={`h-20 lg:right-1 xl:right-4 2xl:right-12 hover:scale-110 animate-fade-in duration-200 py-3 
-            `}
-              >
-                <button
-                  className={
-                    redRoseFont.className +
-                    " py-3 px-16 max-w-fit bg-red-800 border-4 border-red-800 text-white text-2xl tracking-wide rounded hover:outline-8 hover:outline-red-800 hover:bg-white/80 hover:text-red-800 duration-300"
+              <div className="py-3">
+                <Link
+                  href={
+                    currItem.url
+                      ? currItem.url
+                      : "https://order.toasttab.com/online/bullies-bbq"
                   }
+                  target="_blank"
                 >
-                  Order Now
-                </button>
-              </Link>
+                  <button
+                    className={
+                      redRoseFont.className +
+                      "  py-2 px-10 w-60 bg-red-800 border-black border-[1px] text-white text-xl tracking-wide rounded active:border-white hover:scale-105 active:scale-95 duration-300"
+                    }
+                  >
+                    Order Now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
 
