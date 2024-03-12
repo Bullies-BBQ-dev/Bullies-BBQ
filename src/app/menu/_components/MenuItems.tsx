@@ -2,13 +2,15 @@
 
 import { Category, IMenuItem } from "@/app/_utilities";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { menuList, categories } from "@/app/_utilities";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { CategoryIcons } from ".";
 import Link from "next/link";
 import { GrClose } from "react-icons/gr";
 import dynamic from "next/dynamic";
+import { useNavBarHeight } from "@/app/_utilities";
+
 const MenuItemDetails = dynamic(
   () => import("@/app/menu/_components/MenuItemDetails"),
   {
@@ -20,16 +22,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const currCategory = useSearchParams().get("category") as Category;
   const menuRef = useRef<HTMLElement | null>(null);
   const show = useSearchParams().get("show");
-  const [navBarHeight, setNavBarHeight] = useState(0);
-
-  useEffect(() => {
-    const $navBar = document.querySelector("header");
-    const observer = new ResizeObserver(() => {
-      if ($navBar) setNavBarHeight($navBar.scrollHeight - 2);
-    });
-    if ($navBar) observer.observe($navBar);
-    return () => observer.disconnect();
-  }, []);
+  const navBarHeight = useNavBarHeight();
 
   const upperCaseFirst = (category: Category) => {
     if (category) return category.charAt(0).toUpperCase() + category.slice(1);
@@ -121,7 +114,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
       </div>
       <div
         className="relative animate-fade-left-right mt-24"
-        style={{ gridColumnGap: "4%" }}
+        style={{ gridColumnGap: "4%", marginTop: navBarHeight + 5 }}
         key={currCategory}
       >
         {currCategory
@@ -134,36 +127,8 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         <div
           className={`${redRoseFont.className} grid md:grid-cols-2 place-items-baseline max-w-screen-lg gap-20 text-3xl text-center`}
         >
-          <div className="flex flex-col w-full">
-            Texas Sweet
-            <span className="text-red-800 text-2xl">
-              Touches of Citrus, Pineapple & Brown Sugar
-            </span>
-          </div>
-          <div className="flex flex-col w-full">
-            Slow Burn
-            <span className="text-red-800 text-2xl">
-              Starts out Sweet and has a Slow Heat
-            </span>
-          </div>
-          <div className="flex flex-col w-full">
-            Original Mild Herb
-            <span className="text-red-800 text-2xl">
-              Vinegar base with Sweet Basil, Oregano & Rosemarry
-            </span>
-          </div>
-          <div className="flex flex-col w-full">
-            Carolina Mustard
-            <span className="text-red-800 text-2xl">
-              Traditional Vinegar base Mustard Sauce with a Touch of Pepper
-            </span>
-          </div>
-          <div className="flex flex-col w-full col-span-full">
-            Carolina Vinegar
-            <span className="text-red-800 text-2xl">
-              Classic Carolina Vinegar, Slightly Peppery
-            </span>
-          </div>
+          <div className="flex flex-col w-full">Coke</div>
+          <div className="flex flex-col w-full">Coke Zero</div>
         </div>
       )}
       {show && (
