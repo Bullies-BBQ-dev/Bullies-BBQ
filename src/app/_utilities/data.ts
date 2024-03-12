@@ -32,7 +32,7 @@ export const sauces: ISauce[] = [
     description: "Touches of Citrus, Pineapple & Brown Sugar",
     heat: 0,
   },
-  
+
   {
     name: "Original Mild Herb",
     description: "Vinegar base with Sweet Basil, Oregano & Rosemarry",
@@ -594,5 +594,60 @@ export const reviewList: ReviewsProps[] = [
     date: "Nov 19, 2021",
     review:
       "We stopped in for lunch takeout. The people were friendly and allowed us time to scope the menu. They have plenty seating areas but we just wanted to head back to hotel.We chose the full slab of ribs (it is a dry rub but there's about five sauces to choose from) with a side of cornbread (3 pieces) and mac and cheese. The mac and cheese was really cheesy and tasty; wish it came with more of a portion as a side. Ribs were delicious, especially with the slow burn sauce. It was hot but after the initial kick, you'd get used to it. Nice little spot not too far from the hotel area.",
+  },
+];
+
+export const homePageMenuList = [
+  {
+    prodId: 1,
+    name: "1/2 Smoked Chicken Dinner",
+    price: 16.5,
+    description:
+      "1/2 Chicken dinner comes with 1 1/2 smoked Chicken and your choice of 2 sides.",
+    category: "dinners",
+    img: "/chicken-cole-slaw-dinner.png",
+  },
+  {
+    prodId: 2,
+    name: "1/2 Smoked Chicken Dinner",
+    price: 16.5,
+    description:
+      "1/2 Cicken dinner comes with 1 1/2 smoked Chicken and your choice of 2 sides.",
+    category: "dinners",
+    img: "/chicken-macaroni-dinner.png",
+  },
+  {
+    prodId: 3,
+    name: "Full Slab Dinner",
+    price: 33.0,
+    description:
+      "Full Slab dinner comes with 1 Full Slab of dry rubbed St. Louis style Ribs and your choice of 2 sides.",
+    category: "dinners",
+    img: "/ribs.png",
+  },
+  {
+    prodId: 4,
+    name: "Jalapeno Cheddar Corn Bread",
+    price: 4.5,
+    description: "Baked fresh with Jalapenos, and Chedder Cheese",
+    category: "sides",
+    img: "/jalapeno-cheddar-corn-bread.jpeg",
+  },
+  {
+    prodId: 5,
+    name: "Pulled Pork Sandwich",
+    price: 10,
+    description: "Includes your choice of 2 sides and a drink",
+    category: "sandwiches",
+    img: "/pulled-pork-sandwich.jpeg",
+  },
+  {
+    prodId: 6,
+    name: "Full Slab Dinner",
+    price: 33.0,
+    description:
+      "Full Slab dinner comes with 1 Full Slab of dry rubbed St. Louis style Ribs and your choice of 2 sides.",
+    category: "dinners",
+    img: "/chicken-macaroni-dinner.png",
   },
 ];
