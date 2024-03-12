@@ -128,14 +128,8 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             Order Now
           </button>
         </Link>
-        <div className="sm:hidden flex flex-row-reverse justify-between items-center w-full">
-          <GrMenu
-            className={`${
-              isScrolledToTop ? "border-2 border-white" : ""
-            } rounded m-4`}
-            size={45}
-            onClick={() => setIsModalOpen(true)}
-          />
+        <div className="sm:hidden flex flex-row-reverse justify-between items-center w-full p-2">
+          <GrMenu size={45} onClick={() => setIsModalOpen(true)} />
           <Link href={"/"}>
             <img
               src="/Bullies-BBQ-Name.png"

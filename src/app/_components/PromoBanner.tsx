@@ -14,18 +14,17 @@ export function PromoBanner() {
   return (
     <>
       {isOpen && (
-        <div className="w-full bg-yellow-400 flex justify-between  py-1 relative overflow-hidden">
-          <Link href="/catering" className="w-full hover:underline">
-            <div className="w-full flex justify-center ">
-              <span>Having a party? Check out our catering menu!</span>
-            </div>
+        <div className="w-full bg-yellow-400 flex py-1 justify-between relative overflow-hidden">
+          <Link
+            href="/catering"
+            className="hover:underline w-[351px] mx-auto pl-1"
+          >
+            <span>Having a party? Check out our catering menu!</span>
           </Link>
-          <div className="bg-yellow-400 absolute right-0 px-2">
-            <IoMdClose
-              className="text-2xl cursor-pointer"
-              onClick={handleClose}
-            />
-          </div>
+          <IoMdClose
+            className="text-2xl cursor-pointer"
+            onClick={handleClose}
+          />
         </div>
       )}
     </>
