@@ -47,7 +47,7 @@ export default function Home() {
       <section className="flex min-w-60 mx-5 flex-col">
         <div className="bg-gray-300/[0.70] my-16">
           <div className=" flex justify-around xl:justify-evenly items-center lg:items-start mx-auto flex-col lg:flex-row py-10 sm:py-20 w-full sm:w-4/5 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1460px]">
-            <div className="flex w-5/6 sm:w-[560px] lg:w-[478px] xl:min-w-[655px] xl:pr-20 pb-10  lg:pr-3 lg:pt-3 xl:py-10 flex-col gap-6 xl:gap-8">
+            <div className="flex  w-5/6 sm:w-[560px] lg:w-[478px] xl:min-w-[655px] xl:pr-20 pb-10  lg:pr-3 lg:pt-3 xl:py-10 flex-col gap-6 xl:gap-8">
               <h1
                 className={
                   redRoseFont.className + " text-5xl sm:text-6xl text-center"
@@ -109,8 +109,8 @@ export default function Home() {
           Visit Us
         </h2>
 
-        <div className="flex flex-col-reverse justify-evenly mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
-          <div className="flex justify-center flex-col pt-10 px-5 max-w-[310px]">
+        <div className="flex flex-col-reverse justify-between mx-auto lg:flex-row pb-20 pt-10 w-full lg:min-w-[950px] lg:max-w-full xl:max-w-[1640px]">
+          <div className="flex justify-center flex-col pt-10  max-w-[310px]">
             <div
               className={`${redRoseFont.className} flex flex-col gap-5 sm:gap-6 text-base pb-10`}
             >
@@ -159,7 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex w-full lg:mx-w-[650px] xl:max-w-[1140px] lg:w-2/3 lg:pr-5">
+          <div className="flex w-full lg:mx-w-[650px] xl:max-w-[1140px] lg:w-2/3 ">
             <iframe
               className="aspect-video h-full min-h-[545px] lg:min-h-[650px] max-h-[800px]"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.547583284142!2d-80.73426!3d32.173583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc7992c7d5ff67%3A0x2872397f8de93b33!2sBullies%20BBQ!5e0!3m2!1sen!2sus!4v1707822595985!5m2!1sen!2sus"

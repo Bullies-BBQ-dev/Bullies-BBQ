@@ -1,34 +1,30 @@
+import { HomeMenuProps, homePageMenuList } from "../_utilities";
+import Image from "next/image";
 export function HomePageMenuItems() {
-  const menuItems = [
-    "/chicken-cole-slaw-dinner.png",
-    "/chicken-macaroni-dinner.png",
-    "/ribs.png",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/3/item-800000001534426493_1683064245.jpg?size=medium",
-    "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
-    "https://destination-bbq.com/wp-content/uploads/2015/04/Full-Slab-Dinner-Patty-Ricalton-1024x768.jpg.webp",
-  ];
-  const mapMenuItems = (menuItem: string) => {
-    return <HomePageMenuItem menuItem={menuItem} key={menuItem} />;
+  const mapMenuItems = (menuItem: HomeMenuProps) => {
+    return <HomePageMenuItem menuItem={menuItem} key={menuItem.prodId} />;
   };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pb-10 sm:pb-20">
-      {menuItems.map(mapMenuItems)}
+      {homePageMenuList.map(mapMenuItems)}
     </div>
   );
 }
 
-function HomePageMenuItem({ menuItem }: { menuItem: string }) {
+function HomePageMenuItem({ menuItem }: { menuItem: HomeMenuProps }) {
   return (
     <div className="relative">
       <div className="absolute bg-black/70 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 ease-in-out duration-500">
-        <span className="text-white text-5xl text-center w-4/5">
-          Name of this menu item
+        <span className="text-white text-3xl text-center w-4/5 cursor-default">
+          {menuItem.name}
         </span>
       </div>
-      <img
+      <Image
         className="aspect-square w-full object-cover"
-        src={menuItem}
+        width={300}
+        height={300}
+        src={menuItem.img}
         alt={`${menuItem}`}
       />
     </div>

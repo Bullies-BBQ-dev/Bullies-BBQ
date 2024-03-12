@@ -91,3 +91,13 @@ export type ReviewsProps = {
   date: string;
   review: string;
 };
+
+export type HomeMenuProps = {
+  prodId: number;
+  name: string;
+  price: number;
+  description: string;
+  category: string;
+  img: string;
+  url?: string;
+};
