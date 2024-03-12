@@ -110,7 +110,7 @@ export function MobileForm() {
       >
         <div className="">
           <div className="flex w-full justify-center  items-center flex-col">
-            <div className="sticky top-[72px]  max-h-screen min-w-screen px-4 py-10 overflow-y-scroll">
+            <div className="sticky top-[72px]  max-h-screen min-w-screen p-4 pb-10 overflow-y-scroll">
               <div className="w-full px-4 bg-white rounded-lg shadow-gray-800 shadow-2xl">
                 <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                   Catering Inquiry
