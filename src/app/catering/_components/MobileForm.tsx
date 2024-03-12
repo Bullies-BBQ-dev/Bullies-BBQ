@@ -101,13 +101,13 @@ export function MobileForm() {
   return (
     <>
       <div
-        className={`flex lg:hidden xl:hidden fixed top-20 duration-200 z-40 ${
+        className={`flex lg:hidden xl:hidden fixed top-20 right-1 duration-200 z-40 ${
           isOpen ? "" : "translate-y-full"
         }`}
       >
         <div className="">
-          <div className="flex w-full justify-center flex-col">
-            <div className="sticky top-[72px]  max-h-screen min-w-screen p-10 overflow-y-scroll">
+          <div className="flex w-full justify-center  items-center flex-col">
+            <div className="sticky top-[72px]  max-h-screen min-w-screen px-4 py-10 overflow-y-scroll">
               <div className="w-full px-4 bg-white rounded-lg shadow-gray-800 shadow-2xl">
                 <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                   Catering Inquiry
@@ -228,7 +228,7 @@ export function MobileForm() {
                                 className="py-2 w-full border-none bg-inherit select-none focus:outline-none"
                               />
                             </div>
-                            <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end gap-2">
+                            <div className="lg:w-1/2 w-full lg:mr-2 flex justify-end gap-2 ">
                               <button
                                 type="button"
                                 className="p-1 h-full "
@@ -245,7 +245,7 @@ export function MobileForm() {
                                 name="quantity"
                                 min="0"
                                 value={`${item.quantity}`}
-                                className="p-2 w-1/2 focus:outline-red-800 border text-center pointer-events-none mb-1"
+                                className="p-2 w-1/4 focus:outline-red-800 border text-center pointer-events-none mb-2 min-w-[2rem]"
                               />
                               <button
                                 type="button"
