@@ -33,7 +33,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 xl:grid-cols-6 gap-5 sm:gap-8 pb-10 sm:pb-20">
+          <div className="grid grid-cols-2 xl:grid-cols-6 gap-5 sm:gap-8 pb-10">
             <div className="flex flex-col items-center col-span-2 pb-5 sm:pb-10">
               <img
                 src="/bullies-bbq-outside-view-1.png"
@@ -97,7 +97,7 @@ export default function About() {
           </div>
         </section>{" "}
       </main>
-      <div className="flex  bg-yellow-400 ">
+      <div className="flex  bg-yellow-400 mb-20">
         <Reviews />
       </div>
     </>
