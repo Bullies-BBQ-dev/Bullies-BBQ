@@ -3,11 +3,11 @@ import { IoStarSharp } from "react-icons/io5";
 
 export function Reviews() {
   return (
-    <div className="flex flex-nowrap overflow-x-auto px-4 py-4 gap-4 ">
+    <div className="flex flex-nowrap overflow-x-auto px-4 py-10 gap-4 ">
       {reviewList.map((review, index) => (
         <div
           key={review.id}
-          className="flex-shrink-0 border p-4 rounded-xl bg-white shadow-2xl max-w-[400px] md:max-w-[600px] lg:max-w-[700px] "
+          className="flex-shrink-0 border p-4 rounded-xl bg-white shadow-2xl max-w-full md:max-w-[600px] lg:max-w-[700px] "
         >
           <div className="flex justify-between ">
             <div className="flex flex-col gap-4">

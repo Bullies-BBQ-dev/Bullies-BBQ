@@ -57,7 +57,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             className={`aspect-square duration-200 ${
               isScrolledToTop
                 ? " pt-1 h-28"
-                : " h-20 hover:scale-125 hover:translate-y-3"
+                : " h-20 hover:scale-105 active:scale-95 hover:translate-y-3"
             }`}
             src="/Bullies-logo.png"
             alt=""
@@ -95,7 +95,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
       >
         <Link
           href={"/"}
-          className={`hidden w-52 mr-auto h-20 hover:scale-125 animate-fade-in duration-200 ${
+          className={`hidden w-52 mr-auto h-20 hover:scale-105 active:scale-95 animate-fade-in duration-200 ${
             isScrolledToTop
               ? pathName === "/"
                 ? "hidden"
@@ -110,7 +110,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
         </div>
         <Link
           href={EMapHrefToTitle["Order Now"]}
-          className={`hidden w-52 ml-auto py-2 items-center justify-center h-20 hover:scale-110 animate-fade-in duration-200 ${
+          className={`hidden w-52 ml-auto py-2 items-center justify-center h-20 hover:scale-105 active:scale-95 animate-fade-in duration-200 ${
             isScrolledToTop
               ? pathName === "/"
                 ? "hidden"

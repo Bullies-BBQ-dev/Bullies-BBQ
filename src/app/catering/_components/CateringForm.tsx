@@ -252,9 +252,7 @@ export function CateringForm() {
               type="submit"
               value="Send"
               disabled={isSubmitted || selectedItems.length === 0}
-              className={` px-4 py-1 w-full text-white font-medium bg-red-800  transition ease-in-out
-              rounded border-red-800 border-4 hover:border-red-800 duration-300 hover:bg-white hover:text-red-800
-                `}
+              className={` w-60 mx-auto py-2 text-lg bg-red-800 border-black border-[1px] text-white  tracking-wide rounded active:scale-95 hover:scale-105 duration-300 hover:cursor-pointer`}
             >
               {isSubmitted ? "Sent!" : "Send Inquiry"}
             </button>
