@@ -98,7 +98,6 @@ export default function About() {
         </section>{" "}
       </main>
       <div className="flex bg-yellow-400 mb-20">
-        {/* <Reviews /> */}
         <Reviews />
       </div>
     </>
