@@ -6,26 +6,18 @@ import {
   cateringCategories,
   ICateringItems,
 } from "@/app/_utilities";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 import { useSelectedItemsContext } from "./index";
+import { useNavBarHeight } from "@/app/_utilities";
 
 export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const [currentCategory, setCurrentCategory] =
     useState<CateringCategory>(null);
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
   const menuRef = useRef<HTMLElement | null>(null);
-  const [navBarHeight, setNavBarHeight] = useState(0);
-
-  useEffect(() => {
-    const $navBar = document.querySelector("header");
-    const observer = new ResizeObserver(() => {
-      if ($navBar) setNavBarHeight($navBar.scrollHeight);
-    });
-    if ($navBar) observer.observe($navBar);
-    return () => observer.disconnect();
-  }, []);
+  const navBarHeight = useNavBarHeight();
 
   const mapMenu = (menuItem: ICateringItems, index: number) => {
     function handleItemClick(menuItem: ICateringItems) {

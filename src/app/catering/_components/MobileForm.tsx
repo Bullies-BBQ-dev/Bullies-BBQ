@@ -4,6 +4,7 @@ import { useSelectedItemsContext } from "./index";
 import emailjs from "@emailjs/browser";
 import { CiCircleCheck } from "react-icons/ci";
 import { FaTrashAlt, FaMinus, FaPlus } from "react-icons/fa";
+import { useNavBarHeight } from "@/app/_utilities";
 
 export function MobileForm() {
   const [selectedTime, setSelectedTime] = useState("");
@@ -12,6 +13,7 @@ export function MobileForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [total, setTotal] = useState(0);
   const { selectedItems, setSelectedItems } = useSelectedItemsContext();
+  const navBarHeight = useNavBarHeight();
   const form = useRef<HTMLFormElement | null>(null);
   const minTime = "11:30";
   const maxTime = "19:30";
@@ -101,13 +103,14 @@ export function MobileForm() {
   return (
     <>
       <div
-        className={`flex lg:hidden xl:hidden fixed top-20 right-1 duration-200 z-40 ${
+        className={`flex lg:hidden fixed inset-0 duration-200 z-10 ${
           isOpen ? "" : "translate-y-full"
         }`}
+        style={{ top: navBarHeight }}
       >
         <div className="">
           <div className="flex w-full justify-center  items-center flex-col">
-            <div className="sticky top-[72px]  max-h-screen min-w-screen px-4 py-10 overflow-y-scroll">
+            <div className="sticky top-[72px]  max-h-screen min-w-screen p-4 pb-10 overflow-y-scroll">
               <div className="w-full px-4 bg-white rounded-lg shadow-gray-800 shadow-2xl">
                 <h3 className="text-3xl font-bold flex justify-center py-10 text-red-800">
                   Catering Inquiry
@@ -311,7 +314,7 @@ export function MobileForm() {
       </div>
       <button
         onClick={toggleForm}
-        className="px-8 fixed bottom-0 right-4 m-4 p-4 bg-yellow-400/75 border border-black-400 rounded-full shadow-md z-50 block lg:hidden hover:bg-yellow-400/95 duration-100"
+        className="px-8 fixed bottom-0 right-4 m-4 p-4 bg-yellow-400/75 border border-black-400 rounded-full shadow-md z-10 block lg:hidden hover:bg-yellow-400/95 duration-100"
       >
         {isOpen ? "Close Form" : "Open Form"}{" "}
         {!isOpen && total > 0 && (

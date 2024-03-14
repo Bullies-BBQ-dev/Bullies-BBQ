@@ -23,4 +23,7 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .pause {
+    animation-play-state: paused;
+  }
 }

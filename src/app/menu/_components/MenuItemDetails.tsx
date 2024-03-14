@@ -26,7 +26,7 @@ export default function MenuItemDetails({
     dinners: 1,
     sides: 2,
     desserts: 3,
-    sauces: 4,
+    drinks: 4,
     beer: 5,
   };
   const currList = category
@@ -59,7 +59,7 @@ export default function MenuItemDetails({
     >
       <div className="max-h-full max-w-screen-xl bg-white rounded-md grid lg:place-items-center overflow-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 animate-fade-in-200 text-center place-items-center">
-          <div className="col-span-full w-full grid grid-cols-3 lg:mb-6">
+          <div className="col-span-full w-full grid grid-cols-3">
             <Link
               href={`/menu${category ? "?category=" + category : ""}`}
               scroll={false}

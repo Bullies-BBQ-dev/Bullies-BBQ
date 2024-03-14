@@ -25,12 +25,12 @@ const config: Config = {
         "fade-left-right": "leftToRight 0.2s",
         "bounce-slow": "bounceSlow 7s infinite",
         success: "success 4s",
-        slide: "slide 20s linear infinite",
+        "slide-reviews": "slideReviews 65s linear infinite",
       },
       keyframes: {
-        slide: {
-          "0%": { transform: "translateX(-300px)" },
-          "100%": { transform: "translateX(100%)" },
+        slideReviews: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-600%)" },
         },
         success: {
           "0%": { opacity: "0" },

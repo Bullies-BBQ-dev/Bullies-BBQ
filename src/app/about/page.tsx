@@ -97,7 +97,7 @@ export default function About() {
           </div>
         </section>{" "}
       </main>
-      <div className="flex  bg-yellow-400 mb-20">
+      <div className="flex bg-yellow-400  py-10 mb-20">
         <Reviews />
       </div>
     </>
