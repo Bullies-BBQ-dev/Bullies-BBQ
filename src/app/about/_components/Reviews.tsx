@@ -3,13 +3,13 @@ import { IoStarSharp } from "react-icons/io5";
 
 export function Reviews() {
   return (
-    <div className="flex flex-nowrap overflow-x-hidden px-4 py-10 group">
+    <div className="flex flex-nowrap overflow-x-hidden group">
       {[...reviewList, ...reviewList].map((review, index) => (
         <div
           key={index}
-          className="flex-shrink-0 max-w-full md:max-w-[600px] lg:max-w-[700px] group-hover:pause animate-slide-reviews"
+          className="flex-shrink-0 flex max-w-full md:max-w-[600px] lg:max-w-[700px] group-hover:pause animate-slide-reviews"
         >
-          <div className="h-full bg-white m-2 p-4  border rounded-xl shadow-2xl ">
+          <div className="mix-blend-hard-light bg-white m-2 p-4  border rounded-xl shadow-2xl ">
             <div className="flex justify-between">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-row">

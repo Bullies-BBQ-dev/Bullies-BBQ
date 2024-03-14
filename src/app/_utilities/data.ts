@@ -22,7 +22,7 @@ export const categories: Category[] = [
   "dinners",
   "sides",
   "desserts",
-  "sauces",
+  "drinks",
   "beer",
 ];
 
@@ -650,4 +650,39 @@ export const homePageMenuList = [
     category: "dinners",
     img: "/chicken-macaroni-dinner.png",
   },
+];
+
+export const nonAlcoholicDrinks = [
+  "Coke",
+  "Diet Coke",
+  "Coke Zero",
+  "Pibb Extra ",
+  "Barq's Root Beer",
+  "Mellow Yellow",
+  "Sprite",
+  "Minute Maid Lemonade",
+  "Sweet Tea",
+  "Unsweet Tea",
+  "Body Armor Strawberry Banana",
+  "Body Armor Orange Mango",
+  "Body Armor Blackout Berry",
+];
+
+export const beer = [
+  "Budweiser",
+  "Bud Light",
+  "Corona",
+  "Modelo",
+  "Sweetwater",
+  "Michelob Ultra",
+  "Sam Adams",
+  "Heineken",
+  "Beach Bully",
+  "Southern Helles Lager",
+  "Damn Yankee",
+  "Dogfish 90 Minute IPA",
+  "Yuengling Lager",
+  "Pabst Blue Ribbon",
+  "Coor's Lite",
+  "Amstel",
 ];

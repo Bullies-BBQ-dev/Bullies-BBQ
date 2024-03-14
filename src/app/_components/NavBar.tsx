@@ -99,7 +99,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             isScrolledToTop
               ? pathName === "/"
                 ? "hidden"
-                : "lg:flex scale-110"
+                : "lg:flex"
               : "lg:flex "
           }`}
         >

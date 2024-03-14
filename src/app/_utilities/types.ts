@@ -17,7 +17,7 @@ export type Category =
   | "dinners"
   | "sides"
   | "desserts"
-  | "sauces"
+  | "drinks"
   | "beer";
 
 export type CateringCategory =

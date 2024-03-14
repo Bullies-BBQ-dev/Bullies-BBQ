@@ -1,6 +1,6 @@
 "use client";
 
-import { Category, IMenuItem } from "@/app/_utilities";
+import { Category, EMapHrefToTitle, IMenuItem } from "@/app/_utilities";
 import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { menuList, categories } from "@/app/_utilities";
@@ -10,6 +10,7 @@ import Link from "next/link";
 import { GrClose } from "react-icons/gr";
 import dynamic from "next/dynamic";
 import { useNavBarHeight } from "@/app/_utilities";
+import { DrinkMenuItems } from "./DrinkMenuItems";
 
 const MenuItemDetails = dynamic(
   () => import("@/app/menu/_components/MenuItemDetails"),
@@ -23,12 +24,21 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const menuRef = useRef<HTMLElement | null>(null);
   const show = useSearchParams().get("show");
   const navBarHeight = useNavBarHeight();
+  const baseMenuCategories = categories.toSpliced(4);
 
   const upperCaseFirst = (category: Category) => {
     if (category) return category.charAt(0).toUpperCase() + category.slice(1);
   };
 
   const mapMenu = (category: Category, index: number) => {
+    if (category === "drinks" || category === "beer")
+      return (
+        <DrinkMenuItems
+          key={category}
+          isAlcoholic={category === "beer"}
+          redRoseFont={redRoseFont}
+        />
+      );
     return (
       <div key={index} className="flex flex-col">
         <span className={`${redRoseFont.className} text-5xl text-center`}>
@@ -86,7 +96,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         scroll={false}
       >
         <button
-          className={categoryClasses}
+          className={`${categoryClasses}`}
           onClick={() => {
             menuRef.current?.scrollIntoView({ behavior: "smooth" });
           }}
@@ -104,16 +114,48 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
     );
   };
 
+  const mapCategoryButtonsEnd = (category: Category, index: number) => {
+    if (currCategory === category) return;
+    return (
+      <Link
+        href={`/menu${
+          category === currCategory ? "" : "?category=" + category
+        }`}
+        key={index}
+        className={`basis-full grid place-items-center py-2 hover:bg-yellow-400/30 duration-150 px-4 text-red-800 ${
+          (category === "beer" && currCategory === "drinks") ||
+          (category === "drinks" && currCategory === "beer") ||
+          category === "beer"
+            ? ""
+            : "border-r-2"
+        } border-yellow-400`}
+        scroll={false}
+        onClick={() => {
+          menuRef.current?.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        <span className="hidden sm:flex items-center">
+          {upperCaseFirst(category)}
+        </span>
+
+        <CategoryIcons category={category}></CategoryIcons>
+      </Link>
+    );
+  };
+
   return (
-    <section ref={menuRef} className="mx-2 sm:mx-5 min-h-screen">
+    <section
+      ref={menuRef}
+      className="grid min-h-screen max-w-screen-2xl w-full"
+    >
       <div
-        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-1 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md`}
-        style={{ top: navBarHeight }}
+        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md px-2 sm:px-0 mx-2 sm:mx-5`}
+        style={{ top: navBarHeight - 1 }}
       >
         {categories.map(mapCategoryButtons)}
       </div>
       <div
-        className="relative animate-fade-left-right mt-24"
+        className="relative animate-fade-left-right mt-24 mx-2 grid place-items-center"
         style={{ gridColumnGap: "4%", marginTop: navBarHeight + 5 }}
         key={currCategory}
       >
@@ -121,16 +163,35 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
           ? categories
               .filter((category) => category === currCategory)
               .map(mapMenu)
-          : categories.map(mapMenu)}
+          : baseMenuCategories.map(mapMenu)}
       </div>
-      {currCategory === "sauces" && (
+      <div className="grid w-full bg-red-200/10 py-10">
         <div
-          className={`${redRoseFont.className} grid md:grid-cols-2 place-items-baseline max-w-screen-lg gap-20 text-3xl text-center`}
+          className={`${redRoseFont.className} flex flex-col place-self-end m-auto gap-y-5`}
         >
-          <div className="flex flex-col w-full">Coke</div>
-          <div className="flex flex-col w-full">Coke Zero</div>
+          <div className="w-full text-center text-lg text-red-800">
+            {currCategory ? "Looking for more?" : "Check out our drinks!"}
+          </div>
+          <div className="flex">
+            {currCategory
+              ? categories.map(mapCategoryButtonsEnd)
+              : categories.toSpliced(0, 4).map(mapCategoryButtonsEnd)}
+          </div>
+          <Link
+            href={EMapHrefToTitle["Order Now"]}
+            target="_blank"
+            className="col-span-full place-self-center"
+          >
+            <button
+              className={
+                " py-3 px-16 max-w-fit bg-red-800 border-[1px] border-red-800 hover:border-white text-white text-2xl tracking-wide rounded hover:scale-105 active:scale-95 duration-300"
+              }
+            >
+              Order Now
+            </button>
+          </Link>
         </div>
-      )}
+      </div>
       {show && (
         <MenuItemDetails
           redRoseFont={redRoseFont}

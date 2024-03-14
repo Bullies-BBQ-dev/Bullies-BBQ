@@ -20,7 +20,7 @@ export function CategoryIcons({ category }: { category: Category }) {
       return <GiFrenchFries className="sm:hidden" size={35}></GiFrenchFries>;
     case "desserts":
       return <GiCupcake className="sm:hidden" size={35}></GiCupcake>;
-    case "sauces":
+    case "drinks":
       return <BsCupStraw className="sm:hidden" size={35}></BsCupStraw>;
     case "beer":
       return <IoBeer className="sm:hidden" size={35}></IoBeer>;
