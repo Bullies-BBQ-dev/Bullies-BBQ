@@ -149,7 +149,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
       className="grid min-h-screen max-w-screen-2xl w-full"
     >
       <div
-        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md px-2 sm:px-0 mx-2 sm:mx-5`}
+        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md px-2 sm:px-0 mx-2 sm:mx-5 max-h-16`}
         style={{ top: navBarHeight - 1 }}
       >
         {categories.map(mapCategoryButtons)}
