@@ -7,7 +7,7 @@ import { EMapHrefToTitle, Page } from "../_utilities";
 import { pageNames } from "../_utilities";
 import { GrMenu, GrClose } from "react-icons/gr";
 import { NextFont } from "next/dist/compiled/@next/font";
-import { PromoBanner } from "./PromoBanner";
+import { PromoBanner } from ".";
 
 interface NavBarProps {
   redRoseFont: NextFont;
