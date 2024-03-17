@@ -29,7 +29,7 @@ export function CateringForm() {
     if (form.current) {
       emailjs
         .sendForm("service_l66sb72", "template_4vlk3li", form.current, {
-          publicKey: "69VTj3m726TFXQowL",
+          publicKey: "a6pmvaC8Yp-NjzBLV",
         })
         .then(
           () => {
@@ -239,6 +239,7 @@ export function CateringForm() {
 
               {selectedItems.length > 4 && (
                 <button
+                  type="button"
                   onClick={() => setShowAllItems(!showAllItems)}
                   className="text-red-500 hover:underline ease-in-out delay-75 py-4"
                 >
