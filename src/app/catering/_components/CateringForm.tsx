@@ -29,7 +29,7 @@ export function CateringForm() {
     if (form.current) {
       emailjs
         .sendForm("service_l66sb72", "template_4vlk3li", form.current, {
-          publicKey: "a6pmvaC8Yp-NjzBLV",
+          publicKey: "1pGGiF0cCRIkzZg8T",
         })
         .then(
           () => {
