@@ -17,8 +17,7 @@ export type Category =
   | "dinners"
   | "sides"
   | "desserts"
-  | "drinks"
-  | "beer";
+  | "drinks";
 
 export type CateringCategory =
   | "ALA Carte & by Pound"
