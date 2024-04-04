@@ -18,7 +18,7 @@ export function DrinkMenuItems({
   };
   return (
     <div
-      className={`${redRoseFont.className} grid md:grid-cols-2 w-full max-w-screen-lg gap-y-5 gap-x-20 text-2xl text-center mb-5`}
+      className={`${redRoseFont.className} grid md:grid-cols-2 w-full max-w-screen-lg gap-y-5 gap-x-20 text-2xl text-center mb-5 pb-14`}
     >
       <span className="col-span-full place-self-center text-5xl mb-5">
         {isAlcoholic ? "Beer" : "Drinks"}

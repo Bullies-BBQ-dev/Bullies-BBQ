@@ -663,9 +663,7 @@ export const nonAlcoholicDrinks = [
   "Minute Maid Lemonade",
   "Sweet Tea",
   "Unsweet Tea",
-  "Body Armor Strawberry Banana",
-  "Body Armor Orange Mango",
-  "Body Armor Blackout Berry",
+
 ];
 
 export const beer = [
