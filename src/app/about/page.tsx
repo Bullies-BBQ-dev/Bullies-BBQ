@@ -32,7 +32,6 @@ export default function About() {
               </p>
             </div>
           </div>
-
           <div className="grid grid-cols-2 xl:grid-cols-6 gap-5 sm:gap-8 pb-10">
             <div className="flex flex-col items-center col-span-2 pb-5 sm:pb-10">
               <img
@@ -95,7 +94,19 @@ export default function About() {
               </div>
             </div>
           </div>
-        </section>{" "}
+          <hr className="text-2xl pb-4"/>
+          <div className="flex flex-col items-center col-span-2 pb-5 sm:pb-10 gap-2">
+          <div className="px-5 grid gap-2 sm:gap-4 py-4">
+                <h2 className={`${redRoseFont.className} text-4xl`}>
+                  Employment Opportunities
+                </h2>
+                <p>
+                Want to join the Bullies team? We&apos;re always on the lookout for exceptional talent, please click the link below to inquire about potential future openings and check back often for updates!
+                </p>
+                <a href=" https://j.wrkstrm.us/a3d940aa/bullies-bbq" target="_blank" className="text-blue-500 hover:text-blue-400 duration-100 ease-in-out"> https://j.wrkstrm.us/a3d940aa/bullies-bbq</a>
+              </div>
+          </div>
+        </section>
       </main>
       <div className="flex bg-yellow-400  py-10 mb-20">
         <Reviews />
