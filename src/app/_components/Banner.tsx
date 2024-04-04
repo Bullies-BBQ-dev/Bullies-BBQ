@@ -21,6 +21,7 @@ export function Banner({ backgroundURL, title, children }: BannerProps) {
   };
   return (
     <div
+      id="banner"
       ref={bannerRef}
       className={" w-full shadow-md aspect-video relative"}
       style={{

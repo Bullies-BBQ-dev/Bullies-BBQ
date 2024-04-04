@@ -23,7 +23,6 @@ export const categories: Category[] = [
   "sides",
   "desserts",
   "drinks",
-  "beer",
 ];
 
 export const sauces: ISauce[] = [
@@ -414,7 +413,7 @@ export const menuList: IMenuItem[] = [
     name: "Bull Dog\n(2 Meat Combo)",
     price: 24.0,
     description:
-      "Your choice of any 2 meats! All Dinners Include 2 Sides! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Your choice of any 2 meats to satisfy your barbecue cravings! A mouthwatering feast featuring a tantalizing selection of two smoky, succulent meats. Whether it's tender brisket, juicy pulled pork, or savory ribs, paired with your favorite sides, it's a flavorful journey that promises to leave you fully satisfied.",
     category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
   },
@@ -423,27 +422,27 @@ export const menuList: IMenuItem[] = [
     name: "Baked Potato Salad",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Indulge in the comforting flavors of baked potato salad, featuring tender potatoes mixed with creamy dressing and savory seasonings. It's a satisfying side dish that pairs perfectly with any meal.",
     category: "sides",
     img: "/catering/1-pound-baked-potato-salad.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-baked-potato-salad_b06fab5c-f944-4b6b-8ba8-9d53d461b93b",
   },
   {
     prodId: 12,
-    name: "Creamy Cole Slaw",
+    name: "Creamy Coleslaw",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Savor the classic taste of creamy coleslaw, with crisp cabbage and carrots tossed in a creamy, tangy dressing. It's a refreshing complement to any barbecue feast.",
     category: "sides",
     img: "/catering/1-pound-creamy-cole-slaw.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-creamy-cole-slaw_0ad6b84f-5a91-49b7-a05b-ee729a43ab8f",
   },
   {
     prodId: 13,
-    name: "Carolina Cole Slaw",
+    name: "Carolina Coleslaw",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Experience the tangy kick of Carolina coleslaw, featuring shredded cabbage and a zesty vinegar-based dressing. It's a bright and flavorful side that adds a refreshing contrast to your plate.",
     category: "sides",
     img: "/catering/1-pound-carolina-cole-slaw.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-carolina-cole-slaw_ca84d06e-c9de-40a1-92a3-5df039b629c3",
@@ -453,7 +452,7 @@ export const menuList: IMenuItem[] = [
     name: "Zesty 3 Bean Bake",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Delight in the robust flavors of zesty three bean bake, a hearty combination of beans cooked with savory spices and tangy sauce. It's a flavorful side dish that's sure to please.",
     category: "sides",
     img: "/catering/1-pound-zesty-3-bean-bake.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-zesty-3-bean-bake_17cb6d73-ff14-48de-bcf0-307094d9fc3d",
@@ -463,7 +462,7 @@ export const menuList: IMenuItem[] = [
     name: "Collard Greens",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Treat your taste buds to the Southern comfort of collard greens, slow-cooked to perfection with savory seasonings. It's a soulful side dish that's both hearty and delicious.",
     category: "sides",
     img: "/catering/collard-greens.jpg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-collard-greens_d0ea0ed9-833e-4870-b600-3b3444bf84c0",
@@ -473,7 +472,7 @@ export const menuList: IMenuItem[] = [
     name: "Mac & Cheese",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Indulge in the creamy goodness of mac and cheese, featuring tender pasta smothered in rich, cheesy sauce. It's a timeless classic that's sure to be a hit with everyone at the table.",
     category: "sides",
     img: "/catering/1-pound-mac-&-cheese.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-mac-cheese_ec882917-4b6d-45d0-8135-1797b3098baa",
@@ -483,7 +482,7 @@ export const menuList: IMenuItem[] = [
     name: "Jalapeno Corn Bread",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Spice up your meal with jalapeno cornbread, featuring moist cornbread infused with fiery jalapeno peppers. It's a zesty side dish that adds a kick of flavor to any barbecue feast.",
     category: "sides",
     img: "/catering/jalapeno-cheddar-corn-bread.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-of-jalapeno-chedder-corn-bread-3-peices_aa8bc335-4fbf-417b-9763-e3d569af079a",
@@ -493,7 +492,7 @@ export const menuList: IMenuItem[] = [
     name: "Green Beans",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Enjoy the simplicity of green beans, cooked to perfection and seasoned with just the right amount of salt and pepper. It's a light and refreshing side dish that's perfect for rounding out any meal.",
     category: "sides",
     img: "/catering/1-pound-green-beans.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-green-beans_5c982213-12bd-4813-bc27-f7f95b6514ae",
@@ -503,7 +502,7 @@ export const menuList: IMenuItem[] = [
     name: "Brownie",
     price: 2.0,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Indulge in the decadent delight of a brownie, a timeless treat that tantalizes the taste buds with its rich, fudgy texture and deep chocolate flavor. Whether enjoyed warm with a scoop of ice cream or savored on its own, each bite is a blissful indulgence that satisfies the sweetest cravings.",
     category: "desserts",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/5/item-800000001525022625_1683130949.jpg?size=medium",
     url: "https://order.toasttab.com/online/bullies-bbq/item-brownie_d8a5ff72-ad8c-4b90-9992-5962451864e8",
@@ -513,7 +512,7 @@ export const menuList: IMenuItem[] = [
     name: "Fries",
     price: 4.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Indulge in the crispy goodness of fries, with golden-brown potatoes cooked to perfection and seasoned to perfection. It's a classic side dish that's sure to please even the pickiest eaters.",
     category: "sides",
     img: "/catering/fries.jpg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-fries_c69be82c-4663-4bca-a3b3-3eec27b48ab5",
@@ -523,7 +522,7 @@ export const menuList: IMenuItem[] = [
     name: "Brisket Chili",
     price: 5.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Savor the bold and smoky flavors of brisket chili, boasting tender chunks of slow-smoked brisket simmered in a rich, spicy tomato-based sauce. Packed with beans, peppers, and aromatic spices, it's a hearty and satisfying dish that's sure to please any chili lover.",
     category: "sides",
     img: "/catering/brisket-chili.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brisket-chili_05746092-498f-4e0f-87df-eb5e4afbb5b8",
@@ -533,7 +532,7 @@ export const menuList: IMenuItem[] = [
     name: "Brunswick Stew",
     price: 5.5,
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime optio vitae fugiat rem cupiditate voluptate qui iste laborum est necessitatibus. Aliquam vero modi fugiat possimus perspiciatis optio placeat facere saepe.",
+      "Delight in the comforting flavors of Brunswick stew, a hearty Southern classic featuring a rich, savory broth filled with tender chunks of meat, hearty vegetables, and a medley of spices. It's a soul-warming dish that's perfect for warming up on a chilly day.",
     category: "sides",
     img: "/catering/brunswick-stew.jpg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brunswick-stew_51fc829d-84ed-4462-8549-9eced3ef3d83",
@@ -663,24 +662,4 @@ export const nonAlcoholicDrinks = [
   "Minute Maid Lemonade",
   "Sweet Tea",
   "Unsweet Tea",
-
-];
-
-export const beer = [
-  "Budweiser",
-  "Bud Light",
-  "Corona",
-  "Modelo",
-  "Sweetwater",
-  "Michelob Ultra",
-  "Sam Adams",
-  "Heineken",
-  "Beach Bully",
-  "Southern Helles Lager",
-  "Damn Yankee",
-  "Dogfish 90 Minute IPA",
-  "Yuengling Lager",
-  "Pabst Blue Ribbon",
-  "Coor's Lite",
-  "Amstel",
 ];

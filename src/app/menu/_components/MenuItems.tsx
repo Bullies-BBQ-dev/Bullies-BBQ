@@ -24,27 +24,20 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   const menuRef = useRef<HTMLElement | null>(null);
   const show = useSearchParams().get("show");
   const navBarHeight = useNavBarHeight();
-  const baseMenuCategories = categories.toSpliced(4);
 
   const upperCaseFirst = (category: Category) => {
     if (category) return category.charAt(0).toUpperCase() + category.slice(1);
   };
 
   const mapMenu = (category: Category, index: number) => {
-    if (category === "drinks" || category === "beer")
-      return (
-        <DrinkMenuItems
-          key={category}
-          isAlcoholic={category === "beer"}
-          redRoseFont={redRoseFont}
-        />
-      );
+    if (category === "drinks")
+      return <DrinkMenuItems key={category} redRoseFont={redRoseFont} />;
     return (
       <div key={index} className="flex flex-col">
-        <span className={`${redRoseFont.className} text-5xl text-center`}>
+        <span className={`${redRoseFont.className} text-5xl text-center py-10`}>
           {upperCaseFirst(category)}
         </span>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl py-10 mx-2">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-7 xl:mx-9 max-w-screen-2xl mx-2">
           {menuList
             .filter((menuIem) => menuIem.category === category)
             .map(mapMenuItems)}
@@ -98,7 +91,15 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         <button
           className={`${categoryClasses}`}
           onClick={() => {
-            menuRef.current?.scrollIntoView({ behavior: "smooth" });
+            // menuRef.current?.scrollIntoView({ behavior: "smooth" });
+            const $banner = document.querySelector("#banner");
+            window.scrollTo({
+              top: $banner?.scrollHeight
+                ? $banner?.scrollHeight - navBarHeight
+                : 0,
+              left: 0,
+              behavior: "smooth",
+            });
           }}
         >
           <span className="hidden sm:flex items-center">
@@ -123,15 +124,23 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         }`}
         key={index}
         className={`basis-full grid place-items-center py-2 hover:bg-yellow-400/30 duration-150 px-4 text-red-800 ${
-          (category === "beer" && currCategory === "drinks") ||
-          (category === "drinks" && currCategory === "beer") ||
-          category === "beer"
+          (category === "drinks" && currCategory === "desserts") ||
+          (category === "desserts" && currCategory === "drinks") ||
+          category === "drinks"
             ? ""
             : "border-r-2"
         } border-yellow-400`}
         scroll={false}
         onClick={() => {
-          menuRef.current?.scrollIntoView({ behavior: "smooth" });
+          // menuRef.current?.scrollIntoView({ behavior: "smooth" });
+          const $banner = document.querySelector("#banner");
+          window.scrollTo({
+            top: $banner?.scrollHeight
+              ? $banner?.scrollHeight - navBarHeight
+              : 0,
+            left: 0,
+            behavior: "smooth",
+          });
         }}
       >
         <span className="hidden sm:flex items-center">
@@ -144,38 +153,33 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   };
 
   return (
-    <section
-      ref={menuRef}
-      className="grid min-h-screen max-w-screen-2xl w-full"
-    >
+    <section ref={menuRef} className="flex flex-col max-w-screen-2xl w-full">
       <div
-        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md px-2 sm:px-0 mx-2 sm:mx-5 max-h-16`}
+        className={`grid grid-cols-5 gap-2 sm:gap-2 md:gap-4 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md px-2 sm:px-0 mx-2 sm:mx-5 max-h-16`}
         style={{ top: navBarHeight - 1 }}
       >
         {categories.map(mapCategoryButtons)}
       </div>
       <div
-        className="relative animate-fade-left-right mt-24 mx-2 grid place-items-center"
-        style={{ gridColumnGap: "4%", marginTop: navBarHeight + 5 }}
+        className="relative animate-fade-left-right mx-2 grid place-items-center"
+        style={{ gridColumnGap: "4%" }}
         key={currCategory}
       >
         {currCategory
           ? categories
               .filter((category) => category === currCategory)
               .map(mapMenu)
-          : baseMenuCategories.map(mapMenu)}
+          : categories.map(mapMenu)}
       </div>
       <div className="grid w-full bg-red-200/10 py-10">
         <div
-          className={`${redRoseFont.className} flex flex-col place-self-end m-auto gap-y-5`}
+          className={`${redRoseFont.className} flex flex-col place-self-end m-auto gap-y-5 pb-6`}
         >
           <div className="w-full text-center text-lg text-red-800">
-            {currCategory ? "Looking for more?" : "Check out our drinks!"}
+            {currCategory && "Looking for more?"}
           </div>
           <div className="flex">
-            {currCategory
-              ? categories.map(mapCategoryButtonsEnd)
-              : categories.toSpliced(0, 4).map(mapCategoryButtonsEnd)}
+            {currCategory && categories.map(mapCategoryButtonsEnd)}
           </div>
           <Link
             href={EMapHrefToTitle["Order Now"]}
