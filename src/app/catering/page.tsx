@@ -19,10 +19,10 @@ export default function Catering() {
         backgroundURL="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022184_1683832838.jpg?size=medium"
         title="Catering"
       />
-      <div className="mx-5 sm:mx-10 my-10 lg:my-20">
-        <div className="mx-auto w-full min-w-60 lg:min-w-[950px] lg:max-w-full xl:min-w-[1180px] xl:max-w-[1800px]">
-          <div className="flex flex-col md:flex-row justify-between pb-5 lg:pb-10">
-            <div className="flex flex-col justify-center w-full sm:w-[570px] md:w-[690px] lg:w-[550px] lg:min-w-[550px] 2xl:w-[700px]">
+   
+        <div className="mx-auto w-full max-w-[3400px]">
+          <div className="flex flex-col md:flex-row lg:justify-between pb-5 lg:pb-10 p-10 justify-center" id="catering-details">
+            <div className="flex flex-col justify-center w-full  md:w-[690px] lg:w-[550px] text-center lg:text-start ">
               <h3
                 className={`text-red-800 text-4xl lg:text-5xl  ${redRoseFont.className}`}
               >
@@ -38,12 +38,12 @@ export default function Catering() {
               </div>
 
               <p
-                className={`${redRoseFont.className} text-red-800 pb-4 text-3xl sm:text-4xl max-w-[420px] sm:w-[455px] sm:max-w-[455px] 2xl:w-full 2xl:max-w-full `}
+                className={`${redRoseFont.className} text-red-800 pb-4 text-3xl sm:text-4xl `}
               >
                 Click to add items to catering inquiry form
               </p>
               <p
-                className={` text-yellow-600 text-xl max-w-[420px] sm:w-[500px] sm:max-w-[500px] 2xl:w-full 2xl:max-w-full `}
+                className={` text-yellow-600 text-xl  `}
               >
                 *For smaller orders, please place {""}
                 <a
@@ -79,7 +79,7 @@ export default function Catering() {
           </div>
 
           <div className="flex w-full">
-            <div className="w-full lg:w-[70%] ">
+            <div className="w-full ">
               <CateringMenuItems redRoseFont={redRoseFont} />
             </div>
             <div className="lg:flex md:hidden sm:hidden min-w-[356px] flex-col items-center pb-10 w-1/3 hidden sticky top-14 right-0 h-screen overflow-y-scroll shadow-2xl ">
@@ -102,7 +102,7 @@ export default function Catering() {
             <MobileForm />
           </div>
         </div>
-      </div>
+     
     </SelectedItemsProvider>
   );
 }
