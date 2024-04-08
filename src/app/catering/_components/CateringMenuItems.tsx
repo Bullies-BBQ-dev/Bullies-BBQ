@@ -75,7 +75,7 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
 
   const mapCategories = (category: CateringCategory, index: number) => {
     const isActive = category === currentCategory;
-    const categoryClasses = `py-1 rounded hover:bg-red-800/[0.85] duration-200 bg-red-800 text-white  ${
+    const categoryClasses = `py-1 rounded hover:bg-red-800/[0.85] duration-200 bg-red-800 text-white   ${
       isActive ? " outline-4 outline outline-yellow-500" : ""
     }`;
 
@@ -85,10 +85,16 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         className={categoryClasses}
         onClick={() => {
           setCurrentCategory(isActive ? null : category);
-          menuRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+          const $cateringDetails = document.querySelector("#catering-details");
+          const $banner = document.querySelector("#banner");
+          
+            window.scrollTo({
+              top: $cateringDetails?.scrollHeight && $banner?.scrollHeight
+                ? $cateringDetails?.scrollHeight + $banner?.scrollHeight - navBarHeight
+                : 0,
+              left: 0,
+              behavior: "smooth",
+            });
         }}
       >
         {category}
@@ -105,13 +111,13 @@ export function CateringMenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   return (
     <section ref={menuRef} className="min-h-screen">
       <div
-        className="grid sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10"
+        className="grid sm:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:grid-cols-3 gap-4 sticky top-[72px] py-4 sm:top-30 bg-white z-10 px-5 "
         style={{ top: navBarHeight }}
       >
         {cateringCategories.map(mapCategories)}
       </div>
       <div
-        className="justify relative animate-fade-left-right grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-9 py-10 lg:pr-8"
+        className="justify relative animate-fade-left-right grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-9 py-4 lg:pr-8 px-10"
         style={{ gridColumnGap: "4%" }}
         key={currentCategory}
       >

@@ -14,7 +14,7 @@ export function PromoBanner() {
   return (
     <>
       {isOpen && (
-        <div className="w-full bg-yellow-400 flex py-1 justify-between relative overflow-hidden">
+        <div className="w-full bg-yellow-400 flex py-1 justify-between relative overflow-hidden" id="promo-banner">
           <Link
             href="/catering"
             className="hover:underline w-[351px] mx-auto pl-1"
