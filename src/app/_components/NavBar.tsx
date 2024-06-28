@@ -57,7 +57,7 @@ export function NavBar({ redRoseFont }: NavBarProps) {
             className={`aspect-square duration-200 ${
               isScrolledToTop
                 ? " pt-1 h-28"
-                : " h-20 hover:scale-105 active:scale-95 hover:translate-y-3"
+                : " h-20 hover:scale-[1.175] active:scale-95 hover:translate-y-2"
             }`}
             src="/Bullies-logo.png"
             alt=""
