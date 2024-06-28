@@ -60,45 +60,45 @@ export const cateringCategories: CateringCategory[] = [
   "Family Dinners",
   "Sauces & Rubs",
 ];
-
+// Confirm if commented out items are no longer being served. If so, deleted commented out code.
 export const cateringMenuList: ICateringItems[] = [
   {
-    name: "1-pound Smoked Pulled Pork",
-    price: 17.0,
+    name: "1 Pound Smoked Pulled Pork",
+    price: 18.0,
     description: "1 Pound of Smoked Pulled Pork (Feeds 2-3 People)",
     category: "ALA Carte & by Pound",
     img: "/catering/pulled-pork.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-smoked-pulled-pork_18295f17-cb44-41c1-9eb6-796bea157a57",
   },
-  {
-    name: "1/2-pound Pork",
-    price: 10.0,
-    description: "1/2 Pound of Smoked Pulled Pork ",
-    category: "ALA Carte & by Pound",
-    img: "/catering/pulled-pork.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-12pound-pork_fb7bfb45-af0b-46a9-94ac-e72666bf95e9",
-  },
+  // {
+  //   name: "1/2-pound Smoked Pulled Pork",
+  //   price: 10.0,
+  //   description: "1/2 Pound of Smoked Pulled Pork ",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/pulled-pork.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-12pound-pork_fb7bfb45-af0b-46a9-94ac-e72666bf95e9",
+  // },
   {
     name: "1 Whole Smoked Chicken",
-    price: 20.0,
+    price: 24.0,
     description:
       "This smoked whole chicken is Juicy, Delicious, and simply can't be beat.",
     category: "ALA Carte & by Pound",
     img: "/catering/1-whole-smoked-chicken.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1-whole-smoked-chicken_414aaa3c-dd0f-4a5a-b947-01845426a445",
   },
+  // {
+  //   name: "1/2 Smoked Chicken",
+  //   price: 12.0,
+  //   description:
+  //     "This smoked 1/2 chicken is Juicy, Delicious, and simply can't be beat.",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/half-smoked-chicken.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-12-smoked-chicken_0cbfdfe1-1aa0-4951-9d90-b18cfbc2a0c7",
+  // },
   {
-    name: "1/2 Smoked Chicken",
-    price: 12.0,
-    description:
-      "This smoked 1/2 chicken is Juicy, Delicious, and simply can't be beat.",
-    category: "ALA Carte & by Pound",
-    img: "/catering/half-smoked-chicken.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-12-smoked-chicken_0cbfdfe1-1aa0-4951-9d90-b18cfbc2a0c7",
-  },
-  {
-    name: "1-pound Baked Potato Salad",
-    price: 7.0,
+    name: "1 Pound Baked Potato Salad",
+    price: 8.0,
     description:
       "Baked Potatoes, sour cream, bacon and chives. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
@@ -106,8 +106,8 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-baked-potato-salad_a6f9fffa-d0f9-46c4-adaf-0144dc00de1e",
   },
   {
-    name: "1-pound Creamy Cole Slaw",
-    price: 7.0,
+    name: "1 Pound Creamy Cole Slaw",
+    price: 8.0,
     description: "Traditional Creamy Slaw. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
 
@@ -115,23 +115,23 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-creamy-cole-slaw_295dd48d-29f2-4e8c-a2f7-85fd6ec446cb",
   },
   {
-    name: "1-pound Carolina Cole Slaw",
-    price: 7.0,
+    name: "1 Pound Carolina Cole Slaw",
+    price: 8.0,
     description: "Carolina Vinegar Based Slaw. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
     img: "/catering/1-pound-carolina-cole-slaw.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-carolina-cole-slaw_894fe99a-0ecb-4ddc-94f6-899684f93ea6",
   },
   {
-    name: "1-pound Green beans",
-    price: 7.0,
+    name: "1 Pound Green beans",
+    price: 8.0,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/catering/1-pound-green-beans.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-green-beans_af5796fa-0eb9-484d-9a9a-d88344c22563",
   },
   {
-    name: "1-pound Zesty 3 Bean Bake",
+    name: "1 Pound Zesty 3 Bean Bake",
     price: 8.0,
     description: "Baked Beans Bullies Style. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
@@ -139,7 +139,15 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-zesty-3-bean-bake_6e856b7d-6fe0-44e1-924d-bc72c0945499",
   },
   {
-    name: "1-pound Mac & Cheese",
+    name: "1 Pound Double Cheddar Mac",
+    price: 8.0,
+    description: "",
+    category: "ALA Carte & by Pound",
+    img: "/catering/1-pound-mac-&-cheese.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-mac-cheese_117ab635-c87c-4b6d-9de4-5573c9170ba5",
+  },
+  {
+    name: "1 Pound Bacon Gouda Mac",
     price: 8.0,
     description: "Made with Smoked Guda Cheese, and Bacon. (Feeds 2-3 people)",
     category: "ALA Carte & by Pound",
@@ -147,54 +155,54 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-1pound-mac-cheese_117ab635-c87c-4b6d-9de4-5573c9170ba5",
   },
   {
-    name: "Brisket Chili",
-    price: 10.0,
+    name: "1 Pound Brisket Chili",
+    price: 12.0,
     description:
       "Homemade Chili with Smoked Brisket Burnt Ends paired with fresh Green Peppers, Onions, Diced Tomatoes, and Pinto Beans. Includes 2 pieces of Jalapeno Chedder Cornbread.",
     category: "ALA Carte & by Pound",
     img: "/catering/brisket-chili.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-brisket-chili_2c5fb402-ad76-4d3f-b675-99f7cb8a5452",
   },
-  {
-    name: "Jalapeno Cheddar Corn Bread (12 Pieces)",
-    price: 12.0,
-    description: "Baked fresh with Jalapeno peppers, and Chedder cheese",
-    category: "ALA Carte & by Pound",
-    img: "/catering/jalapeno-cheddar-corn-bread.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-jalapeno-chedder-corn-bread-12-pieces_aea062c2-6cd3-4b62-ae07-0795fcbfd8ab",
-  },
-  {
-    name: "Rolls",
-    price: 0.75,
-    description: "",
-    category: "ALA Carte & by Pound",
-    img: "/catering/dinner-rolls.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-rolls_308028c1-58bc-4785-87b8-825b22418adb",
-  },
-  {
-    name: "Rolls (6)",
-    price: 4.5,
-    description: "",
-    category: "ALA Carte & by Pound",
-    img: "/catering/dinner-rolls.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-rolls-6_9690a642-6a6d-421e-9c60-f2370ce8a361",
-  },
-  {
-    name: "Rolls (12)",
-    price: 9.0,
-    description: "",
-    category: "ALA Carte & by Pound",
-    img: "/catering/dinner-rolls.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-rolls-12_38b3e9e1-5e10-49b4-a47c-7c86294d61bc",
-  },
-  {
-    name: "Slider Rolls (12)",
-    price: 5.0,
-    description: "",
-    category: "ALA Carte & by Pound",
-    img: "/catering/slider-rolls.jpeg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-slider-rolls-12_56dc5571-d550-4d87-a34d-b4eac3ec835d",
-  },
+  // {
+  //   name: "Jalapeno Cheddar Corn Bread (12 Pieces)",
+  //   price: 12.0,
+  //   description: "Baked fresh with Jalapeno peppers, and Chedder cheese",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/jalapeno-cheddar-corn-bread.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-jalapeno-chedder-corn-bread-12-pieces_aea062c2-6cd3-4b62-ae07-0795fcbfd8ab",
+  // },
+  // {
+  //   name: "Rolls",
+  //   price: 0.75,
+  //   description: "",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/dinner-rolls.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-rolls_308028c1-58bc-4785-87b8-825b22418adb",
+  // },
+  // {
+  //   name: "Rolls (6)",
+  //   price: 4.5,
+  //   description: "",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/dinner-rolls.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-rolls-6_9690a642-6a6d-421e-9c60-f2370ce8a361",
+  // },
+  // {
+  //   name: "Rolls (12)",
+  //   price: 9.0,
+  //   description: "",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/dinner-rolls.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-rolls-12_38b3e9e1-5e10-49b4-a47c-7c86294d61bc",
+  // },
+  // {
+  //   name: "Slider Rolls (12)",
+  //   price: 5.0,
+  //   description: "",
+  //   category: "ALA Carte & by Pound",
+  //   img: "/catering/slider-rolls.jpeg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-slider-rolls-12_56dc5571-d550-4d87-a34d-b4eac3ec835d",
+  // },
   {
     name: "Pickles 1 LB",
     price: 5.0,
@@ -204,88 +212,88 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-pickles-1-lb_dfbb5523-5dac-46c6-a514-c4cf738e9d01",
   },
   {
-    name: "Open Food",
-    price: 16.0,
-    description: "",
-    category: "ALA Carte & by Pound",
-    img: "/Bullies-logo.png",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-open-food_ad41657c-0130-4ee8-b661-431c2ca8fca7",
-  },
-  {
-    name: "1/2 pound Baked Potato Salad",
-    price: 5.5,
+    name: "2 pounds Baked Potato Salad",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-baked-potato-salad_19f76cc2-5bf9-44ec-b39d-ce2135bc08b4",
   },
   {
-    name: "1/2 Pound Creamy Cole Slaw",
-    price: 5.5,
+    name: "2 Pounds Creamy Cole Slaw",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-creamy-cole-slaw_8026c0db-1b3d-45d0-8cc6-7a406df921c6",
   },
   {
-    name: "1/2 Pound Carolina Cole Slaw",
-    price: 5.5,
+    name: "2 Pounds Carolina Cole Slaw",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-carolina-cole-slaw_af4dfb20-dfd3-40ea-aa56-a06c74572364",
   },
   {
-    name: "1/2 Pound Green Beans",
-    price: 5.5,
+    name: "2 Pounds Green Beans",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-green-beans_edc3077f-1b05-434d-b345-8aa1e908fb8a",
   },
   {
-    name: "1/2 Pound Collard Greens",
-    price: 5.5,
+    name: "2 Pounds Collard Greens",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-collard-greens_78e0b1b8-7dee-4b7a-9b43-233222c5f7e0",
   },
   {
-    name: "1/2 Pound Zesty 3 Bean Bake",
-    price: 5.5,
+    name: "2 Pounds Zesty 3 Bean Bake",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-zesty-3-bean-bake_92635565-1c46-4085-9bc6-d36d2f72f616",
   },
   {
-    name: "1/2 Pound Mac & Cheese",
-    price: 5.5,
+    name: "2 Pounds Double Cheddar Mac",
+    price: 12,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-mac-cheese_f89436ca-028f-4aad-967a-ab151b35299b",
   },
   {
-    name: "1/2 Pound Brisket Chili",
-    price: 6.5,
+    name: "2 Pounds Bacon Gouda Mac",
+    price: 12,
+    description: "",
+    category: "ALA Carte & by Pound",
+    img: "/Bullies-logo.png",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-mac-cheese_f89436ca-028f-4aad-967a-ab151b35299b",
+  },
+  {
+    name: "2 Pounds Brisket Chili",
+    price: 15,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-brisket-chili_a2d0d1e7-9000-49c2-b763-a43000f278dd",
   },
   {
-    name: "1/2 Pound Brunswick Stew",
-    price: 6.5,
+    name: "2 Pounds Brunswick Stew",
+    price: 15,
     description: "",
     category: "ALA Carte & by Pound",
     img: "/Bullies-logo.png",
     url: "https://order.toasttab.com/online/bullies-bbq/item-12-pound-brunswick-stew_742458e8-8bb9-4f1b-ae8c-e7dde4f7f37a",
   },
   {
-    name: "Family Dinner for 2-3 People",
-    price: 50.0,
+    name: "Family Dinner for 3-5 People",
+    price: 60.0,
     description:
       "Includes ribs, pulled pork, brisket, pulled chicken, jalapeno cheddar cornbread and your choice of 2 sides.",
     category: "Family Dinners",
@@ -293,8 +301,8 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-family-dinner-for-23-people_3adfea65-0675-4b01-8bb2-a8406fff7c30",
   },
   {
-    name: "Family Dinner for 4-6 People",
-    price: 80.0,
+    name: "Family Dinner for 6-8 People",
+    price: 100.0,
     description:
       "Includes ribs, pulled pork, brisket, pulled chicken, jalapeno cheddar cornbread and your choice of 2 sides.",
     category: "Family Dinners",
@@ -302,8 +310,8 @@ export const cateringMenuList: ICateringItems[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-family-dinner-for-46-people_bb9b2696-a340-4368-8948-5fb66a6546da",
   },
   {
-    name: "Family Dinner for 8-10 People",
-    price: 150.0,
+    name: "Family Dinner for 9-11 People",
+    price: 170.0,
     description:
       "Includes ribs, pulled pork, beef brisket, pulled chicken, jalapeno cheddar cornbread, and your choice of 2 sides.",
     category: "Family Dinners",
@@ -312,7 +320,7 @@ export const cateringMenuList: ICateringItems[] = [
   },
   {
     name: "Rib Rub",
-    price: 7.5,
+    price: 7,
     description: "",
     category: "Sauces & Rubs",
     img: "/Bullies-logo.png",
@@ -324,7 +332,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 1,
     name: "Brisket Sandwich",
-    price: 12.0,
+    price: 14.0,
     description:
       "Dive into a brisket sandwich: tender, slow-smoked brisket hugged by a toasted bun. It's a meaty masterpiece, pure and simple.",
     category: "sandwiches",
@@ -333,27 +341,27 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 2,
-    name: "Pulled Pork Sandwich",
-    price: 10.0,
+    name: "Pork Sandwich",
+    price: 12.0,
     description:
-      "Savor the essence of Southern comfort with a pulled pork sandwich. Tender strands of slow-cooked pork, piled high atop a soft bun. It's a flavor-packed journey to BBQ heaven in every bite.",
+      "Savor the essence of Southern comfort with a pork sandwich. Tender strands of slow-cooked pork, piled high atop a soft bun. It's a flavor-packed journey to BBQ heaven in every bite.",
     category: "sandwiches",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
     url: "https://order.toasttab.com/online/bullies-bbq/item-j-pulled-pork-sandwich-combo-34-lb_200fdb47-0f2d-4ac3-9ef8-d35043be3901",
   },
   {
     prodId: 3,
-    name: "Pulled Chicken Sandwich",
-    price: 9.5,
+    name: "Chicken Sandwich",
+    price: 12,
     description:
-      "Delight in the lighter side of barbecue with a pulled chicken sandwich. Succulent shredded chicken, nestled within a fluffy bun. It's a delightful twist on a classic favorite, perfect as a lighter but equally satisfying option.",
+      "Delight in the lighter side of barbecue with a chicken sandwich. Succulent shredded chicken, nestled within a fluffy bun. It's a delightful twist on a classic favorite, perfect as a lighter but equally satisfying option.",
     category: "sandwiches",
     img: "https://images-ext-2.discordapp.net/external/5UljIDiN-mKkEbeel4KEtVOSkMmKFCvoMtu9KRpri0s/https/img.cdn4dd.com/cdn-cgi/image/fit%3Dcontain%2Cwidth%3D1200%2Cheight%3D672%2Cformat%3Dauto/https%3A/doordash-static.s3.amazonaws.com/media/photosV2/3bf86092-97f8-4121-9589-c9b314d65915-retina-large.jpg?format=webp&width=1087&height=611",
   },
   {
     prodId: 4,
     name: "Pulled Pork Dinner",
-    price: 21.0,
+    price: 23.0,
     description:
       "Enjoy the savory goodness of a pulled pork dinner, featuring tender, succulent pork infused with smoky flavors. It's a meal that's sure to satisfy your cravings for classic barbecue taste.",
     category: "dinners",
@@ -380,8 +388,8 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 7,
-    name: "Half Chicken Dinner",
-    price: 16.5,
+    name: "Half Smoked Chicken Dinner",
+    price: 18,
     description:
       "1/2 Chicken dinner comes with 1 1/2 smoked Chicken and your choice of 2 sides.",
     category: "dinners",
@@ -391,7 +399,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 8,
     name: "Half Slab Dinner",
-    price: 25.0,
+    price: 26.0,
     description:
       "Indulge in barbecue bliss with a half slab rib dinner, showcasing tender ribs smothered in mouthwatering sauce. It's a finger-licking feast that'll leave you craving more.",
     category: "dinners",
@@ -401,7 +409,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 9,
     name: "Full Slab Dinner",
-    price: 33.0,
+    price: 36.0,
     description:
       "Treat yourself to the ultimate barbecue experience with a full slab rib dinner, featuring a generous portion of fall-off-the-bone ribs. It's a hearty meal that's perfect for satisfying even the heartiest appetites.",
     category: "dinners",
@@ -420,7 +428,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 11,
     name: "Baked Potato Salad",
-    price: 4.5,
+    price: 5,
     description:
       "Indulge in the comforting flavors of baked potato salad, featuring tender potatoes mixed with creamy dressing and savory seasonings. It's a satisfying side dish that pairs perfectly with any meal.",
     category: "sides",
@@ -430,7 +438,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 12,
     name: "Creamy Coleslaw",
-    price: 4.5,
+    price: 5,
     description:
       "Savor the classic taste of creamy coleslaw, with crisp cabbage and carrots tossed in a creamy, tangy dressing. It's a refreshing complement to any barbecue feast.",
     category: "sides",
@@ -440,7 +448,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 13,
     name: "Carolina Coleslaw",
-    price: 4.5,
+    price: 5,
     description:
       "Experience the tangy kick of Carolina coleslaw, featuring shredded cabbage and a zesty vinegar-based dressing. It's a bright and flavorful side that adds a refreshing contrast to your plate.",
     category: "sides",
@@ -450,7 +458,7 @@ export const menuList: IMenuItem[] = [
   {
     prodId: 14,
     name: "Zesty 3 Bean Bake",
-    price: 4.5,
+    price: 5,
     description:
       "Delight in the robust flavors of zesty three bean bake, a hearty combination of beans cooked with savory spices and tangy sauce. It's a flavorful side dish that's sure to please.",
     category: "sides",
@@ -459,8 +467,8 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 15,
-    name: "Collard Greens",
-    price: 4.5,
+    name: "Kickin' Collard Greens",
+    price: 5,
     description:
       "Treat your taste buds to the Southern comfort of collard greens, slow-cooked to perfection with savory seasonings. It's a soulful side dish that's both hearty and delicious.",
     category: "sides",
@@ -469,18 +477,28 @@ export const menuList: IMenuItem[] = [
   },
   {
     prodId: 16,
-    name: "Mac & Cheese",
-    price: 4.5,
+    name: "Double Cheddar Mac",
+    price: 5,
     description:
-      "Indulge in the creamy goodness of mac and cheese, featuring tender pasta smothered in rich, cheesy sauce. It's a timeless classic that's sure to be a hit with everyone at the table.",
+      "Indulge in the creamy goodness of mac and cheese, featuring tender pasta smothered in rich, cheesy cheddar sauce. It's a timeless classic that's sure to be a hit with everyone at the table.",
     category: "sides",
     img: "/catering/1-pound-mac-&-cheese.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-mac-cheese_ec882917-4b6d-45d0-8135-1797b3098baa",
   },
   {
     prodId: 17,
-    name: "Jalapeno Corn Bread",
-    price: 4.5,
+    name: "Bacon Gouda Mac",
+    price: 5,
+    description:
+      "Indulge in the creamy goodness of mac and cheese, featuring tender pasta smothered in smoked guda cheese and bacon. It's a timeless classic that's sure to be a hit with everyone at the table.",
+    category: "sides",
+    img: "/catering/1-pound-mac-&-cheese.jpeg",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-side-mac-cheese_ec882917-4b6d-45d0-8135-1797b3098baa",
+  },
+  {
+    prodId: 18,
+    name: "Jalapeno Corn Bread (3pc)",
+    price: 5,
     description:
       "Spice up your meal with jalapeno cornbread, featuring moist cornbread infused with fiery jalapeno peppers. It's a zesty side dish that adds a kick of flavor to any barbecue feast.",
     category: "sides",
@@ -488,9 +506,9 @@ export const menuList: IMenuItem[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-of-jalapeno-chedder-corn-bread-3-peices_aa8bc335-4fbf-417b-9763-e3d569af079a",
   },
   {
-    prodId: 18,
+    prodId: 19,
     name: "Green Beans",
-    price: 4.5,
+    price: 5,
     description:
       "Enjoy the simplicity of green beans, cooked to perfection and seasoned with just the right amount of salt and pepper. It's a light and refreshing side dish that's perfect for rounding out any meal.",
     category: "sides",
@@ -498,7 +516,7 @@ export const menuList: IMenuItem[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-green-beans_5c982213-12bd-4813-bc27-f7f95b6514ae",
   },
   {
-    prodId: 19,
+    prodId: 20,
     name: "Brownie",
     price: 2.0,
     description:
@@ -508,9 +526,9 @@ export const menuList: IMenuItem[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-brownie_d8a5ff72-ad8c-4b90-9992-5962451864e8",
   },
   {
-    prodId: 20,
+    prodId: 21,
     name: "Fries",
-    price: 4.5,
+    price: 5,
     description:
       "Indulge in the crispy goodness of fries, with golden-brown potatoes cooked to perfection and seasoned to perfection. It's a classic side dish that's sure to please even the pickiest eaters.",
     category: "sides",
@@ -518,24 +536,44 @@ export const menuList: IMenuItem[] = [
     url: "https://order.toasttab.com/online/bullies-bbq/item-fries_c69be82c-4663-4bca-a3b3-3eec27b48ab5",
   },
   {
-    prodId: 21,
+    prodId: 22,
     name: "Brisket Chili",
-    price: 5.5,
+    price: 7,
     description:
-      "Savor the bold and smoky flavors of brisket chili, boasting tender chunks of slow-smoked brisket simmered in a rich, spicy tomato-based sauce. Packed with beans, peppers, and aromatic spices, it's a hearty and satisfying dish that's sure to please any chili lover.",
+      "Savor the bold and smoky flavors of brisket chili, boasting tender chunks of slow-smoked brisket simmered in a rich, spicy tomato-based sauce. Packed with beans, peppers, and aromatic spices, it's a hearty and satisfying dish that's sure to please any chili lover. Comes with one pience of our famous Jalapeno Cheddar Cornbread",
     category: "sides",
     img: "/catering/brisket-chili.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brisket-chili_05746092-498f-4e0f-87df-eb5e4afbb5b8",
   },
   {
-    prodId: 22,
+    prodId: 23,
     name: "Brunswick Stew",
-    price: 5.5,
+    price: 7,
     description:
-      "Delight in the comforting flavors of Brunswick stew, a hearty Southern classic featuring a rich, savory broth filled with tender chunks of meat, hearty vegetables, and a medley of spices. It's a soul-warming dish that's perfect for warming up on a chilly day.",
+      "Delight in the comforting flavors of Brunswick stew, a hearty Southern classic featuring a rich, savory broth filled with tender chunks of meat, hearty vegetables, and a medley of spices. It's a soul-warming dish that's perfect for warming up on a chilly day. Comes with one pience of our famous Jalapeno Cheddar Cornbread",
     category: "sides",
     img: "/catering/brunswick-stew.jpg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brunswick-stew_51fc829d-84ed-4462-8549-9eced3ef3d83",
+  },
+  {
+    prodId: 24,
+    name: "Turkey Sandwich",
+    price: 13.0,
+    description:
+      "Introducing our mouthwatering Smoked Turkey Sandwich! Enjoy tender smoked turkey nestled between toasted bread. It's a flavor-packed delight that's simply irresistible!",
+    category: "sandwiches",
+    img: "https://images-ext-2.discordapp.net/external/5UljIDiN-mKkEbeel4KEtVOSkMmKFCvoMtu9KRpri0s/https/img.cdn4dd.com/cdn-cgi/image/fit%3Dcontain%2Cwidth%3D1200%2Cheight%3D672%2Cformat%3Dauto/https%3A/doordash-static.s3.amazonaws.com/media/photosV2/3bf86092-97f8-4121-9589-c9b314d65915-retina-large.jpg?format=webp&width=1087&height=611",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-j-turkey-sandwich-34_63924f2c-1989-420f-89eb-55965c23b21c",
+  },
+  {
+    prodId: 25,
+    name: "Turkey Dinner",
+    price: 24.0,
+    description:
+      "Savor the smoky goodness of our Turkey Dinner! Tender oven-roasted turkey infused with rich BBQ flavors, served with all your favorite sides. A delicious twist on classic barbecue that's guaranteed to satisfy your cravings.",
+    category: "dinners",
+    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022164_1683832820.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-turkey-dinner_d8b33072-9bea-46fe-ae19-1617e1f68ff4",
   },
 ];
 

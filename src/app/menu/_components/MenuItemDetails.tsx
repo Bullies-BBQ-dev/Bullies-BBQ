@@ -127,7 +127,7 @@ export default function MenuItemDetails({
                       Combo Your Sandwich
                       <br />2 Sides & Drink
                     </span>
-                    <span>+$4.50</span>
+                    <span>+$6</span>
                   </div>
                 </div>
               ) : (
