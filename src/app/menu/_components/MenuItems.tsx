@@ -124,8 +124,8 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
         }`}
         key={index}
         className={`basis-full grid place-items-center py-2 hover:bg-yellow-400/30 duration-150 px-4 text-red-800 ${
-          (category === "drinks" && currCategory === "desserts") ||
-          (category === "desserts" && currCategory === "drinks") ||
+          (category === "drinks" && currCategory === "kids") ||
+          (category === "kids" && currCategory === "drinks") ||
           category === "drinks"
             ? ""
             : "border-r-2"
@@ -155,7 +155,7 @@ export function MenuItems({ redRoseFont }: { redRoseFont: NextFont }) {
   return (
     <section ref={menuRef} className="flex flex-col max-w-screen-2xl w-full">
       <div
-        className={`grid grid-cols-5 gap-2 sm:gap-2 md:gap-4 md:px-8 lg:px-16 py-4 sticky z-10 bg-white shadow-md px-2 sm:px-0 mx-2 sm:mx-5 max-h-16`}
+        className={`grid grid-cols-6 gap-2 sm:gap-2 md:gap-4 px-2 lg:px-4 py-4 sticky z-10 bg-white shadow-md mx-2 xl:mx-5 max-h-16`}
         style={{ top: navBarHeight - 1 }}
       >
         {categories.map(mapCategoryButtons)}
