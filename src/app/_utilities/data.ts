@@ -21,7 +21,8 @@ export const categories: Category[] = [
   "sandwiches",
   "dinners",
   "sides",
-  "desserts",
+  "soups",
+  "kids",
   "drinks",
 ];
 
@@ -368,24 +369,24 @@ export const menuList: IMenuItem[] = [
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022164_1683832820.jpg?size=medium",
     url: "https://order.toasttab.com/online/bullies-bbq/item-pulled-pork-dinner_0f52cd74-8c4a-4cf0-8d62-052394188357",
   },
-  {
-    prodId: 5,
-    name: "Brisket Dinner",
-    price: 24.0,
-    description:
-      "Savor the rich flavors of a brisket dinner, featuring tender slices of slow-smoked brisket. It's a hearty delight that promises pure satisfaction with every bite.",
-    category: "dinners",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
-  },
-  {
-    prodId: 6,
-    name: "Pulled Chicken Dinner",
-    price: 20.0,
-    description:
-      "Delight in a pulled chicken dinner, boasting juicy, flavorful chicken cooked to perfection. It's a lighter option that doesn't skimp on taste, offering a delicious twist on traditional barbecue fare.",
-    category: "dinners",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
-  },
+  // {
+  //   prodId: 5,
+  //   name: "Brisket Dinner",
+  //   price: 24.0,
+  //   description:
+  //     "Savor the rich flavors of a brisket dinner, featuring tender slices of slow-smoked brisket. It's a hearty delight that promises pure satisfaction with every bite.",
+  //   category: "dinners",
+  //   img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
+  // },
+  // {
+  //   prodId: 6,
+  //   name: "Pulled Chicken Dinner",
+  //   price: 20.0,
+  //   description:
+  //     "Delight in a pulled chicken dinner, boasting juicy, flavorful chicken cooked to perfection. It's a lighter option that doesn't skimp on taste, offering a delicious twist on traditional barbecue fare.",
+  //   category: "dinners",
+  //   img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022044_1683832343.jpg?size=medium",
+  // },
   {
     prodId: 7,
     name: "Half Smoked Chicken Dinner",
@@ -416,15 +417,15 @@ export const menuList: IMenuItem[] = [
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/0/item-800000001525022160_1683130037.jpg?size=medium",
     url: "https://order.toasttab.com/online/bullies-bbq/item-full-slab-dinner_18725acc-6c85-42f0-bf2c-1075db286ba4",
   },
-  {
-    prodId: 10,
-    name: "Bull Dog\n(2 Meat Combo)",
-    price: 24.0,
-    description:
-      "Your choice of any 2 meats to satisfy your barbecue cravings! A mouthwatering feast featuring a tantalizing selection of two smoky, succulent meats. Whether it's tender brisket, juicy pulled pork, or savory ribs, paired with your favorite sides, it's a flavorful journey that promises to leave you fully satisfied.",
-    category: "dinners",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
-  },
+  // {
+  //   prodId: 10,
+  //   name: "Bull Dog\n(2 Meat Combo)",
+  //   price: 24.0,
+  //   description:
+  //     "Your choice of any 2 meats to satisfy your barbecue cravings! A mouthwatering feast featuring a tantalizing selection of two smoky, succulent meats. Whether it's tender brisket, juicy pulled pork, or savory ribs, paired with your favorite sides, it's a flavorful journey that promises to leave you fully satisfied.",
+  //   category: "dinners",
+  //   img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022172_1683238227.jpg?size=medium",
+  // },
   {
     prodId: 11,
     name: "Baked Potato Salad",
@@ -515,43 +516,43 @@ export const menuList: IMenuItem[] = [
     img: "/catering/1-pound-green-beans.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-green-beans_5c982213-12bd-4813-bc27-f7f95b6514ae",
   },
-  {
-    prodId: 20,
-    name: "Brownie",
-    price: 2.0,
-    description:
-      "Indulge in the decadent delight of a brownie, a timeless treat that tantalizes the taste buds with its rich, fudgy texture and deep chocolate flavor. Whether enjoyed warm with a scoop of ice cream or savored on its own, each bite is a blissful indulgence that satisfies the sweetest cravings.",
-    category: "desserts",
-    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/5/item-800000001525022625_1683130949.jpg?size=medium",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-brownie_d8a5ff72-ad8c-4b90-9992-5962451864e8",
-  },
-  {
-    prodId: 21,
-    name: "Fries",
-    price: 5,
-    description:
-      "Indulge in the crispy goodness of fries, with golden-brown potatoes cooked to perfection and seasoned to perfection. It's a classic side dish that's sure to please even the pickiest eaters.",
-    category: "sides",
-    img: "/catering/fries.jpg",
-    url: "https://order.toasttab.com/online/bullies-bbq/item-fries_c69be82c-4663-4bca-a3b3-3eec27b48ab5",
-  },
+  // {
+  //   prodId: 20,
+  //   name: "Brownie",
+  //   price: 2.0,
+  //   description:
+  //     "Indulge in the decadent delight of a brownie, a timeless treat that tantalizes the taste buds with its rich, fudgy texture and deep chocolate flavor. Whether enjoyed warm with a scoop of ice cream or savored on its own, each bite is a blissful indulgence that satisfies the sweetest cravings.",
+  //   category: "desserts",
+  //   img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/5/item-800000001525022625_1683130949.jpg?size=medium",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-brownie_d8a5ff72-ad8c-4b90-9992-5962451864e8",
+  // },
+  // {
+  //   prodId: 21,
+  //   name: "Fries",
+  //   price: 5,
+  //   description:
+  //     "Indulge in the crispy goodness of fries, with golden-brown potatoes cooked to perfection and seasoned to perfection. It's a classic side dish that's sure to please even the pickiest eaters.",
+  //   category: "sides",
+  //   img: "/catering/fries.jpg",
+  //   url: "https://order.toasttab.com/online/bullies-bbq/item-fries_c69be82c-4663-4bca-a3b3-3eec27b48ab5",
+  // },
   {
     prodId: 22,
-    name: "Brisket Chili",
+    name: "Brisket Chili Combo",
     price: 7,
     description:
       "Savor the bold and smoky flavors of brisket chili, boasting tender chunks of slow-smoked brisket simmered in a rich, spicy tomato-based sauce. Packed with beans, peppers, and aromatic spices, it's a hearty and satisfying dish that's sure to please any chili lover. Comes with one pience of our famous Jalapeno Cheddar Cornbread",
-    category: "sides",
+    category: "soups",
     img: "/catering/brisket-chili.jpeg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brisket-chili_05746092-498f-4e0f-87df-eb5e4afbb5b8",
   },
   {
     prodId: 23,
-    name: "Brunswick Stew",
+    name: "Brunswick Stew Combo",
     price: 7,
     description:
       "Delight in the comforting flavors of Brunswick stew, a hearty Southern classic featuring a rich, savory broth filled with tender chunks of meat, hearty vegetables, and a medley of spices. It's a soul-warming dish that's perfect for warming up on a chilly day. Comes with one pience of our famous Jalapeno Cheddar Cornbread",
-    category: "sides",
+    category: "soups",
     img: "/catering/brunswick-stew.jpg",
     url: "https://order.toasttab.com/online/bullies-bbq/item-side-brunswick-stew_51fc829d-84ed-4462-8549-9eced3ef3d83",
   },
@@ -573,6 +574,36 @@ export const menuList: IMenuItem[] = [
       "Savor the smoky goodness of our Turkey Dinner! Tender oven-roasted turkey infused with rich BBQ flavors, served with all your favorite sides. A delicious twist on classic barbecue that's guaranteed to satisfy your cravings.",
     category: "dinners",
     img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022164_1683832820.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-turkey-dinner_d8b33072-9bea-46fe-ae19-1617e1f68ff4",
+  },
+  {
+    prodId: 26,
+    name: "BBQ Sliders",
+    price: 6.0,
+    description:
+      "Savor the smoky goodness of our Turkey Dinner! Tender oven-roasted turkey infused with rich BBQ flavors, served with all your favorite sides. A delicious twist on classic barbecue that's guaranteed to satisfy your cravings.",
+    category: "kids",
+    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/6/item-800000001525022466_1683134566.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-turkey-dinner_d8b33072-9bea-46fe-ae19-1617e1f68ff4",
+  },
+  {
+    prodId: 27,
+    name: "Kids Mac & Cheese",
+    price: 6.0,
+    description:
+      "Savor the smoky goodness of our Turkey Dinner! Tender oven-roasted turkey infused with rich BBQ flavors, served with all your favorite sides. A delicious twist on classic barbecue that's guaranteed to satisfy your cravings.",
+    category: "kids",
+    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/4/item-800000001525022464_1683134927.jpg?size=medium",
+    url: "https://order.toasttab.com/online/bullies-bbq/item-turkey-dinner_d8b33072-9bea-46fe-ae19-1617e1f68ff4",
+  },
+  {
+    prodId: 28,
+    name: "Kids Rib Basket",
+    price: 6.0,
+    description:
+      "Savor the smoky goodness of our Turkey Dinner! Tender oven-roasted turkey infused with rich BBQ flavors, served with all your favorite sides. A delicious twist on classic barbecue that's guaranteed to satisfy your cravings.",
+    category: "kids",
+    img: "https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-150841000000000000/menu/items/2/item-800000001525022462_1683134550.jpg?size=medium",
     url: "https://order.toasttab.com/online/bullies-bbq/item-turkey-dinner_d8b33072-9bea-46fe-ae19-1617e1f68ff4",
   },
 ];

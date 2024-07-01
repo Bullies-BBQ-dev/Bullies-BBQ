@@ -25,9 +25,9 @@ export default function MenuItemDetails({
     sandwiches: 0,
     dinners: 1,
     sides: 2,
-    desserts: 3,
-    drinks: 4,
-    beer: 5,
+    kids: 3,
+    soups: 4,
+    drinks: 5,
   };
   const currList = category
     ? menuList.filter((menuItem) => menuItem.category === category)
@@ -121,6 +121,10 @@ export default function MenuItemDetails({
                       Jumbo
                       <span>${currItem.price + 2}</span>
                     </div>
+                  </div>
+                  <div className="flex justify-between items-center w-full px-2 text-xl sm:text-2xl sm:px-6">
+                    <span className=" text-start">Sub Gluten Free Bun</span>
+                    <span>+$3.5</span>
                   </div>
                   <div className="flex justify-between items-center w-full px-2 text-xl sm:text-2xl sm:px-6">
                     <span className=" text-start">
