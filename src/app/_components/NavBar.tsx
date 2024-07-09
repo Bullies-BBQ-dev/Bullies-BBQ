@@ -8,6 +8,7 @@ import { pageNames } from "../_utilities";
 import { GrMenu, GrClose } from "react-icons/gr";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { PromoBanner } from ".";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 interface NavBarProps {
   redRoseFont: NextFont;
@@ -64,21 +65,74 @@ export function NavBar({ redRoseFont }: NavBarProps) {
           />
         </Link>
       );
+    if (page === "Catering")
+      return (
+        <div
+          key={index}
+          className={`h-full w-full duration-200 place-items-center min-w-28 ${
+            page === "Catering" ? " relaitve group" : ""
+          }
+          ${
+            EMapHrefToTitle[page] === pathName
+              ? `${isScrolledToTop ? "" : "bg-red-800 text-white "}`
+              : " hover:bg-red-800/50"
+          }
+        `}
+        >
+          <Link
+            href={EMapHrefToTitle[page]}
+            className={`h-full w-full grid place-items-center`}
+          >
+            {page === "Catering" ? (
+              <div
+                className={`flex items-center pl-1 group-hover:scale-105 group-hover:font-extrabold group-hover:underline-offset-4 group-hover:underline duration-200           ${
+                  EMapHrefToTitle[page] === pathName
+                    ? `${
+                        isScrolledToTop ? "" : "bg-red-800 text-white "
+                      }font-extrabold text-xl underline-offset-4 underline`
+                    : ""
+                }`}
+              >
+                {page}
+                <IoMdArrowDropdown />
+              </div>
+            ) : (
+              page
+            )}
+          </Link>
+
+          {page === "Catering" && (
+            <div
+              className={` border-t-2 w-full flex justify-center py-2 bg-red-800 text-white bottom-0 opacity-0 -translate-y-full group-hover:-translate-y-0 group-hover:opacity-100 duration-300 pointer-events-none group-hover:pointer-events-auto shadow-lg`}
+            >
+              <Link
+                href="https://www.ezcater.com/catering/pvt/bullies-bbq-3"
+                target="_blank"
+                className=" hover:underline-offset-4 hover:underline"
+              >
+                Order Catering
+              </Link>
+            </div>
+          )}
+        </div>
+      );
     return (
       <Link
         href={EMapHrefToTitle[page]}
         key={index}
-        className={`h-full w-full duration-200 grid place-items-center min-w-28
+        className={`h-full w-full duration-200 grid place-items-center min-w-28 group
           ${
             EMapHrefToTitle[page] === pathName
-              ? `text-${
-                  isScrolledToTop ? "" : "red"
-                }-800 font-extrabold text-xl underline-offset-4 underline`
-              : "hover:scale-105 hover:font-extrabold hover:underline-offset-4 hover:underline"
+              ? `${
+                  isScrolledToTop ? "" : "bg-red-800 text-white "
+                }font-extrabold text-xl underline-offset-4 underline`
+              : " hover:bg-red-800/50"
           }
         `}
       >
-        <span>{page}</span>
+        <span className="duration-200 group-hover:scale-105 group-hover:font-extrabold group-hover:underline-offset-4 group-hover:underline">
+          {page}
+        </span>
       </Link>
     );
   };
@@ -147,6 +201,22 @@ export function NavBar({ redRoseFont }: NavBarProps) {
                 <GrClose onClick={() => setIsModalOpen(false)} size={40} />
               </div>
               {pageNames.map(mapModalLinks)}
+              <Link
+                href={`https://order.toasttab.com/online/bullies-bbq`}
+                className={`w-full py-4 duration-200 grid place-items-center text-2xl order-6`}
+                onClick={() => setIsModalOpen(false)}
+                target="_blank"
+              >
+                <span>Order Online</span>
+              </Link>
+              <Link
+                href={`https://www.ezcater.com/catering/pvt/bullies-bbq-3`}
+                className={`w-full py-4 duration-200 grid place-items-center text-2xl order-7`}
+                onClick={() => setIsModalOpen(false)}
+                target="_blank"
+              >
+                <span>Order Catering</span>
+              </Link>
             </div>
           </div>
         )}
