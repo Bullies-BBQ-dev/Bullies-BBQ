@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Permanent_Marker, Red_Rose } from "next/font/google";
 import "./globals.css";
 import { Footer, NavBar } from "./_components";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 const redRoseFont = Red_Rose({
@@ -24,6 +25,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-S7P50RRMR0"
+        ></Script>
+        <Script id="google-analyitcs">
+          {`          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S7P50RRMR0');`}
+        </Script>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
